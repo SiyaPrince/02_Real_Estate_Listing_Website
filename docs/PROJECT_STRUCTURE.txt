@@ -1,0 +1,139 @@
+larhub/
+├── admin
+│   ├── agent-review.html
+│   ├── agents.html
+│   ├── index.html
+│   ├── listing-review.html
+│   ├── listings.html
+│   ├── moderation.html
+│   ├── settings.html
+│   └── users.html
+├── agent
+│   ├── enquiries.html
+│   ├── index.html
+│   ├── listings.html
+│   ├── performance.html
+│   ├── profile.html
+│   └── property-form.html
+├── assets
+│   ├── icons
+│   │   └── .gitkeep
+│   └── images
+│       ├── about
+│       │   └── .gitkeep
+│       ├── agents
+│       │   └── .gitkeep
+│       ├── auth
+│       │   └── .gitkeep
+│       ├── home
+│       │   └── .gitkeep
+│       └── properties
+│           └── .gitkeep
+├── auth
+│   ├── forgot-password.html
+│   ├── login.html
+│   └── register.html
+├── css
+│   ├── components
+│   │   ├── agent-card.css
+│   │   ├── buttons.css
+│   │   ├── dashboard.css
+│   │   ├── dialogs.css
+│   │   ├── empty-state.css
+│   │   ├── filters.css
+│   │   ├── forms.css
+│   │   ├── gallery.css
+│   │   ├── navigation.css
+│   │   ├── pagination.css
+│   │   ├── property-card.css
+│   │   ├── search.css
+│   │   ├── status.css
+│   │   └── tables.css
+│   ├── pages
+│   │   ├── about.css
+│   │   ├── admin.css
+│   │   ├── agent-dashboard.css
+│   │   ├── agent-profile.css
+│   │   ├── agents.css
+│   │   ├── auth.css
+│   │   ├── contact.css
+│   │   ├── home.css
+│   │   ├── properties.css
+│   │   ├── property-details.css
+│   │   └── user.css
+│   ├── base.css
+│   ├── layout.css
+│   ├── main.css
+│   ├── tokens.css
+│   ├── typography.css
+│   └── utilities.css
+├── docs
+│   ├── BACKEND_INTEGRATION_NOTES.md
+│   ├── IMAGE_ASSET_INVENTORY.md
+│   ├── PROJECT_STATE.md
+│   └── QA_CHECKLIST.md
+├── js
+│   ├── components
+│   │   ├── agent-card.js
+│   │   ├── app-navigation.js
+│   │   ├── pagination.js
+│   │   ├── property-card.js
+│   │   ├── public-footer.js
+│   │   ├── public-header.js
+│   │   └── status-badge.js
+│   ├── data
+│   │   ├── agents.js
+│   │   ├── enquiries.js
+│   │   ├── properties.js
+│   │   └── users.js
+│   ├── features
+│   │   ├── auth.js
+│   │   ├── dialogs.js
+│   │   ├── forms.js
+│   │   ├── management-tables.js
+│   │   ├── navigation.js
+│   │   ├── property-filters.js
+│   │   ├── property-form.js
+│   │   ├── property-gallery.js
+│   │   ├── property-search.js
+│   │   ├── property-sort.js
+│   │   ├── recently-viewed.js
+│   │   └── saved-properties.js
+│   ├── pages
+│   │   ├── admin-dashboard.js
+│   │   ├── agent-dashboard.js
+│   │   ├── agent-profile.js
+│   │   ├── agents.js
+│   │   ├── auth.js
+│   │   ├── home.js
+│   │   ├── properties.js
+│   │   ├── property-details.js
+│   │   └── user-dashboard.js
+│   ├── services
+│   │   ├── agent-service.js
+│   │   ├── auth-service.js
+│   │   ├── enquiry-service.js
+│   │   ├── property-service.js
+│   │   └── storage-service.js
+│   ├── utils
+│   │   ├── currency.js
+│   │   ├── dates.js
+│   │   ├── dom.js
+│   │   ├── url.js
+│   │   └── validation.js
+│   └── main.js
+├── user
+│   ├── enquiries.html
+│   ├── index.html
+│   ├── profile.html
+│   ├── recently-viewed.html
+│   └── saved.html
+├── .gitignore
+├── about.html
+├── agent.html
+├── agents.html
+├── contact.html
+├── index.html
+├── properties.html
+├── property.html
+└── README.md

@@ -1,0 +1,28 @@
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Environment files
+.env
+.env.*
+
+# Node/build output if introduced later
+node_modules/
+dist/
+build/
+
+# Python cache if local helper scripts are ever used
+__pycache__/
+*.py[cod]
