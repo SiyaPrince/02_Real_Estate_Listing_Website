@@ -121,3 +121,22 @@ js/utils/url.js
 ```
 
 Feature logic remains intentionally deferred.
+
+## Project Documentation Discipline
+
+LarHub maintains implementation state and downstream decisions in:
+
+```text
+docs/PROJECT_STATE.md
+docs/QA_CHECKLIST.md
+docs/IMAGE_ASSET_INVENTORY.md
+docs/BACKEND_INTEGRATION_NOTES.md
+docs/DECISIONS.md
+```
+
+These documents should be updated deliberately as increments are accepted.
+
+`PROJECT_STATE.md` is the implementation-status source of truth.
+
+`DECISIONS.md` records important locked architectural/product decisions rather
+than conversation history.
