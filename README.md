@@ -140,3 +140,23 @@ These documents should be updated deliberately as increments are accepted.
 
 `DECISIONS.md` records important locked architectural/product decisions rather
 than conversation history.
+
+## Foundation Verification
+
+Increment 0.9 verified the current foundation through a local HTTP server.
+
+Verified:
+
+- Public/auth/application route availability
+- Shared CSS resources
+- JavaScript resources and syntax
+- Local HTML/CSS/JS reference integrity
+- Basic overflow-risk patterns
+
+The detailed report is available at:
+
+```text
+docs/FOUNDATION_VERIFICATION.md
+```
+
+Full visual multi-viewport QA remains scheduled for later once implemented UI exists.
