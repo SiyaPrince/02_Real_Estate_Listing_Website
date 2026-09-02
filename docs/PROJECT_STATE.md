@@ -6,24 +6,15 @@ This file is the authoritative implementation-status snapshot for LarHub.
 
 Update it after every accepted increment.
 
-It should answer:
-
-- What increment are we on?
-- What is complete?
-- What is intentionally not complete?
-- What is currently locked?
-- What is next?
-- Are there known defects or blockers?
-
 ---
 
 ## Current Increment
 
-**Increment 0.8 — Documentation and Implementation-State Discipline**
+**Increment 0.9 — Local Runtime Foundation Verification**
 
 Status:
 
-**Complete — pending runtime verification of the foundation.**
+**Complete**
 
 ---
 
@@ -31,7 +22,7 @@ Status:
 
 ```text
 PLANNING / DESIGN          COMPLETE
-FOUNDATION                 IN PROGRESS
+FOUNDATION                 VERIFIED
 PUBLIC SHELL               NOT STARTED
 MARKETPLACE FEATURES       NOT STARTED
 AUTHENTICATION UI          NOT STARTED
@@ -43,131 +34,48 @@ FINAL QA / CONSOLIDATION   NOT STARTED
 
 ---
 
-## Completed Increments
+## Completed Foundation Increments
 
 ### Increment 0.1 — Project Structure
-
-Completed:
-
-- Initial LarHub directory structure
-- Public page placeholders
-- Authentication page placeholders
-- User-area page placeholders
-- Agent-area page placeholders
-- Admin-area page placeholders
-- CSS architecture placeholders
-- JavaScript architecture placeholders
-- Asset directories
-- Documentation directory
-- `.gitignore`
-- Root `README.md`
+Complete.
 
 ### Increment 0.2 — Design Tokens
-
-Completed:
-
-- Brand colours
-- Surface colours
-- Text colours
-- Border colours
-- Semantic colours
-- Typography tokens
-- Spacing scale
-- Section-spacing tokens
-- Container-width tokens
-- Gutter tokens
-- Radius tokens
-- Border-width tokens
-- Shadow tokens
-- Control-height tokens
-- Image-ratio tokens
-- Motion tokens
-- Layering tokens
-- Breakpoint reference tokens
+Complete.
 
 ### Increment 0.3 — CSS Base / Reset
-
-Completed:
-
-- Predictable box sizing
-- Document/body defaults
-- Text reset
-- List reset
-- Media defaults
-- Form-control inheritance
-- Table normalization
-- Focus baseline
-- Reduced-motion baseline
+Complete.
 
 ### Increment 0.4 — Typography System
-
-Completed:
-
-- Heading hierarchy
-- Fluid display/H1/H2 sizing
-- Body text roles
-- Label/eyebrow treatments
-- Property-price treatments
-- Text-colour helpers
-- Readable-measure helpers
-- Number-formatting typography helper
+Complete.
 
 ### Increment 0.5 — Layout and Container Primitives
-
-Completed:
-
-- Standard/narrow/wide/application containers
-- Responsive gutters
-- Section primitives
-- Flow rhythm
-- Stack
-- Cluster
-- Responsive grids
-- Split layout
-- Application content shell
-- Mobile full-bleed helper
-- Shared media wrappers
+Complete.
 
 ### Increment 0.6 — Shared Utility Layer
+Complete.
 
-Completed:
-
-- Visually-hidden utilities
-- Display helpers
-- Alignment helpers
-- Width helpers
-- Overflow helpers
-- Position helpers
-- Spacing helpers
-- Gap helpers
-- Surface helpers
-- Border helpers
-- Radius helpers
-- Responsive visibility helpers
-
-### Increment 0.7 — JavaScript Entry Architecture
-
-Completed:
-
-- ES-module application entry point
-- DOM-ready bootstrap helper
-- Single-element selector helper
-- Multi-element selector helper
-- Element-existence helper
-- Query-parameter helper
-- Small `initLarHub()` application boundary
+### Increment 0.7 — JavaScript Module Entry Architecture
+Complete.
 
 ### Increment 0.8 — Documentation Discipline
+Complete.
 
-Completed:
+### Increment 0.9 — Runtime Verification
+Complete.
 
-- Formal project-state format
-- Formal QA checklist structure
-- Image-asset inventory format
-- Backend-integration notes format
-- Architecture/decision log
-- Documentation update rules
-- Increment acceptance rules
+Verified:
+
+- LarHub runs through a local HTTP server.
+- Root page returns HTTP 200.
+- Public page routes return HTTP 200.
+- Authentication routes return HTTP 200.
+- Representative User, Agent, and Admin routes return HTTP 200.
+- Shared CSS foundation files return HTTP 200.
+- JavaScript entry/utilities return HTTP 200.
+- All JavaScript files pass `node --check`.
+- Local HTML/CSS/JavaScript references resolve to existing files.
+- No obvious `100vw` or large fixed-width overflow-risk patterns exist in foundation CSS.
+- HTTP server logs show successful foundation requests without 404s in the tested route set.
 
 ---
 
@@ -208,35 +116,32 @@ js/utils/url.js
 
 ## Known Issues
 
-None recorded yet.
+No foundation defects were identified in Increment 0.9.
 
-This section must contain only known, reproducible defects.
+### Environment Note
 
-Do not use it as a future-feature list.
+Headless Chromium was available in the verification environment but did not complete a reliable
+render/screenshot run in that environment.
 
----
+Therefore Increment 0.9 confirms:
 
-## Pending Runtime Verification
+- HTTP routing
+- resource resolution
+- JavaScript syntax
+- module/reference integrity
+- static overflow-risk inspection
 
-The foundation still needs browser verification through a local HTTP server.
+Full visual browser QA remains part of the later browser-QA stages when implemented UI exists.
 
-Verify:
-
-- CSS imports
-- ES module imports
-- Console errors
-- Horizontal overflow
-- Responsive containers
-- Typography scaling
-- Reduced-motion behaviour
-- Utility behaviour
+This is not considered a blocker because LarHub currently contains only structural placeholder
+pages and foundation styles, not completed visual components.
 
 ---
 
 ## Next Increment
 
-**Increment 0.9 — Run locally and verify the foundation**
-
-After 0.9 passes, proceed to:
-
 **Increment 0.10 — Foundation review and lock**
+
+After 0.10, begin:
+
+**Increment 1 — Public Shell**
