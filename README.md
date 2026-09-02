@@ -1,163 +1,62 @@
-# LarHub Design Documentation
+# LarHub
 
-This folder contains the locked pre-implementation design and architecture decisions for the
-LarHub real estate listing platform.
+LarHub is a real estate listing platform currently being implemented as a modular
+HTML, CSS, and vanilla JavaScript frontend.
 
-The documents are intentionally separated by relevance and responsibility so that downstream
-implementation work can reference the correct source without searching through one enormous
-planning document.
+## Current State
 
-## Documents
+The project is currently at:
 
-### 01 — Project Scope and Product Architecture
+**Increment 0.1 — Project Structure**
 
-`01_PROJECT_SCOPE_AND_PRODUCT_ARCHITECTURE.md`
+Only the structural project skeleton has been created.
 
-Use this when deciding:
+No page designs, property data, search logic, authentication logic, dashboards,
+or design-system styling have been implemented yet.
 
-- What LarHub is
-- Which product areas exist
-- Which pages are in scope
-- Who each area serves
-- What belongs in frontend scope
-- What requires a backend
-- Which status models exist
+## Development
 
-### 02 — Design System and Visual Direction
+LarHub should be served through a local HTTP server.
 
-`02_DESIGN_SYSTEM_AND_VISUAL_DIRECTION.md`
+```powershell
+py -m http.server 5500
+```
 
-Use this for:
+Then open:
 
-- Brand personality
-- Colour tokens
-- Typography
-- Spacing
-- Containers
-- Grid
-- Responsive ranges
-- Buttons/forms
-- Imagery
-- Motion
-- Accessibility-oriented visual rules
+```text
+http://localhost:5500
+```
 
-### 03 — Public Marketplace UX and Page Designs
+## Documentation
 
-`03_PUBLIC_MARKETPLACE_UX_AND_PAGE_DESIGNS.md`
+See the `/docs` directory for implementation-state and downstream notes.
 
-Use this when building:
+## Design Tokens
 
-- Home
-- Properties
-- Property Details
-- Agents
-- Agent Profile
-- About
-- Contact
-- Public navigation/footer
+The shared LarHub design-token layer is defined in:
 
-### 04 — Authentication UX Design
+```text
+css/tokens.css
+```
 
-`04_AUTHENTICATION_UX_DESIGN.md`
+The tokens cover brand colours, typography references, spacing, containers,
+radii, shadows, control sizing, motion, layering, and breakpoint references.
 
-Use this when building:
+Component styling has not yet been implemented.
 
-- Login
-- Register
-- Forgot Password
-- Google/Facebook/Apple authentication UI
-- Authentication validation
-- Demo/not-connected states
+## CSS Foundation
 
-### 05 — User Area UX Design
+LarHub now includes:
 
-`05_USER_AREA_UX_DESIGN.md`
+```text
+css/tokens.css
+css/base.css
+```
 
-Use this when building:
+`tokens.css` defines shared design values.
 
-- User dashboard
-- Saved Properties
-- Enquiries
-- Recently Viewed
-- Profile
+`base.css` establishes predictable browser defaults, responsive media behaviour,
+form-control inheritance, focus visibility, and reduced-motion handling.
 
-### 06 — Agent Area UX and Workflows
-
-`06_AGENT_AREA_UX_AND_WORKFLOWS.md`
-
-Use this when building:
-
-- Agent dashboard
-- Listing management
-- Property form
-- Agent enquiries
-- Performance
-- Agent profile management
-- Agent lifecycle UI
-
-### 07 — Admin Area UX and Moderation
-
-`07_ADMIN_AREA_UX_AND_MODERATION.md`
-
-Use this when building:
-
-- Admin dashboard
-- Listing moderation
-- Users
-- Agent approval
-- Reports
-- Admin settings
-- Moderation states/workflows
-
-### 08 — Shared Components, Interaction and State Model
-
-`08_SHARED_COMPONENTS_INTERACTION_AND_STATE_MODEL.md`
-
-Use this for:
-
-- Shared shells
-- Property Card
-- Agent Card
-- Search state
-- Saved/recent state
-- Forms
-- Tables
-- Status badges
-- Empty states
-- Drawers/dialogs/lightboxes
-- Shared component ownership
-
-### 09 — Technical Architecture and Project Structure
-
-`09_TECHNICAL_ARCHITECTURE_AND_PROJECT_STRUCTURE.md`
-
-Use this when deciding:
-
-- HTML/CSS/JavaScript architecture
-- File/folder structure
-- Services/data/pages separation
-- Query-parameter routing
-- localStorage
-- Rendering strategy
-- CSS/JS module ownership
-- Local development
-- Git/documentation strategy
-
-### 10 — Implementation Roadmap and Acceptance Plan
-
-`10_IMPLEMENTATION_ROADMAP_AND_ACCEPTANCE_PLAN.md`
-
-Use this to control:
-
-- Increment order
-- Scope of each increment
-- QA
-- Acceptance
-- Final consolidation
-
-## Authority
-
-These documents capture the agreed LarHub design state immediately before implementation.
-
-If implementation exposes a genuine missing requirement or defect, update the relevant design
-document deliberately rather than silently diverging from it.
+Typography hierarchy, layout primitives, components, and page styling are still pending.
