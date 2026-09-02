@@ -85,3 +85,17 @@ css/layout.css
 
 It provides responsive containers, section rhythm, flow/stack/cluster patterns,
 generic grids, split layouts, application shells, and intrinsic media wrappers.
+
+## Utility Layer
+
+The shared utility layer is defined in:
+
+```text
+css/utilities.css
+```
+
+It provides a deliberately small set of accessibility, display, alignment,
+spacing, width, overflow, surface, border, radius, and responsive-visibility
+helpers.
+
+LarHub avoids turning utilities into a replacement for meaningful component CSS.
