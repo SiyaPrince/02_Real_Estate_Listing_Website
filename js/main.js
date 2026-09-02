@@ -1,12 +1,20 @@
 /**
  * LarHub Application Entry Point
  *
- * Increment 0.7
- *
- * Shared application bootstrapping only.
- * Feature modules and page-specific behaviour belong
- * to later increments.
+ * Shared application bootstrapping.
  */
+
+import {
+  renderPublicHeader
+} from "./components/public-header.js";
+
+import {
+  renderPublicFooter
+} from "./components/public-footer.js";
+
+import {
+  initPublicNavigation
+} from "./features/navigation.js";
 
 import {
   onReady
@@ -14,13 +22,11 @@ import {
 
 /**
  * Initialize global LarHub behaviour.
- *
- * Keep this function intentionally small.
- * Shared components and features will register here
- * as later increments are implemented.
  */
 function initLarHub() {
-  // Shared initialization will be added incrementally.
+  renderPublicHeader();
+  renderPublicFooter();
+  initPublicNavigation();
 }
 
 onReady(initLarHub);

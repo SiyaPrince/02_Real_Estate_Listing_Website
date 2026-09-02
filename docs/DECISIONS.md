@@ -251,3 +251,35 @@ Changes to locked foundation files should be targeted and justified by a genuine
 requirement, accessibility issue, architecture issue, or reproducible defect.
 
 Page-specific problems should not trigger broad foundation rewrites.
+
+
+## DEC-012 — Shared Public Shell
+
+**Date:** 2026-09-02  
+**Status:** LOCKED
+
+### Decision
+
+All public LarHub pages use one shared JavaScript-rendered header and one shared
+JavaScript-rendered footer.
+
+### Navigation
+
+```text
+Buy
+Rent
+Agents
+About
+Contact
+Sign In
+```
+
+### Reason
+
+This prevents repeated header/footer markup across the public marketplace while preserving a
+single source of truth for navigation, active states, mobile behavior, and future maintenance.
+
+### Impact
+
+Public pages retain explicit semantic `<main>` content while shared public chrome is mounted into
+the existing header/footer placeholders.

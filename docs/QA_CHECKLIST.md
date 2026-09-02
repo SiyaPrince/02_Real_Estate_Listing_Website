@@ -236,3 +236,54 @@ Full visual/browser interaction QA remains intentionally deferred until implemen
 - [x] Foundation is approved for downstream implementation.
 
 **Foundation status: LOCKED**
+
+
+# 5. Increment 1 — Public Shell QA
+
+## Structure
+
+- [x] Shared public header component exists.
+- [x] Shared public footer component exists.
+- [x] All public pages contain shared header/footer mount points.
+- [x] Shared button CSS exists.
+- [x] Shared navigation CSS exists.
+- [x] Shared footer CSS exists.
+
+## Navigation
+
+- [x] Buy links to sale-filtered Properties.
+- [x] Rent links to rent-filtered Properties.
+- [x] Agents links to public agent directory.
+- [x] About links to About.
+- [x] Contact links to Contact.
+- [x] Sign In links to authentication UI.
+- [x] Active navigation state is generated from current path/query state.
+
+## Mobile Navigation
+
+- [x] Hamburger control exists.
+- [x] Control uses `aria-controls`.
+- [x] Control updates `aria-expanded`.
+- [x] Escape closes an open menu.
+- [x] Escape returns focus to the menu control.
+- [x] Selecting a mobile navigation link closes the menu.
+- [x] Navigation resets when entering desktop range.
+
+## Accessibility
+
+- [x] Skip-to-content link exists.
+- [x] Primary navigation has an accessible label.
+- [x] Footer navigation has an accessible label.
+- [x] Mobile menu toggle has an accessible name.
+- [x] Active page uses `aria-current="page"`.
+- [x] Touch targets use the shared minimum target token.
+
+## Pending Browser Acceptance
+
+- [ ] Verify header visual balance on desktop.
+- [ ] Verify hamburger visibility on mobile.
+- [ ] Verify desktop navigation does not wrap unexpectedly.
+- [ ] Verify mobile navigation does not create horizontal overflow.
+- [ ] Verify footer composition on mobile/tablet/desktop.
+- [ ] Verify keyboard navigation in a real browser.
+- [ ] Verify focus visibility on all header/footer links.

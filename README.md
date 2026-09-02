@@ -188,3 +188,29 @@ docs/FOUNDATION_LOCK.md
 for the final foundation review.
 
 The next development phase is **Increment 1 — Public Shell**.
+
+## Public Shell
+
+LarHub now includes one reusable public shell across all public pages.
+
+Implemented:
+
+- Shared header
+- Desktop navigation
+- Mobile hamburger navigation
+- Active navigation state
+- Skip link
+- Shared buttons
+- Shared footer
+
+Primary implementation files:
+
+```text
+css/components/buttons.css
+css/components/navigation.css
+css/components/footer.css
+
+js/components/public-header.js
+js/components/public-footer.js
+js/features/navigation.js
+```

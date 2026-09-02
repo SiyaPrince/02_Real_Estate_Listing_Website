@@ -1,7 +1,5 @@
 /*
  * LarHub Shared Stylesheet Entry Point
- *
- * Foundation imports are added incrementally.
  */
 
 @import "./tokens.css";
@@ -9,3 +7,7 @@
 @import "./typography.css";
 @import "./layout.css";
 @import "./utilities.css";
+
+@import "./components/buttons.css";
+@import "./components/navigation.css";
+@import "./components/footer.css";
