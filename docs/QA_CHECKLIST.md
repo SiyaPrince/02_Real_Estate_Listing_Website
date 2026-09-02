@@ -1,104 +1,194 @@
 # LarHub — QA Checklist
 
-QA criteria will be expanded incrementally as features are implemented.
+## Purpose
 
-## Increment 0.1
+This document is the reusable quality-assurance checklist for LarHub.
 
-- [x] Project structure created.
-- [x] Expected page/module directories exist.
-- [x] No feature implementation was introduced prematurely.
+QA is performed incrementally.
 
-## Increment 0.2
+A feature is not accepted merely because the code was written.
 
-- [x] `tokens.css` exists and is imported.
-- [x] Shared design tokens are defined.
-- [x] No component/page styling was introduced.
+The expected cycle is:
 
-## Increment 0.3
+```text
+Implement
+↓
+Review code
+↓
+Run in browser
+↓
+Inspect behaviour
+↓
+Repair defects
+↓
+Verify
+↓
+Accept
+↓
+Lock
+```
 
-- [x] `base.css` exists and is imported.
-- [x] Browser defaults are normalized.
-- [x] Focus and reduced-motion baselines are preserved.
-- [x] No typography hierarchy/layout/component styling was introduced prematurely.
+---
 
-## Increment 0.4
+# 1. Foundation QA
 
-- [x] `typography.css` exists.
-- [x] `main.css` imports typography after base styles.
-- [x] H1 and H2 use fluid sizing.
-- [x] H3/H4/body roles use shared tokens.
-- [x] Display text uses the locked LarHub scale.
-- [x] Price treatments exist for cards/details.
-- [x] Secondary/muted text roles exist.
+## 1.1 Project Structure
+
+- [x] Required project directories exist.
+- [x] Public page files exist.
+- [x] Auth page files exist.
+- [x] User-area page files exist.
+- [x] Agent-area page files exist.
+- [x] Admin-area page files exist.
+- [x] CSS module directories exist.
+- [x] JavaScript module directories exist.
+- [x] Documentation directory exists.
+
+## 1.2 Design Tokens
+
+- [x] Colour tokens exist.
+- [x] Semantic colours are distinct from brand colours.
+- [x] Typography tokens exist.
+- [x] Spacing scale exists.
+- [x] Container tokens exist.
+- [x] Radius/border/shadow tokens exist.
+- [x] Motion tokens exist.
+- [x] Layering tokens exist.
+- [x] Breakpoint references are documented.
+
+## 1.3 Base / Reset
+
+- [x] Global box sizing is predictable.
+- [x] Default body margin is removed.
+- [x] Images/media are responsive by default.
+- [x] Form controls inherit typography.
+- [x] Tables use a normalized model.
+- [x] Keyboard focus is not globally removed.
+- [x] Reduced-motion preferences are respected.
+
+## 1.4 Typography
+
+- [x] Shared heading hierarchy exists.
+- [x] Display/H1/H2 use fluid sizing.
+- [x] Body roles exist.
+- [x] Label and eyebrow roles exist.
+- [x] Property-price roles exist.
 - [x] Readable-measure helpers exist.
-- [x] UI label and eyebrow roles exist.
-- [x] Number alignment helper exists.
-- [x] No container/grid/component/page styling was introduced.
+- [x] Tabular-number helper exists.
 
-## Pending Runtime Verification
+## 1.5 Layout
 
-- [ ] Run through local HTTP server.
-- [ ] Confirm typography CSS imports successfully.
-- [ ] Confirm heading sizes scale without overflow.
-- [ ] Confirm long content wraps safely.
-- [ ] Confirm text remains readable at narrow widths.
+- [x] Standard container exists.
+- [x] Narrow container exists.
+- [x] Wide container exists.
+- [x] Application container exists.
+- [x] Responsive gutters exist.
+- [x] Flow/stack/cluster primitives exist.
+- [x] Responsive grids exist.
+- [x] Split layout exists.
+- [x] Media aspect-ratio wrappers exist.
 
-## Increment 0.5
+## 1.6 Utilities
 
-- [x] `layout.css` exists.
-- [x] `main.css` imports layout after typography.
-- [x] Standard/narrow/wide/application containers exist.
-- [x] Containers use responsive gutters.
-- [x] Section spacing responds to available viewport width.
-- [x] Flow, stack, and cluster primitives exist.
-- [x] Generic 2/3/4-column grids collapse safely.
-- [x] Split layouts stack before becoming two-column.
-- [x] Application content has a bounded responsive shell.
-- [x] Media wrappers use the locked image aspect ratios.
-- [x] Grid children use `minmax(0, 1fr)` to reduce overflow risk.
-- [x] No navigation/button/form/card/page-specific styling was added.
-
-## Pending Runtime Verification
-
-- [ ] Verify containers at mobile/tablet/desktop widths.
-- [ ] Verify grids do not cause horizontal overflow.
-- [ ] Verify image wrappers crop correctly with `object-fit: cover`.
-- [ ] Verify section spacing remains proportionate across widths.
-
-## Increment 0.6
-
-- [x] `utilities.css` exists.
-- [x] `main.css` imports utilities after layout.
-- [x] Accessible visually-hidden helpers exist.
-- [x] Utility classes map to shared tokens rather than hard-coded spacing values.
-- [x] Display/alignment/width/overflow helpers exist.
+- [x] Visually-hidden helper exists.
+- [x] Focusable visually-hidden helper exists.
+- [x] Display helpers exist.
+- [x] Alignment helpers exist.
+- [x] Width/overflow helpers exist.
+- [x] Token-based spacing helpers exist.
 - [x] Surface/border/radius helpers exist.
-- [x] Mobile/desktop visibility helpers exist.
-- [x] No component-specific styling was introduced.
-- [x] No page-specific styling was introduced.
+- [x] Responsive visibility helpers exist.
 
-## Pending Runtime Verification
+## 1.7 JavaScript Foundation
 
-- [ ] Verify visually-hidden content remains available to assistive technology.
-- [ ] Verify focusable hidden content becomes visible when focused.
-- [ ] Verify visibility helpers behave correctly around desktop breakpoint.
-- [ ] Verify utility combinations do not introduce horizontal overflow.
+- [x] `js/main.js` is an ES module.
+- [x] DOM-ready initialization is centralized.
+- [x] Single-element selector helper exists.
+- [x] Multi-element selector helper exists.
+- [x] Query-parameter helper exists.
+- [x] No page feature logic was introduced prematurely.
 
-## Increment 0.7
+---
 
-- [x] `js/main.js` is a valid ES module.
-- [x] `main.js` has one small application bootstrap function.
-- [x] DOM-ready logic is centralized in `js/utils/dom.js`.
-- [x] Shared element-selection helpers exist.
-- [x] Multi-element selection returns a standard array.
-- [x] A minimal URL query helper exists.
-- [x] No page-specific feature logic was introduced.
-- [x] No demo data was introduced.
-- [x] No authentication/search/property logic was introduced.
+# 2. Runtime Foundation Verification
 
-## Pending Runtime Verification
+These checks must be completed during Increment 0.9.
 
-- [ ] Serve LarHub through a local HTTP server.
-- [ ] Confirm `js/main.js` loads without module errors.
-- [ ] Confirm browser console contains no import-path errors.
-- [ ] Confirm `initLarHub()` runs after the DOM is ready.
+## Local Server
+
+- [ ] Run `py -m http.server 5500`.
+- [ ] Open `http://localhost:5500`.
+- [ ] Confirm `index.html` loads.
+- [ ] Confirm subdirectory pages load directly.
+
+## CSS
+
+- [ ] Confirm `main.css` loads.
+- [ ] Confirm `tokens.css` loads.
+- [ ] Confirm `base.css` loads.
+- [ ] Confirm `typography.css` loads.
+- [ ] Confirm `layout.css` loads.
+- [ ] Confirm `utilities.css` loads.
+- [ ] Confirm no CSS import 404s.
+
+## JavaScript
+
+- [ ] Confirm `js/main.js` loads.
+- [ ] Confirm `js/utils/dom.js` imports successfully.
+- [ ] Confirm browser console has no module errors.
+- [ ] Confirm no path-resolution errors.
+
+## Layout
+
+- [ ] Verify narrow mobile width.
+- [ ] Verify ordinary mobile width.
+- [ ] Verify tablet width.
+- [ ] Verify desktop width.
+- [ ] Verify large desktop width.
+- [ ] Confirm no accidental horizontal scrolling.
+
+## Accessibility Foundation
+
+- [ ] Verify visible keyboard focus.
+- [ ] Verify reduced-motion media query behaviour.
+- [ ] Verify visually-hidden content remains accessible.
+- [ ] Verify focusable hidden content becomes visible on focus.
+
+---
+
+# 3. Future Public Marketplace QA
+
+To be expanded when implemented.
+
+Will include:
+
+- Header/footer
+- Mobile navigation
+- Property cards
+- Search
+- Filters
+- Sorting
+- Pagination
+- Property gallery
+- Agent cards
+- Forms
+- Empty states
+
+---
+
+# 4. Future Application QA
+
+To be expanded when implemented.
+
+Will include:
+
+- User shell
+- Agent shell
+- Admin shell
+- Tables/mobile record cards
+- Property form
+- Auth UI
+- Social provider UI
+- Confirmation dialogs
+- Moderation workflows
+- Demo state
