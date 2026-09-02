@@ -221,3 +221,18 @@ Verified categories:
 - Basic overflow-risk patterns
 
 Full visual/browser interaction QA remains intentionally deferred until implemented UI exists.
+
+
+## Increment 0.10 — Foundation Lock
+
+- [x] Required foundation files exist.
+- [x] CSS foundation import order is correct.
+- [x] Foundation CSS uses declared design tokens.
+- [x] No undefined token references were found.
+- [x] `js/main.js` remains a small bootstrap module.
+- [x] No property/search/authentication feature logic has leaked into the foundation.
+- [x] Increment 0.9 runtime verification remains valid.
+- [x] Foundation documentation is present.
+- [x] Foundation is approved for downstream implementation.
+
+**Foundation status: LOCKED**

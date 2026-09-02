@@ -160,3 +160,31 @@ docs/FOUNDATION_VERIFICATION.md
 ```
 
 Full visual multi-viewport QA remains scheduled for later once implemented UI exists.
+
+## Foundation Status
+
+LarHub Foundation Increments **0.1–0.10 are complete and locked**.
+
+The accepted shared foundation consists of:
+
+```text
+css/tokens.css
+css/base.css
+css/typography.css
+css/layout.css
+css/utilities.css
+
+js/main.js
+js/utils/dom.js
+js/utils/url.js
+```
+
+See:
+
+```text
+docs/FOUNDATION_LOCK.md
+```
+
+for the final foundation review.
+
+The next development phase is **Increment 1 — Public Shell**.

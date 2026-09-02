@@ -218,3 +218,36 @@ be required.
 
 Accepted increments should be preserved unless a real defect or architecture issue justifies a
 change.
+
+
+## DEC-011 — Foundation Lock
+
+**Date:** 2026-09-02  
+**Status:** LOCKED
+
+### Decision
+
+LarHub Foundation Increments 0.1–0.10 are accepted as the shared implementation baseline.
+
+### Locked Foundation
+
+```text
+css/tokens.css
+css/base.css
+css/typography.css
+css/layout.css
+css/utilities.css
+
+js/main.js
+js/utils/dom.js
+js/utils/url.js
+```
+
+### Impact
+
+Future page and component work should build on these files.
+
+Changes to locked foundation files should be targeted and justified by a genuine shared
+requirement, accessibility issue, architecture issue, or reproducible defect.
+
+Page-specific problems should not trigger broad foundation rewrites.

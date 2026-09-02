@@ -10,11 +10,11 @@ Update it after every accepted increment.
 
 ## Current Increment
 
-**Increment 0.9 — Local Runtime Foundation Verification**
+**Increment 0.10 — Foundation Review and Lock**
 
 Status:
 
-**Complete**
+**COMPLETE — FOUNDATION LOCKED**
 
 ---
 
@@ -22,8 +22,8 @@ Status:
 
 ```text
 PLANNING / DESIGN          COMPLETE
-FOUNDATION                 VERIFIED
-PUBLIC SHELL               NOT STARTED
+FOUNDATION                 COMPLETE + LOCKED
+PUBLIC SHELL               NEXT
 MARKETPLACE FEATURES       NOT STARTED
 AUTHENTICATION UI          NOT STARTED
 USER APPLICATION           NOT STARTED
@@ -34,52 +34,24 @@ FINAL QA / CONSOLIDATION   NOT STARTED
 
 ---
 
-## Completed Foundation Increments
+## Foundation Increment Status
 
-### Increment 0.1 — Project Structure
-Complete.
-
-### Increment 0.2 — Design Tokens
-Complete.
-
-### Increment 0.3 — CSS Base / Reset
-Complete.
-
-### Increment 0.4 — Typography System
-Complete.
-
-### Increment 0.5 — Layout and Container Primitives
-Complete.
-
-### Increment 0.6 — Shared Utility Layer
-Complete.
-
-### Increment 0.7 — JavaScript Module Entry Architecture
-Complete.
-
-### Increment 0.8 — Documentation Discipline
-Complete.
-
-### Increment 0.9 — Runtime Verification
-Complete.
-
-Verified:
-
-- LarHub runs through a local HTTP server.
-- Root page returns HTTP 200.
-- Public page routes return HTTP 200.
-- Authentication routes return HTTP 200.
-- Representative User, Agent, and Admin routes return HTTP 200.
-- Shared CSS foundation files return HTTP 200.
-- JavaScript entry/utilities return HTTP 200.
-- All JavaScript files pass `node --check`.
-- Local HTML/CSS/JavaScript references resolve to existing files.
-- No obvious `100vw` or large fixed-width overflow-risk patterns exist in foundation CSS.
-- HTTP server logs show successful foundation requests without 404s in the tested route set.
+| Increment | Scope | Status |
+|---|---|---|
+| 0.1 | Project structure | COMPLETE |
+| 0.2 | Design tokens | COMPLETE |
+| 0.3 | CSS base/reset | COMPLETE |
+| 0.4 | Typography system | COMPLETE |
+| 0.5 | Layout/container primitives | COMPLETE |
+| 0.6 | Utility layer | COMPLETE |
+| 0.7 | JavaScript entry architecture | COMPLETE |
+| 0.8 | Documentation discipline | COMPLETE |
+| 0.9 | Runtime foundation verification | PASS |
+| 0.10 | Foundation review and lock | PASS / LOCKED |
 
 ---
 
-## Foundation Files Currently Active
+## Locked Foundation Files
 
 ```text
 css/tokens.css
@@ -93,55 +65,59 @@ js/utils/dom.js
 js/utils/url.js
 ```
 
+These are now accepted shared foundations.
+
+Future edits should be targeted and justified by:
+
+- Reproducible defect
+- Accessibility issue
+- Architecture inconsistency
+- Proven new shared requirement
+
+Do not rewrite these files merely to solve page-specific styling problems.
+
 ---
 
-## Locked Technical Decisions
+## Foundation Review Result
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- ES Modules
-- Multi-page HTML architecture
-- Query parameters for page/search state where appropriate
-- `localStorage` only where appropriate
-- No frontend framework in this project stage
-- No backend in the current project stage
-- Shared service boundaries should prepare for later backend integration
-- Meaningful imagery uses explicit `<img>` elements
-- Public Sold/Rented states are not shown in active marketplace discovery
-- Google/Facebook/Apple authentication UI will exist before provider integration
-- Shared UI should be reusable rather than duplicated across pages
+**PASS**
+
+Confirmed:
+
+- CSS import order is coherent.
+- Foundation CSS token references resolve to declared tokens.
+- JavaScript bootstrap remains small.
+- No feature-level logic has leaked into the foundation.
+- Runtime verification from 0.9 remains valid.
+- Documentation structure is in place.
+- No blocking foundation defect is currently known.
+
+Detailed review:
+
+```text
+docs/FOUNDATION_LOCK.md
+```
 
 ---
 
 ## Known Issues
 
-No foundation defects were identified in Increment 0.9.
+No blocking foundation issues are currently recorded.
 
-### Environment Note
-
-Headless Chromium was available in the verification environment but did not complete a reliable
-render/screenshot run in that environment.
-
-Therefore Increment 0.9 confirms:
-
-- HTTP routing
-- resource resolution
-- JavaScript syntax
-- module/reference integrity
-- static overflow-risk inspection
-
-Full visual browser QA remains part of the later browser-QA stages when implemented UI exists.
-
-This is not considered a blocker because LarHub currently contains only structural placeholder
-pages and foundation styles, not completed visual components.
+Full visual multi-viewport browser QA remains scheduled for later once implemented UI exists.
 
 ---
 
-## Next Increment
-
-**Increment 0.10 — Foundation review and lock**
-
-After 0.10, begin:
+## Next
 
 **Increment 1 — Public Shell**
+
+Initial public-shell scope:
+
+- Shared public header
+- Desktop navigation
+- Mobile navigation
+- Shared public footer
+- Shared buttons
+- Shared responsive behaviour
+- Accessibility and keyboard behaviour
