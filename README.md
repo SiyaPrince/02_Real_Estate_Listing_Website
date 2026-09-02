@@ -99,3 +99,25 @@ spacing, width, overflow, surface, border, radius, and responsive-visibility
 helpers.
 
 LarHub avoids turning utilities into a replacement for meaningful component CSS.
+
+## JavaScript Foundation
+
+LarHub now has an ES-module application entry point:
+
+```text
+js/main.js
+```
+
+Shared DOM-ready and selector helpers live in:
+
+```text
+js/utils/dom.js
+```
+
+A minimal URL-query helper lives in:
+
+```text
+js/utils/url.js
+```
+
+Feature logic remains intentionally deferred.

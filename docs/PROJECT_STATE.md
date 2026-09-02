@@ -2,7 +2,7 @@
 
 ## Current Increment
 
-**Increment 0.6 — Shared Utility Layer**
+**Increment 0.7 — JavaScript Module Entry Architecture**
 
 ## Completed
 
@@ -22,21 +22,17 @@
 - Layout and container primitives
 
 ### Increment 0.6
-- Visually-hidden accessibility utility
-- Focusable visually-hidden utility
-- Display helpers
-- Flex alignment helpers
-- Width helpers
-- Overflow helpers
-- Position helpers
-- Spacing helpers mapped to design tokens
-- Gap helpers
-- Surface helpers
-- Border helpers
-- Radius helpers
-- Interaction helpers
-- Mobile/desktop visibility helpers
-- `utilities.css` wired into `main.css`
+- Shared utility layer
+
+### Increment 0.7
+- ES-module application entry point
+- DOM-ready initialization helper
+- Safe single-element selection helper
+- Safe multi-element selection helper
+- Basic element-existence helper
+- Minimal query-parameter helper
+- Small `initLarHub()` bootstrap boundary
+- No feature logic introduced prematurely
 
 ## Not Yet Implemented
 
@@ -49,9 +45,10 @@
 - Agent cards
 - Application navigation
 - Demo data
-- Feature logic
-- Page-specific compositions
+- Search/filter logic
+- Authentication behaviour
+- Page-specific functionality
 
 ## Next
 
-**Increment 0.7 — Establish the JavaScript module entry architecture**
+**Increment 0.8 — Establish documentation files and implementation-state discipline**

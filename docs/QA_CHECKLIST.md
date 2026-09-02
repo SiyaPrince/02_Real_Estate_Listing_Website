@@ -83,3 +83,22 @@ QA criteria will be expanded incrementally as features are implemented.
 - [ ] Verify focusable hidden content becomes visible when focused.
 - [ ] Verify visibility helpers behave correctly around desktop breakpoint.
 - [ ] Verify utility combinations do not introduce horizontal overflow.
+
+## Increment 0.7
+
+- [x] `js/main.js` is a valid ES module.
+- [x] `main.js` has one small application bootstrap function.
+- [x] DOM-ready logic is centralized in `js/utils/dom.js`.
+- [x] Shared element-selection helpers exist.
+- [x] Multi-element selection returns a standard array.
+- [x] A minimal URL query helper exists.
+- [x] No page-specific feature logic was introduced.
+- [x] No demo data was introduced.
+- [x] No authentication/search/property logic was introduced.
+
+## Pending Runtime Verification
+
+- [ ] Serve LarHub through a local HTTP server.
+- [ ] Confirm `js/main.js` loads without module errors.
+- [ ] Confirm browser console contains no import-path errors.
+- [ ] Confirm `initLarHub()` runs after the DOM is ready.
