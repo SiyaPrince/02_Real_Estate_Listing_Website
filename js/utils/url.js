@@ -1,6 +1,22 @@
 /**
- * LarHub — utils / url
+ * LarHub URL Utilities
  *
- * Placeholder created in Increment 0.1.
- * Implementation belongs to a later increment.
+ * Increment 0.7
+ *
+ * Minimal URL helpers only.
+ * Search-state parsing belongs to later increments.
  */
+
+/**
+ * Read one query-string parameter from the current URL.
+ *
+ * @param {string} key
+ * @returns {string|null}
+ */
+export function getQueryParam(key) {
+  const params = new URLSearchParams(
+    window.location.search
+  );
+
+  return params.get(key);
+}
