@@ -64,3 +64,22 @@ QA criteria will be expanded incrementally as features are implemented.
 - [ ] Verify grids do not cause horizontal overflow.
 - [ ] Verify image wrappers crop correctly with `object-fit: cover`.
 - [ ] Verify section spacing remains proportionate across widths.
+
+## Increment 0.6
+
+- [x] `utilities.css` exists.
+- [x] `main.css` imports utilities after layout.
+- [x] Accessible visually-hidden helpers exist.
+- [x] Utility classes map to shared tokens rather than hard-coded spacing values.
+- [x] Display/alignment/width/overflow helpers exist.
+- [x] Surface/border/radius helpers exist.
+- [x] Mobile/desktop visibility helpers exist.
+- [x] No component-specific styling was introduced.
+- [x] No page-specific styling was introduced.
+
+## Pending Runtime Verification
+
+- [ ] Verify visually-hidden content remains available to assistive technology.
+- [ ] Verify focusable hidden content becomes visible when focused.
+- [ ] Verify visibility helpers behave correctly around desktop breakpoint.
+- [ ] Verify utility combinations do not introduce horizontal overflow.

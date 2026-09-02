@@ -1,6 +1,376 @@
 /*
- * LarHub — utilities
+ * LarHub Utility Layer
  *
- * Placeholder created in Increment 0.1.
- * Implementation belongs to a later increment.
+ * Increment 0.6
+ *
+ * Keep utilities small, predictable, and genuinely reusable.
+ * Component and page-specific styles belong elsewhere.
  */
+
+/* -------------------------------------------------
+ * Accessibility
+ * ------------------------------------------------- */
+
+.visually-hidden {
+  position: absolute !important;
+
+  width: 1px !important;
+  height: 1px !important;
+
+  padding: 0 !important;
+  margin: -1px !important;
+
+  overflow: hidden !important;
+
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+
+  white-space: nowrap !important;
+
+  border: 0 !important;
+}
+
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  position: absolute !important;
+
+  width: 1px !important;
+  height: 1px !important;
+
+  padding: 0 !important;
+  margin: -1px !important;
+
+  overflow: hidden !important;
+
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+
+  white-space: nowrap !important;
+
+  border: 0 !important;
+}
+
+/* -------------------------------------------------
+ * Display
+ * ------------------------------------------------- */
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.grid-display {
+  display: grid;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* -------------------------------------------------
+ * Flex alignment
+ * ------------------------------------------------- */
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* -------------------------------------------------
+ * Width
+ * ------------------------------------------------- */
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
+/* -------------------------------------------------
+ * Overflow
+ * ------------------------------------------------- */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+/* -------------------------------------------------
+ * Position
+ * ------------------------------------------------- */
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.sticky {
+  position: sticky;
+}
+
+/* -------------------------------------------------
+ * Spacing
+ *
+ * These utilities intentionally map directly to the
+ * shared spacing scale.
+ * ------------------------------------------------- */
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-2 {
+  margin-top: var(--space-2);
+}
+
+.mt-4 {
+  margin-top: var(--space-4);
+}
+
+.mt-5 {
+  margin-top: var(--space-5);
+}
+
+.mt-6 {
+  margin-top: var(--space-6);
+}
+
+.mt-7 {
+  margin-top: var(--space-7);
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-2 {
+  margin-bottom: var(--space-2);
+}
+
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
+
+.mb-5 {
+  margin-bottom: var(--space-5);
+}
+
+.mb-6 {
+  margin-bottom: var(--space-6);
+}
+
+.mb-7 {
+  margin-bottom: var(--space-7);
+}
+
+.mx-auto {
+  margin-inline: auto;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.p-4 {
+  padding: var(--space-4);
+}
+
+.p-5 {
+  padding: var(--space-5);
+}
+
+.p-6 {
+  padding: var(--space-6);
+}
+
+.px-4 {
+  padding-inline: var(--space-4);
+}
+
+.px-5 {
+  padding-inline: var(--space-5);
+}
+
+.py-4 {
+  padding-block: var(--space-4);
+}
+
+.py-5 {
+  padding-block: var(--space-5);
+}
+
+/* -------------------------------------------------
+ * Gap
+ * ------------------------------------------------- */
+
+.gap-1 {
+  gap: var(--space-1);
+}
+
+.gap-2 {
+  gap: var(--space-2);
+}
+
+.gap-3 {
+  gap: var(--space-3);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-5 {
+  gap: var(--space-5);
+}
+
+.gap-6 {
+  gap: var(--space-6);
+}
+
+/* -------------------------------------------------
+ * Surface helpers
+ * ------------------------------------------------- */
+
+.bg-page {
+  background: var(--color-background);
+}
+
+.bg-surface {
+  background: var(--color-surface);
+}
+
+.bg-surface-secondary {
+  background: var(--color-surface-secondary);
+}
+
+/* -------------------------------------------------
+ * Border helpers
+ * ------------------------------------------------- */
+
+.border {
+  border:
+    var(--border-width)
+    solid
+    var(--color-border);
+}
+
+.border-top {
+  border-top:
+    var(--border-width)
+    solid
+    var(--color-border);
+}
+
+.border-bottom {
+  border-bottom:
+    var(--border-width)
+    solid
+    var(--color-border);
+}
+
+/* -------------------------------------------------
+ * Radius helpers
+ * ------------------------------------------------- */
+
+.rounded-sm {
+  border-radius: var(--radius-sm);
+}
+
+.rounded-control {
+  border-radius: var(--radius-control);
+}
+
+.rounded-md {
+  border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+.rounded-full {
+  border-radius: var(--radius-pill);
+}
+
+/* -------------------------------------------------
+ * Interaction helpers
+ * ------------------------------------------------- */
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.select-none {
+  user-select: none;
+}
+
+/* -------------------------------------------------
+ * Mobile / desktop visibility
+ * ------------------------------------------------- */
+
+.mobile-only {
+  display: block;
+}
+
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+}
