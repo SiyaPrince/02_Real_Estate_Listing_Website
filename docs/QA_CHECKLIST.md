@@ -42,3 +42,25 @@ QA criteria will be expanded incrementally as features are implemented.
 - [ ] Confirm heading sizes scale without overflow.
 - [ ] Confirm long content wraps safely.
 - [ ] Confirm text remains readable at narrow widths.
+
+## Increment 0.5
+
+- [x] `layout.css` exists.
+- [x] `main.css` imports layout after typography.
+- [x] Standard/narrow/wide/application containers exist.
+- [x] Containers use responsive gutters.
+- [x] Section spacing responds to available viewport width.
+- [x] Flow, stack, and cluster primitives exist.
+- [x] Generic 2/3/4-column grids collapse safely.
+- [x] Split layouts stack before becoming two-column.
+- [x] Application content has a bounded responsive shell.
+- [x] Media wrappers use the locked image aspect ratios.
+- [x] Grid children use `minmax(0, 1fr)` to reduce overflow risk.
+- [x] No navigation/button/form/card/page-specific styling was added.
+
+## Pending Runtime Verification
+
+- [ ] Verify containers at mobile/tablet/desktop widths.
+- [ ] Verify grids do not cause horizontal overflow.
+- [ ] Verify image wrappers crop correctly with `object-fit: cover`.
+- [ ] Verify section spacing remains proportionate across widths.

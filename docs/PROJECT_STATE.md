@@ -2,73 +2,53 @@
 
 ## Current Increment
 
-**Increment 0.4 — Typography System**
+**Increment 0.5 — Layout and Container Primitives**
 
 ## Completed
 
 ### Increment 0.1
-
-- Initial project/directory structure
-- Public/auth/user/agent/admin page files
-- CSS/JS module placeholders
-- Asset directories
-- Documentation placeholders
-- `.gitignore`
-- Root README
+- Initial project structure and page/module placeholders
 
 ### Increment 0.2
-
-- Shared design tokens
-- Colour system
-- Typography reference tokens
-- Spacing/container/gutter tokens
-- Radius/border/shadow tokens
-- Motion/layering/breakpoint reference tokens
+- Shared LarHub design tokens
 
 ### Increment 0.3
-
-- CSS base/reset
-- Predictable box sizing
-- Document/body defaults
-- Responsive media defaults
-- Form-control inheritance
-- Table normalization
-- Focus baseline
-- Reduced-motion baseline
+- CSS base/reset layer
 
 ### Increment 0.4
+- Shared typography system
 
-- Shared body typography
-- H1–H6 hierarchy
-- Fluid display text
-- Fluid H1/H2 sizing
-- Large/body/small/caption text roles
-- Primary/secondary/muted text colour roles
-- Label typography
-- Eyebrow typography
-- Property-price typography
-- Large property-price typography
-- Shared text-link treatment
-- Readable text-measure helpers
-- Text alignment helpers
-- Font-weight helpers
-- Tabular-number helper
-- Long-text wrapping helper
-- `typography.css` wired into `main.css`
+### Increment 0.5
+- Standard/narrow/wide/application containers
+- Responsive page gutters
+- Shared section-spacing primitives
+- Surface section helpers
+- Flow rhythm primitives
+- Flex stack primitives
+- Wrapping cluster primitives
+- Generic responsive grids
+- Responsive split layout
+- Application content shell primitives
+- Mobile full-bleed helper
+- Property/gallery/agent media wrappers
+- Responsive layout behaviour at agreed breakpoints
+- `layout.css` wired into `main.css`
 
 ## Not Yet Implemented
 
-- Container/layout primitives
-- Utility layout classes
-- Shared navigation
-- Shared footer
+- General utility-class layer
+- Shared public header/navigation
+- Shared public footer
 - Buttons
 - Forms
+- Search component
 - Property cards
+- Agent cards
+- Application navigation
 - Demo data
-- Search/filter logic
-- Page-specific styling
+- Feature logic
+- Page-specific compositions
 
 ## Next
 
-**Increment 0.5 — Build the layout/container primitives**
+**Increment 0.6 — Build the shared utility layer**
