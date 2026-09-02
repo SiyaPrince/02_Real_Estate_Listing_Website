@@ -60,3 +60,17 @@ css/base.css
 form-control inheritance, focus visibility, and reduced-motion handling.
 
 Typography hierarchy, layout primitives, components, and page styling are still pending.
+
+## Typography System
+
+LarHub now includes a shared typography layer in:
+
+```text
+css/typography.css
+```
+
+It defines the heading hierarchy, fluid display/H1/H2 sizing, body text roles,
+labels, eyebrow text, property-price treatments, text colours, readable measure,
+and number-alignment helpers.
+
+Layout primitives, shared components, and page styling are still pending.
