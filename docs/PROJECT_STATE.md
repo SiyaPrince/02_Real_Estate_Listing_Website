@@ -2,9 +2,11 @@
 
 ## Current Increment
 
-**Increment 0.1 — Project Structure**
+**Increment 0.2 — Design Tokens**
 
 ## Completed
+
+### Increment 0.1
 
 - Initial directory structure
 - Public page files
@@ -16,19 +18,49 @@
 - JavaScript module placeholders
 - Asset directories
 - Documentation placeholders
+- `.gitignore`
+- Root README
+
+### Increment 0.2
+
+- Brand colour tokens
+- Surface colour tokens
+- Text colour tokens
+- Border colour tokens
+- Semantic state colours
+- Typography family and weight tokens
+- Fluid typography reference tokens
+- Line-height tokens
+- Spacing scale
+- Section-spacing tokens
+- Container-width tokens
+- Responsive gutter tokens
+- Border-radius tokens
+- Border-width tokens
+- Shadow tokens
+- Control-height tokens
+- Touch-target token
+- Image-ratio tokens
+- Motion-duration/easing tokens
+- Z-index/layer tokens
+- Breakpoint reference tokens
+- `tokens.css` wired into `main.css`
 
 ## Not Yet Implemented
 
-- Design tokens
-- Base CSS
-- Typography
-- Layout system
+- CSS reset/base styles
+- Typography rules
+- Container/layout primitives
+- Utility classes
 - Shared navigation
 - Shared footer
+- Buttons
+- Forms
+- Property cards
 - Demo data
-- Feature logic
-- Page styling
+- Search/filter logic
+- Page-specific styling
 
 ## Next
 
-**Increment 0.2 — Establish design tokens**
+**Increment 0.3 — Build the CSS base/reset**

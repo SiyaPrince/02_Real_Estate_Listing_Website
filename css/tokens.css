@@ -1,6 +1,219 @@
 /*
- * LarHub — tokens
+ * LarHub Design Tokens
  *
- * Placeholder created in Increment 0.1.
- * Implementation belongs to a later increment.
+ * Increment 0.2
+ *
+ * This file defines shared design values only.
+ * Component and page styles belong to later increments.
  */
+
+:root {
+  /* -------------------------------------------------
+   * Brand colours
+   * ------------------------------------------------- */
+
+  --color-brand: #173f35;
+  --color-brand-hover: #0f3028;
+  --color-brand-soft: #e7efec;
+
+  /* -------------------------------------------------
+   * Surface colours
+   * ------------------------------------------------- */
+
+  --color-background: #f7f6f2;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f0f0eb;
+
+  /* -------------------------------------------------
+   * Text colours
+   * ------------------------------------------------- */
+
+  --color-text: #1d211f;
+  --color-text-secondary: #606762;
+  --color-text-muted: #7b827e;
+  --color-text-on-brand: #ffffff;
+
+  /* -------------------------------------------------
+   * Border colours
+   * ------------------------------------------------- */
+
+  --color-border: #daddd9;
+  --color-border-strong: #b8bdb9;
+
+  /* -------------------------------------------------
+   * Semantic colours
+   * ------------------------------------------------- */
+
+  --color-success: #287a4b;
+  --color-warning: #a66b18;
+  --color-error: #b43a3a;
+  --color-info: #356a8a;
+
+  /* -------------------------------------------------
+   * Typography
+   * ------------------------------------------------- */
+
+  --font-family-base:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-display-min: 2.625rem;
+  --font-size-display-max: 4rem;
+
+  --font-size-h1-min: 2.25rem;
+  --font-size-h1-max: 3rem;
+
+  --font-size-h2-min: 1.875rem;
+  --font-size-h2-max: 2.25rem;
+
+  --font-size-h3: 1.5rem;
+  --font-size-h4: 1.25rem;
+
+  --font-size-body-lg: 1.125rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+  --font-size-caption: 0.8125rem;
+
+  --line-height-tight: 1.1;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+  --line-height-ui: 1.4;
+
+  /* -------------------------------------------------
+   * Spacing scale
+   * ------------------------------------------------- */
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 5rem;
+  --space-10: 6rem;
+
+  /* -------------------------------------------------
+   * Section spacing
+   * ------------------------------------------------- */
+
+  --section-space-mobile: 3.5rem;
+  --section-space-desktop: 5rem;
+  --section-space-large: 6rem;
+
+  --app-section-space-sm: 1.5rem;
+  --app-section-space-md: 2rem;
+  --app-section-space-lg: 3rem;
+
+  /* -------------------------------------------------
+   * Container widths
+   * ------------------------------------------------- */
+
+  --container-narrow: 40rem;
+  --container-standard: 70rem;
+  --container-wide: 80rem;
+  --container-app: 90rem;
+
+  /* -------------------------------------------------
+   * Page gutters
+   * ------------------------------------------------- */
+
+  --gutter-mobile: 1rem;
+  --gutter-tablet: 1.5rem;
+  --gutter-desktop: 2rem;
+  --gutter-large: 3rem;
+
+  /* -------------------------------------------------
+   * Border radius
+   * ------------------------------------------------- */
+
+  --radius-sm: 0.25rem;
+  --radius-control: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-pill: 999px;
+
+  /* -------------------------------------------------
+   * Border widths
+   * ------------------------------------------------- */
+
+  --border-width: 1px;
+  --border-width-strong: 2px;
+
+  /* -------------------------------------------------
+   * Shadows
+   * ------------------------------------------------- */
+
+  --shadow-none: none;
+
+  --shadow-subtle:
+    0 0.25rem 1rem rgb(29 33 31 / 0.08);
+
+  --shadow-overlay:
+    0 1rem 2.5rem rgb(29 33 31 / 0.16);
+
+  /* -------------------------------------------------
+   * Control sizing
+   * ------------------------------------------------- */
+
+  --control-height-sm: 2.25rem;
+  --control-height-md: 2.75rem;
+  --control-height-lg: 3.25rem;
+
+  --touch-target-min: 2.75rem;
+
+  /* -------------------------------------------------
+   * Imagery ratios
+   * ------------------------------------------------- */
+
+  --ratio-property-card: 4 / 3;
+  --ratio-property-gallery: 3 / 2;
+  --ratio-agent-avatar: 1 / 1;
+
+  /* -------------------------------------------------
+   * Motion
+   * ------------------------------------------------- */
+
+  --duration-fast: 150ms;
+  --duration-base: 225ms;
+  --duration-slow: 350ms;
+
+  --ease-standard: ease;
+  --ease-emphasized: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* -------------------------------------------------
+   * Layering
+   * ------------------------------------------------- */
+
+  --z-base: 0;
+  --z-sticky: 100;
+  --z-dropdown: 200;
+  --z-backdrop: 300;
+  --z-drawer: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+
+  /* -------------------------------------------------
+   * Breakpoint references
+   *
+   * CSS custom properties cannot be used directly
+   * inside standard media-query conditions.
+   * These values document the agreed breakpoint
+   * references for later implementation.
+   * ------------------------------------------------- */
+
+  --breakpoint-mobile: 40rem;
+  --breakpoint-tablet: 48rem;
+  --breakpoint-desktop: 64rem;
+  --breakpoint-large: 80rem;
+}

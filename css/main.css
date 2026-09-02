@@ -1,5 +1,7 @@
 /*
- * LarHub shared stylesheet entry point.
+ * LarHub Shared Stylesheet Entry Point
  *
- * Imports will be added in Increment 0.2+ as the foundation is built.
+ * Foundation imports are added incrementally.
  */
+
+@import "./tokens.css";
