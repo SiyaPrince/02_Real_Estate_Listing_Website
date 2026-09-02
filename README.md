@@ -74,3 +74,14 @@ labels, eyebrow text, property-price treatments, text colours, readable measure,
 and number-alignment helpers.
 
 Layout primitives, shared components, and page styling are still pending.
+
+## Layout Foundation
+
+The shared structural layout layer is defined in:
+
+```text
+css/layout.css
+```
+
+It provides responsive containers, section rhythm, flow/stack/cluster patterns,
+generic grids, split layouts, application shells, and intrinsic media wrappers.

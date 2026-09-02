@@ -1,6 +1,359 @@
 /*
- * LarHub — layout
+ * LarHub Layout Primitives
  *
- * Placeholder created in Increment 0.1.
- * Implementation belongs to a later increment.
+ * Increment 0.5
+ *
+ * Shared structural primitives only.
+ * Component and page-specific composition belongs to later increments.
  */
+
+/* -------------------------------------------------
+ * Page shell
+ * ------------------------------------------------- */
+
+.page {
+  width: 100%;
+  min-width: 0;
+}
+
+/* -------------------------------------------------
+ * Containers
+ * ------------------------------------------------- */
+
+.container,
+.container-narrow,
+.container-wide,
+.container-app {
+  width: min(
+    100% - (var(--gutter-mobile) * 2),
+    var(--container-standard)
+  );
+  margin-inline: auto;
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+.container-wide {
+  max-width: var(--container-wide);
+}
+
+.container-app {
+  max-width: var(--container-app);
+}
+
+/* -------------------------------------------------
+ * Sections
+ * ------------------------------------------------- */
+
+.section {
+  padding-block: var(--section-space-mobile);
+}
+
+.section-sm {
+  padding-block: var(--space-7);
+}
+
+.section-lg {
+  padding-block: var(--section-space-mobile);
+}
+
+.section-surface {
+  background: var(--color-surface);
+}
+
+.section-surface-secondary {
+  background: var(--color-surface-secondary);
+}
+
+/* -------------------------------------------------
+ * Vertical flow
+ *
+ * Child elements own no external spacing here.
+ * The parent controls rhythm consistently.
+ * ------------------------------------------------- */
+
+.flow > * + * {
+  margin-block-start: var(--space-4);
+}
+
+.flow-sm > * + * {
+  margin-block-start: var(--space-2);
+}
+
+.flow-lg > * + * {
+  margin-block-start: var(--space-6);
+}
+
+/* -------------------------------------------------
+ * Stack
+ * ------------------------------------------------- */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.stack-sm {
+  gap: var(--space-2);
+}
+
+.stack-lg {
+  gap: var(--space-6);
+}
+
+/* -------------------------------------------------
+ * Cluster
+ *
+ * Useful for groups of controls, tags, metadata,
+ * actions, and other wrapping horizontal content.
+ * ------------------------------------------------- */
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.cluster-sm {
+  gap: var(--space-2);
+}
+
+.cluster-lg {
+  gap: var(--space-5);
+}
+
+/* -------------------------------------------------
+ * Generic responsive grid
+ * ------------------------------------------------- */
+
+.grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.grid-2,
+.grid-3,
+.grid-4 {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* -------------------------------------------------
+ * Split layout
+ *
+ * Starts stacked and becomes two-column when space
+ * is available.
+ * ------------------------------------------------- */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.split-start {
+  align-items: start;
+}
+
+/* -------------------------------------------------
+ * Application layout
+ * ------------------------------------------------- */
+
+.app-layout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.app-main {
+  min-width: 0;
+}
+
+.app-content {
+  width: min(
+    100% - (var(--gutter-mobile) * 2),
+    var(--container-app)
+  );
+  margin-inline: auto;
+  padding-block: var(--app-section-space-md);
+}
+
+/* -------------------------------------------------
+ * Full-bleed helper
+ *
+ * Allows media/content to reach the viewport edges
+ * from inside a standard mobile container.
+ * ------------------------------------------------- */
+
+.full-bleed-mobile {
+  width: calc(100% + (var(--gutter-mobile) * 2));
+  margin-inline: calc(var(--gutter-mobile) * -1);
+}
+
+/* -------------------------------------------------
+ * Intrinsic media wrappers
+ * ------------------------------------------------- */
+
+.media-property {
+  aspect-ratio: var(--ratio-property-card);
+  overflow: hidden;
+}
+
+.media-property-gallery {
+  aspect-ratio: var(--ratio-property-gallery);
+  overflow: hidden;
+}
+
+.media-agent {
+  aspect-ratio: var(--ratio-agent-avatar);
+  overflow: hidden;
+}
+
+.media-property > img,
+.media-property-gallery > img,
+.media-agent > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -------------------------------------------------
+ * Tablet
+ * ------------------------------------------------- */
+
+@media (min-width: 48rem) {
+  .container,
+  .container-narrow,
+  .container-wide,
+  .container-app {
+    width: min(
+      100% - (var(--gutter-tablet) * 2),
+      var(--container-standard)
+    );
+  }
+
+  .container-narrow {
+    max-width: var(--container-narrow);
+  }
+
+  .container-wide {
+    max-width: var(--container-wide);
+  }
+
+  .container-app {
+    max-width: var(--container-app);
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .app-content {
+    width: min(
+      100% - (var(--gutter-tablet) * 2),
+      var(--container-app)
+    );
+  }
+
+  .full-bleed-mobile {
+    width: auto;
+    margin-inline: 0;
+  }
+}
+
+/* -------------------------------------------------
+ * Desktop
+ * ------------------------------------------------- */
+
+@media (min-width: 64rem) {
+  .container,
+  .container-narrow,
+  .container-wide,
+  .container-app {
+    width: min(
+      100% - (var(--gutter-desktop) * 2),
+      var(--container-standard)
+    );
+  }
+
+  .container-narrow {
+    max-width: var(--container-narrow);
+  }
+
+  .container-wide {
+    max-width: var(--container-wide);
+  }
+
+  .container-app {
+    max-width: var(--container-app);
+  }
+
+  .section {
+    padding-block: var(--section-space-desktop);
+  }
+
+  .section-lg {
+    padding-block: var(--section-space-large);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .app-content {
+    width: min(
+      100% - (var(--gutter-desktop) * 2),
+      var(--container-app)
+    );
+    padding-block: var(--app-section-space-lg);
+  }
+}
+
+/* -------------------------------------------------
+ * Large desktop
+ * ------------------------------------------------- */
+
+@media (min-width: 80rem) {
+  .container,
+  .container-narrow,
+  .container-wide,
+  .container-app {
+    width: min(
+      100% - (var(--gutter-large) * 2),
+      var(--container-standard)
+    );
+  }
+
+  .container-narrow {
+    max-width: var(--container-narrow);
+  }
+
+  .container-wide {
+    max-width: var(--container-wide);
+  }
+
+  .container-app {
+    max-width: var(--container-app);
+  }
+
+  .app-content {
+    width: min(
+      100% - (var(--gutter-large) * 2),
+      var(--container-app)
+    );
+  }
+}
