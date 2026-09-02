@@ -1,6 +1,267 @@
 /*
- * LarHub — typography
+ * LarHub Typography System
  *
- * Placeholder created in Increment 0.1.
- * Implementation belongs to a later increment.
+ * Increment 0.4
+ *
+ * Establishes the shared typographic hierarchy.
+ * Layout primitives, components, and page-specific
+ * compositions belong to later increments.
  */
+
+/* -------------------------------------------------
+ * Base text
+ * ------------------------------------------------- */
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+}
+
+p,
+li,
+dd {
+  color: var(--color-text-secondary);
+}
+
+/* -------------------------------------------------
+ * Headings
+ * ------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size:
+    clamp(
+      var(--font-size-h1-min),
+      4vw,
+      var(--font-size-h1-max)
+    );
+}
+
+h2 {
+  font-size:
+    clamp(
+      var(--font-size-h2-min),
+      3vw,
+      var(--font-size-h2-max)
+    );
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+}
+
+h5,
+h6 {
+  font-size: var(--font-size-body);
+}
+
+/* -------------------------------------------------
+ * Display text
+ * ------------------------------------------------- */
+
+.text-display {
+  color: var(--color-text);
+
+  font-size:
+    clamp(
+      var(--font-size-display-min),
+      6vw,
+      var(--font-size-display-max)
+    );
+
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+/* -------------------------------------------------
+ * Body text roles
+ * ------------------------------------------------- */
+
+.text-body-lg {
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body);
+}
+
+.text-body {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.text-small {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-ui);
+}
+
+.text-caption {
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-ui);
+}
+
+/* -------------------------------------------------
+ * Colour roles
+ * ------------------------------------------------- */
+
+.text-primary {
+  color: var(--color-text);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+/* -------------------------------------------------
+ * UI labels and eyebrow text
+ * ------------------------------------------------- */
+
+.text-label {
+  color: var(--color-text);
+
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-ui);
+}
+
+.text-eyebrow {
+  color: var(--color-text-secondary);
+
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-ui);
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* -------------------------------------------------
+ * Price treatment
+ * ------------------------------------------------- */
+
+.text-price {
+  color: var(--color-text);
+
+  font-size: clamp(
+    1.25rem,
+    2vw,
+    1.5rem
+  );
+
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
+}
+
+.text-price-lg {
+  color: var(--color-text);
+
+  font-size: clamp(
+    2rem,
+    4vw,
+    2.5rem
+  );
+
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.03em;
+}
+
+/* -------------------------------------------------
+ * Links
+ * ------------------------------------------------- */
+
+a {
+  font-weight: inherit;
+}
+
+.text-link {
+  color: var(--color-brand);
+
+  font-weight: var(--font-weight-medium);
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+}
+
+.text-link:hover {
+  color: var(--color-brand-hover);
+}
+
+/* -------------------------------------------------
+ * Readable measure
+ * ------------------------------------------------- */
+
+.text-measure {
+  max-width: 65ch;
+}
+
+.text-measure-narrow {
+  max-width: 48ch;
+}
+
+/* -------------------------------------------------
+ * Text alignment helpers
+ * ------------------------------------------------- */
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* -------------------------------------------------
+ * Weight helpers
+ * ------------------------------------------------- */
+
+.text-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.text-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.text-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* -------------------------------------------------
+ * Numbers
+ *
+ * Useful for prices, metrics, and table values.
+ * ------------------------------------------------- */
+
+.text-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* -------------------------------------------------
+ * Accessibility / content behaviour
+ * ------------------------------------------------- */
+
+.text-break {
+  overflow-wrap: anywhere;
+}

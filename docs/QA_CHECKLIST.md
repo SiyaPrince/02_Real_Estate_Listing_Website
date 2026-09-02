@@ -5,36 +5,40 @@ QA criteria will be expanded incrementally as features are implemented.
 ## Increment 0.1
 
 - [x] Project structure created.
-- [x] Expected public/auth/user/agent/admin page files exist.
-- [x] CSS/JS module directories exist.
+- [x] Expected page/module directories exist.
 - [x] No feature implementation was introduced prematurely.
 
 ## Increment 0.2
 
-- [x] `tokens.css` exists.
-- [x] `main.css` imports `tokens.css`.
-- [x] Brand colours match the locked design direction.
-- [x] Semantic colours are separate from brand colours.
-- [x] Shared spacing/container/radius/shadow/motion tokens exist.
-- [x] No component or page styling was added.
+- [x] `tokens.css` exists and is imported.
+- [x] Shared design tokens are defined.
+- [x] No component/page styling was introduced.
 
 ## Increment 0.3
 
-- [x] `base.css` exists.
-- [x] `main.css` imports `base.css` after `tokens.css`.
-- [x] Global box sizing is predictable.
-- [x] Browser-default body margin is removed.
-- [x] Images/media do not overflow their containers by default.
-- [x] Form controls inherit LarHub typography.
-- [x] Tables use a normalized collapse model.
-- [x] Keyboard focus is not globally removed.
-- [x] Reduced-motion preferences are respected.
-- [x] No typography hierarchy was introduced prematurely.
-- [x] No layout/component/page styling was introduced.
+- [x] `base.css` exists and is imported.
+- [x] Browser defaults are normalized.
+- [x] Focus and reduced-motion baselines are preserved.
+- [x] No typography hierarchy/layout/component styling was introduced prematurely.
+
+## Increment 0.4
+
+- [x] `typography.css` exists.
+- [x] `main.css` imports typography after base styles.
+- [x] H1 and H2 use fluid sizing.
+- [x] H3/H4/body roles use shared tokens.
+- [x] Display text uses the locked LarHub scale.
+- [x] Price treatments exist for cards/details.
+- [x] Secondary/muted text roles exist.
+- [x] Readable-measure helpers exist.
+- [x] UI label and eyebrow roles exist.
+- [x] Number alignment helper exists.
+- [x] No container/grid/component/page styling was introduced.
 
 ## Pending Runtime Verification
 
-- [ ] Run LarHub through the local HTTP server.
-- [ ] Confirm there are no CSS import errors.
-- [ ] Confirm browser console has no CSS-related warnings.
-- [ ] Confirm body does not create unexpected horizontal overflow.
+- [ ] Run through local HTTP server.
+- [ ] Confirm typography CSS imports successfully.
+- [ ] Confirm heading sizes scale without overflow.
+- [ ] Confirm long content wraps safely.
+- [ ] Confirm text remains readable at narrow widths.

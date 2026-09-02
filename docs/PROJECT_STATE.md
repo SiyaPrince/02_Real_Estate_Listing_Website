@@ -2,20 +2,15 @@
 
 ## Current Increment
 
-**Increment 0.3 — CSS Base / Reset**
+**Increment 0.4 — Typography System**
 
 ## Completed
 
 ### Increment 0.1
 
-- Initial directory structure
-- Public page files
-- Authentication page files
-- User-area page files
-- Agent-area page files
-- Admin-area page files
-- CSS module placeholders
-- JavaScript module placeholders
+- Initial project/directory structure
+- Public/auth/user/agent/admin page files
+- CSS/JS module placeholders
 - Asset directories
 - Documentation placeholders
 - `.gitignore`
@@ -23,48 +18,48 @@
 
 ### Increment 0.2
 
-- Brand colour tokens
-- Surface/text/border tokens
-- Semantic colour tokens
+- Shared design tokens
+- Colour system
 - Typography reference tokens
-- Spacing scale
-- Container-width tokens
-- Responsive gutter tokens
+- Spacing/container/gutter tokens
 - Radius/border/shadow tokens
-- Control/touch sizing tokens
-- Imagery-ratio tokens
-- Motion tokens
-- Layering tokens
-- Breakpoint reference tokens
-- `tokens.css` wired into `main.css`
+- Motion/layering/breakpoint reference tokens
 
 ### Increment 0.3
 
-- Universal `box-sizing: border-box`
-- Predictable document/body defaults
-- Body colour/background/font defaults
-- Structural min-width safeguards
-- Margin reset for common text elements
-- Safe heading/text wrapping defaults
-- List normalization
-- Link baseline behaviour
+- CSS base/reset
+- Predictable box sizing
+- Document/body defaults
 - Responsive media defaults
-- Form-control font inheritance
-- Disabled-control cursor behaviour
-- Responsive textarea/input defaults
+- Form-control inheritance
 - Table normalization
-- Horizontal-rule baseline
-- Native `[hidden]` enforcement
-- Visible global `:focus-visible` baseline
-- Selection styling
-- Reduced-motion fallback
-- `base.css` wired into `main.css`
+- Focus baseline
+- Reduced-motion baseline
+
+### Increment 0.4
+
+- Shared body typography
+- H1–H6 hierarchy
+- Fluid display text
+- Fluid H1/H2 sizing
+- Large/body/small/caption text roles
+- Primary/secondary/muted text colour roles
+- Label typography
+- Eyebrow typography
+- Property-price typography
+- Large property-price typography
+- Shared text-link treatment
+- Readable text-measure helpers
+- Text alignment helpers
+- Font-weight helpers
+- Tabular-number helper
+- Long-text wrapping helper
+- `typography.css` wired into `main.css`
 
 ## Not Yet Implemented
 
-- Typography hierarchy
 - Container/layout primitives
-- Utility classes
+- Utility layout classes
 - Shared navigation
 - Shared footer
 - Buttons
@@ -76,4 +71,4 @@
 
 ## Next
 
-**Increment 0.4 — Build the typography system**
+**Increment 0.5 — Build the layout/container primitives**
