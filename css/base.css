@@ -1,6 +1,284 @@
 /*
- * LarHub — base
+ * LarHub Base / Reset
  *
- * Placeholder created in Increment 0.1.
- * Implementation belongs to a later increment.
+ * Increment 0.3
+ *
+ * This file establishes predictable browser defaults.
+ * Typography hierarchy, layout primitives, components,
+ * and page-specific styles belong to later increments.
  */
+
+/* -------------------------------------------------
+ * Box sizing
+ * ------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* -------------------------------------------------
+ * Document
+ * ------------------------------------------------- */
+
+html {
+  min-width: 100%;
+  min-height: 100%;
+  color-scheme: light;
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-width: 20rem;
+  min-height: 100vh;
+  margin: 0;
+
+  color: var(--color-text);
+  background: var(--color-background);
+
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------------------------------------
+ * Structural defaults
+ * ------------------------------------------------- */
+
+main {
+  display: block;
+}
+
+header,
+footer,
+main,
+nav,
+section,
+article,
+aside {
+  min-width: 0;
+}
+
+/* -------------------------------------------------
+ * Text content
+ * ------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p,
+li,
+dd {
+  overflow-wrap: break-word;
+}
+
+strong,
+b {
+  font-weight: var(--font-weight-bold);
+}
+
+/* -------------------------------------------------
+ * Lists
+ * ------------------------------------------------- */
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* -------------------------------------------------
+ * Links
+ * ------------------------------------------------- */
+
+a {
+  color: inherit;
+  text-decoration-thickness: from-font;
+  text-underline-offset: 0.15em;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* -------------------------------------------------
+ * Media
+ * ------------------------------------------------- */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+img {
+  font-style: italic;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+/* -------------------------------------------------
+ * Forms
+ * ------------------------------------------------- */
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+
+  color: inherit;
+  font: inherit;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  appearance: button;
+  cursor: pointer;
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+/* -------------------------------------------------
+ * Tables
+ * ------------------------------------------------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* -------------------------------------------------
+ * Horizontal rules
+ * ------------------------------------------------- */
+
+hr {
+  height: 0;
+  margin: 0;
+
+  color: inherit;
+  border: 0;
+  border-top:
+    var(--border-width)
+    solid
+    var(--color-border);
+}
+
+/* -------------------------------------------------
+ * Hidden content
+ * ------------------------------------------------- */
+
+[hidden] {
+  display: none !important;
+}
+
+/* -------------------------------------------------
+ * Focus
+ *
+ * A shared component-level focus system will be
+ * developed later. This baseline ensures keyboard
+ * focus is never globally removed.
+ * ------------------------------------------------- */
+
+:focus-visible {
+  outline:
+    var(--border-width-strong)
+    solid
+    var(--color-brand);
+  outline-offset: 0.2rem;
+}
+
+/* -------------------------------------------------
+ * Selection
+ * ------------------------------------------------- */
+
+::selection {
+  color: var(--color-text-on-brand);
+  background: var(--color-brand);
+}
+
+/* -------------------------------------------------
+ * Reduced motion
+ * ------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -2,7 +2,7 @@
 
 ## Current Increment
 
-**Increment 0.2 — Design Tokens**
+**Increment 0.3 — CSS Base / Reset**
 
 ## Completed
 
@@ -24,32 +24,45 @@
 ### Increment 0.2
 
 - Brand colour tokens
-- Surface colour tokens
-- Text colour tokens
-- Border colour tokens
-- Semantic state colours
-- Typography family and weight tokens
-- Fluid typography reference tokens
-- Line-height tokens
+- Surface/text/border tokens
+- Semantic colour tokens
+- Typography reference tokens
 - Spacing scale
-- Section-spacing tokens
 - Container-width tokens
 - Responsive gutter tokens
-- Border-radius tokens
-- Border-width tokens
-- Shadow tokens
-- Control-height tokens
-- Touch-target token
-- Image-ratio tokens
-- Motion-duration/easing tokens
-- Z-index/layer tokens
+- Radius/border/shadow tokens
+- Control/touch sizing tokens
+- Imagery-ratio tokens
+- Motion tokens
+- Layering tokens
 - Breakpoint reference tokens
 - `tokens.css` wired into `main.css`
 
+### Increment 0.3
+
+- Universal `box-sizing: border-box`
+- Predictable document/body defaults
+- Body colour/background/font defaults
+- Structural min-width safeguards
+- Margin reset for common text elements
+- Safe heading/text wrapping defaults
+- List normalization
+- Link baseline behaviour
+- Responsive media defaults
+- Form-control font inheritance
+- Disabled-control cursor behaviour
+- Responsive textarea/input defaults
+- Table normalization
+- Horizontal-rule baseline
+- Native `[hidden]` enforcement
+- Visible global `:focus-visible` baseline
+- Selection styling
+- Reduced-motion fallback
+- `base.css` wired into `main.css`
+
 ## Not Yet Implemented
 
-- CSS reset/base styles
-- Typography rules
+- Typography hierarchy
 - Container/layout primitives
 - Utility classes
 - Shared navigation
@@ -63,4 +76,4 @@
 
 ## Next
 
-**Increment 0.3 — Build the CSS base/reset**
+**Increment 0.4 — Build the typography system**

@@ -14,16 +14,27 @@ QA criteria will be expanded incrementally as features are implemented.
 - [x] `tokens.css` exists.
 - [x] `main.css` imports `tokens.css`.
 - [x] Brand colours match the locked design direction.
-- [x] Semantic colours are defined separately from brand colours.
-- [x] Spacing uses one shared scale.
-- [x] Container widths are tokenized.
-- [x] Radii and shadows are tokenized.
-- [x] Motion values are tokenized.
-- [x] Layering/z-index values are tokenized.
-- [x] Breakpoints are documented as reference tokens.
-- [x] No component or page styling was added in this increment.
+- [x] Semantic colours are separate from brand colours.
+- [x] Shared spacing/container/radius/shadow/motion tokens exist.
+- [x] No component or page styling was added.
+
+## Increment 0.3
+
+- [x] `base.css` exists.
+- [x] `main.css` imports `base.css` after `tokens.css`.
+- [x] Global box sizing is predictable.
+- [x] Browser-default body margin is removed.
+- [x] Images/media do not overflow their containers by default.
+- [x] Form controls inherit LarHub typography.
+- [x] Tables use a normalized collapse model.
+- [x] Keyboard focus is not globally removed.
+- [x] Reduced-motion preferences are respected.
+- [x] No typography hierarchy was introduced prematurely.
+- [x] No layout/component/page styling was introduced.
 
 ## Pending Runtime Verification
 
-- [ ] Run through local HTTP server.
-- [ ] Confirm no CSS import errors in browser developer tools.
+- [ ] Run LarHub through the local HTTP server.
+- [ ] Confirm there are no CSS import errors.
+- [ ] Confirm browser console has no CSS-related warnings.
+- [ ] Confirm body does not create unexpected horizontal overflow.
