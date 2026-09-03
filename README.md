@@ -1,396 +1,835 @@
 # LarHub
 
-LarHub is a real estate listing platform currently being implemented as a modular
-HTML, CSS, and vanilla JavaScript frontend.
+**LarHub** is a modern, responsive real estate marketplace frontend built with **HTML5, CSS3, and Vanilla JavaScript**.
 
-## Current State
+The project demonstrates how a complete property platform can be designed without relying on a frontend framework. It includes a public property marketplace, property search and filtering, property details, agent discovery, authentication interfaces, user dashboards, agent property-management tools, and administrative moderation interfaces.
 
-The project is currently at:
+LarHub was designed around a simple principle:
 
-**Increment 0.1 — Project Structure**
+> **Properties provide personality. The interface provides clarity.**
 
-Only the structural project skeleton has been created.
+The project currently represents a complete **frontend implementation and portfolio demonstration**. Backend services, production authentication, database persistence, and real property-management APIs are intentionally separated as future integration work.
 
-No page designs, property data, search logic, authentication logic, dashboards,
-or design-system styling have been implemented yet.
+---
 
-## Development
+## Table of Contents
 
-LarHub should be served through a local HTTP server.
+* [Overview](#overview)
+* [Project Goals](#project-goals)
+* [Features](#features)
+* [Application Areas](#application-areas)
+* [Technology Stack](#technology-stack)
+* [Architecture](#architecture)
+* [Project Structure](#project-structure)
+* [Public Marketplace](#public-marketplace)
+* [Property Search](#property-search)
+* [Property Details](#property-details)
+* [Agents](#agents)
+* [Authentication](#authentication)
+* [User Application](#user-application)
+* [Agent Application](#agent-application)
+* [Admin Application](#admin-application)
+* [Property Status Architecture](#property-status-architecture)
+* [Demo Data and Local Storage](#demo-data-and-local-storage)
+* [Responsive Design](#responsive-design)
+* [Accessibility](#accessibility)
+* [Imagery](#imagery)
+* [Running the Project](#running-the-project)
+* [Development Principles](#development-principles)
+* [Testing and QA](#testing-and-qa)
+* [Current Limitations](#current-limitations)
+* [Future Development](#future-development)
+* [Portfolio Value](#portfolio-value)
 
-```powershell
-py -m http.server 5500
-```
+---
 
-Then open:
+# Overview
 
-```text
-http://localhost:5500
-```
+LarHub is a fictional South African real estate platform designed to support several different marketplace participants:
 
-## Documentation
+* property seekers
+* buyers
+* renters
+* property agents
+* marketplace administrators
 
-See the `/docs` directory for implementation-state and downstream notes.
+The public experience focuses on helping users discover properties clearly and efficiently.
 
-## Design Tokens
+The broader application demonstrates how the same frontend architecture can support multiple roles without turning the project into a collection of disconnected pages.
 
-The shared LarHub design-token layer is defined in:
-
-```text
-css/tokens.css
-```
-
-The tokens cover brand colours, typography references, spacing, containers,
-radii, shadows, control sizing, motion, layering, and breakpoint references.
-
-Component styling has not yet been implemented.
-
-## CSS Foundation
-
-LarHub now includes:
-
-```text
-css/tokens.css
-css/base.css
-```
-
-`tokens.css` defines shared design values.
-
-`base.css` establishes predictable browser defaults, responsive media behaviour,
-form-control inheritance, focus visibility, and reduced-motion handling.
-
-Typography hierarchy, layout primitives, components, and page styling are still pending.
-
-## Typography System
-
-LarHub now includes a shared typography layer in:
+The primary marketplace journey is:
 
 ```text
-css/typography.css
+Home
+↓
+Search
+↓
+Properties
+↓
+Filter / Sort
+↓
+Property Details
+↓
+Agent
+↓
+Enquiry
 ```
 
-It defines the heading hierarchy, fluid display/H1/H2 sizing, body text roles,
-labels, eyebrow text, property-price treatments, text colours, readable measure,
-and number-alignment helpers.
-
-Layout primitives, shared components, and page styling are still pending.
-
-## Layout Foundation
-
-The shared structural layout layer is defined in:
+Additional application areas extend the platform into:
 
 ```text
-css/layout.css
+User Workspace
+Agent Workspace
+Admin Workspace
 ```
 
-It provides responsive containers, section rhythm, flow/stack/cluster patterns,
-generic grids, split layouts, application shells, and intrinsic media wrappers.
+---
 
-## Utility Layer
+# Project Goals
 
-The shared utility layer is defined in:
+LarHub was created to demonstrate more advanced frontend engineering concepts than a traditional static website.
+
+The main goals were to practice:
+
+* application architecture with Vanilla JavaScript
+* reusable UI components
+* data-driven rendering
+* service-layer architecture
+* state management without a framework
+* URL-based search state
+* filtering and sorting
+* pagination
+* local persistence
+* role-based interface design
+* complex forms
+* responsive application layouts
+* accessibility
+* modular CSS
+* ES modules
+* progressive enhancement
+* separation between frontend and backend responsibilities
+
+The project intentionally avoids React, Vue, Angular, or other frameworks.
+
+This allows the underlying frontend concepts to remain visible rather than being hidden behind framework abstractions.
+
+---
+
+# Features
+
+LarHub includes a complete frontend interface across four major application areas.
+
+### Public marketplace
+
+* responsive homepage
+* property search
+* Buy and Rent discovery
+* property listing catalogue
+* property filtering
+* sorting
+* pagination
+* URL-based search state
+* removable filter chips
+* property detail pages
+* property galleries
+* image lightbox
+* property saving
+* recently viewed properties
+* property enquiry forms
+* viewing request forms
+* agent directory
+* agent profiles
+* About page
+* Contact page
+
+### Authentication UI
+
+* Sign In
+* Registration
+* Forgot Password
+* password visibility controls
+* form validation
+* Google authentication UI
+* Facebook authentication UI
+* Apple authentication UI
+* clearly separated Demo Access
+
+### User application
+
+* dashboard overview
+* saved properties
+* recently viewed properties
+* enquiries
+* profile management
+
+### Agent application
+
+* dashboard overview
+* property listings
+* Add Property
+* Edit Property
+* listing lifecycle management
+* enquiries
+* performance overview
+* agent profile management
+
+### Admin application
+
+* dashboard overview
+* property moderation
+* agent management
+* user management
+* marketplace activity
+* platform settings
+
+---
+
+# Application Areas
+
+LarHub is structured as several connected frontend experiences.
 
 ```text
-css/utilities.css
+LARHUB
+│
+├── PUBLIC MARKETPLACE
+│   ├── Home
+│   ├── Properties
+│   ├── Property Details
+│   ├── Agents
+│   ├── Agent Profile
+│   ├── About
+│   └── Contact
+│
+├── AUTHENTICATION
+│   ├── Login
+│   ├── Register
+│   └── Forgot Password
+│
+├── USER APPLICATION
+│   ├── Overview
+│   ├── Saved Properties
+│   ├── Enquiries
+│   ├── Recently Viewed
+│   └── Profile
+│
+├── AGENT APPLICATION
+│   ├── Overview
+│   ├── Listings
+│   ├── Add Property
+│   ├── Edit Property
+│   ├── Enquiries
+│   ├── Performance
+│   └── Profile
+│
+└── ADMIN APPLICATION
+    ├── Overview
+    ├── Property Moderation
+    ├── Users
+    ├── Agents
+    ├── Activity
+    └── Settings
 ```
 
-It provides a deliberately small set of accessibility, display, alignment,
-spacing, width, overflow, surface, border, radius, and responsive-visibility
-helpers.
+---
 
-LarHub avoids turning utilities into a replacement for meaningful component CSS.
+# Technology Stack
 
-## JavaScript Foundation
-
-LarHub now has an ES-module application entry point:
+LarHub deliberately uses a lightweight frontend stack.
 
 ```text
-js/main.js
+HTML5
+CSS3
+Vanilla JavaScript
+ES Modules
+localStorage
+URLSearchParams
+IntersectionObserver
+DOM APIs
 ```
 
-Shared DOM-ready and selector helpers live in:
+### HTML
+
+HTML provides:
+
+* semantic document structure
+* accessible forms
+* navigation landmarks
+* page structure
+* content hierarchy
+
+### CSS
+
+CSS provides:
+
+* design tokens
+* responsive layouts
+* component styling
+* application shells
+* grid systems
+* typography
+* interactive states
+* responsive navigation
+* reduced-motion support
+
+### JavaScript
+
+JavaScript handles:
+
+* component rendering
+* property data
+* search state
+* filtering
+* sorting
+* pagination
+* gallery behavior
+* saved properties
+* recently viewed properties
+* demo enquiries
+* authentication UI behavior
+* dashboards
+* property management
+* moderation interfaces
+* local persistence
+
+---
+
+# Architecture
+
+LarHub follows a layered frontend architecture.
 
 ```text
-js/utils/dom.js
+UI
+↓
+Page Modules
+↓
+Feature Logic
+↓
+Services
+↓
+Data Sources
 ```
 
-A minimal URL-query helper lives in:
+This separation is important because the project currently uses local demonstration data, but the UI is designed so that those data sources can eventually be replaced by real APIs.
+
+For example:
 
 ```text
-js/utils/url.js
+Property Page
+↓
+Property Service
+↓
+Demo Property Data
 ```
 
-Feature logic remains intentionally deferred.
-
-## Project Documentation Discipline
-
-LarHub maintains implementation state and downstream decisions in:
+could later become:
 
 ```text
-docs/PROJECT_STATE.md
-docs/QA_CHECKLIST.md
-docs/IMAGE_ASSET_INVENTORY.md
-docs/BACKEND_INTEGRATION_NOTES.md
-docs/DECISIONS.md
+Property Page
+↓
+Property Service
+↓
+REST API
+↓
+Backend
+↓
+Database
 ```
 
-These documents should be updated deliberately as increments are accepted.
+The page itself should not need to understand where the property data originates.
 
-`PROJECT_STATE.md` is the implementation-status source of truth.
+---
 
-`DECISIONS.md` records important locked architectural/product decisions rather
-than conversation history.
+# Project Structure
 
-## Foundation Verification
-
-Increment 0.9 verified the current foundation through a local HTTP server.
-
-Verified:
-
-- Public/auth/application route availability
-- Shared CSS resources
-- JavaScript resources and syntax
-- Local HTML/CSS/JS reference integrity
-- Basic overflow-risk patterns
-
-The detailed report is available at:
+The project follows a modular structure similar to:
 
 ```text
-docs/FOUNDATION_VERIFICATION.md
+larhub/
+│
+├── index.html
+├── properties.html
+├── property.html
+├── agents.html
+├── agent.html
+├── about.html
+├── contact.html
+│
+├── auth/
+│   ├── login.html
+│   ├── register.html
+│   └── forgot-password.html
+│
+├── user/
+│   ├── index.html
+│   ├── saved.html
+│   ├── enquiries.html
+│   ├── recently-viewed.html
+│   └── profile.html
+│
+├── agent/
+│   ├── index.html
+│   ├── listings.html
+│   ├── property-form.html
+│   ├── enquiries.html
+│   ├── performance.html
+│   └── profile.html
+│
+├── admin/
+│   ├── index.html
+│   ├── properties.html
+│   ├── agents.html
+│   ├── users.html
+│   ├── activity.html
+│   └── settings.html
+│
+├── assets/
+│   └── images/
+│       ├── home/
+│       ├── properties/
+│       ├── agents/
+│       ├── about/
+│       └── auth/
+│
+├── css/
+│   ├── main.css
+│   ├── tokens.css
+│   ├── base.css
+│   ├── typography.css
+│   ├── layout.css
+│   ├── utilities.css
+│   │
+│   ├── components/
+│   └── pages/
+│
+├── js/
+│   ├── main.js
+│   │
+│   ├── components/
+│   ├── data/
+│   ├── features/
+│   ├── pages/
+│   ├── services/
+│   └── utils/
+│
+├── docs/
+│   ├── PROJECT_STATE.md
+│   ├── PROJECT_STRUCTURE.txt
+│   ├── QA_CHECKLIST.md
+│   ├── IMAGE_ASSET_INVENTORY.md
+│   └── BACKEND_INTEGRATION_NOTES.md
+│
+└── README.md
 ```
 
-Full visual multi-viewport QA remains scheduled for later once implemented UI exists.
+---
 
-## Foundation Status
+# Public Marketplace
 
-LarHub Foundation Increments **0.1–0.10 are complete and locked**.
+The public marketplace is the primary LarHub experience.
 
-The accepted shared foundation consists of:
+Its navigation includes:
 
 ```text
-css/tokens.css
-css/base.css
-css/typography.css
-css/layout.css
-css/utilities.css
-
-js/main.js
-js/utils/dom.js
-js/utils/url.js
+LarHub
+Buy
+Rent
+Agents
+About
+Contact
+Sign In
 ```
 
-See:
+The public interface prioritizes property discovery rather than account-management functionality.
+
+---
+
+# Homepage
+
+The homepage introduces LarHub and provides the main entry point into property discovery.
+
+The hero includes:
+
+* marketplace positioning
+* primary headline
+* supporting description
+* property search
+* property imagery
+
+The main search supports:
 
 ```text
-docs/FOUNDATION_LOCK.md
+Looking to
+Location
+Property Type
+Search Properties
 ```
 
-for the final foundation review.
+Additional homepage sections include:
 
-The next development phase is **Increment 1 — Public Shell**.
+* featured properties
+* Buy/Rent discovery
+* popular locations
+* marketplace value proposition
+* Browse Properties CTA
 
-## Public Shell
+The homepage uses responsive layouts that adapt the hero, search form, cards, and imagery for smaller screens.
 
-LarHub now includes one reusable public shell across all public pages.
+---
 
-Implemented:
+# Property Search
 
-- Shared header
-- Desktop navigation
-- Mobile hamburger navigation
-- Active navigation state
-- Skip link
-- Shared buttons
-- Shared footer
+The Properties page provides the main marketplace discovery experience.
 
-Primary implementation files:
+Users can filter by:
+
+* listing type
+* property type
+* location
+* minimum price
+* maximum price
+* bedrooms
+* bathrooms
+
+Additional filters can support features such as:
+
+* parking
+* garden
+* pool
+* security
+* solar
+* balcony
+* garage
+
+Search logic follows:
 
 ```text
-css/components/buttons.css
-css/components/navigation.css
-css/components/footer.css
-
-js/components/public-header.js
-js/components/public-footer.js
-js/features/navigation.js
+Across filter categories = AND
+Within multi-select categories = OR
 ```
 
-
-## Property Data Foundation
-
-Demo data and service boundaries now exist for properties and agents.
-
-Primary files:
+For example:
 
 ```text
-js/data/properties.js
-js/data/agents.js
-js/services/property-service.js
-js/services/agent-service.js
-js/utils/currency.js
-js/components/property-card.js
-js/components/agent-card.js
-css/components/property-card.css
-css/components/agent-card.css
+Johannesburg
+AND
+(House OR Townhouse)
+AND
+3+ Bedrooms
 ```
 
-Public property retrieval excludes Sold, Rented, Draft, and other management-only records.
+---
 
+## URL-Based Search State
 
-## Home Page
+Search state is represented through URL query parameters.
 
-LarHub Home now includes:
-
-- Responsive hero
-- Primary property search
-- Featured Property Cards
-- Buy/Rent discovery
-- Popular South African locations
-- Concise platform value section
-- Browse Properties CTA
-
-The Home search passes its state into the future Properties experience using query parameters.
-
-The current hero asset is a temporary structural placeholder and is explicitly referenced through an `<img>` element.
-
-
-## Properties Marketplace
-
-The public Properties page now supports:
-
-- URL-backed search state
-- Buy/Rent filtering
-- Location filtering
-- Property Type filtering
-- Price filtering
-- Bedroom/bathroom filtering
-- Feature filtering
-- Sorting
-- Active filter chips
-- Result counts
-- Pagination
-- Empty states
-- Responsive mobile filter drawer
-
-The marketplace continues to use only public-property records from the Property Service.
-
-
-## Property Details
-
-The Property Details experience now supports:
-
-- Dynamic `?id=` loading
-- Public-property eligibility checks
-- Multi-image gallery/lightbox
-- Property facts
-- Description/features
-- Agent contact panel
-- Saved properties through `localStorage`
-- Enquiry UI
-- Request-viewing UI
-- Similar properties
-- Honest frontend-only messaging for backend-dependent actions
-
-
-## Agents
-
-LarHub now includes a public agent directory and agent profile experience.
-
-Directory search supports:
-
-- Agent name
-- Agency
-- Area served
-
-Agent profiles load through:
+A filtered page may conceptually look like:
 
 ```text
-agent.html?id=agent-001
+properties.html?listing=sale&location=Johannesburg&type=house
 ```
 
-Public active listing counts are derived from public property data, so Sold, Rented, Draft,
-and other management-only listings are not included.
+This provides several benefits:
 
+* filtered searches can be bookmarked
+* searches can be shared
+* browser navigation behaves more naturally
+* refreshing the page can preserve search context
 
-## Supporting Public Pages
+---
 
-LarHub now includes completed public About and Contact interfaces.
+# Sorting
 
-About covers:
-
-- Marketplace purpose
-- Discovery process
-- User groups
-- Platform principles
-- Current frontend-only project stage
-
-Contact includes:
-
-- General-enquiry guidance
-- Accessible client-side validation
-- Inline errors
-- First-invalid-field focus
-- Honest frontend-only result messaging
-
-The form does not claim a message was delivered because no backend is connected yet.
-
-
-## Authentication UI
-
-LarHub now includes frontend-only authentication interfaces for:
-
-- Login
-- Registration
-- Forgot Password
-- Google
-- Facebook
-- Apple
-
-The UI validates locally but never claims that authentication, account creation,
-password reset delivery, or provider OAuth succeeded.
-
-A separate Demo Access mode allows User, Agent, and Admin application areas to be previewed
-without pretending a real authenticated session exists.
-
-
-## User Application
-
-LarHub now includes a complete frontend User workspace:
-
-- Overview
-- Saved Properties
-- Recently Viewed
-- Enquiries
-- Profile
-
-The workspace reuses the shared Property Card and Property Service and uses browser-local
-demonstration persistence.
-
-Important local keys:
+Property results support sorting such as:
 
 ```text
-larhub.savedProperties
-larhub.recentlyViewed
-larhub.demoEnquiries
-larhub.demoUserProfile
+Most Relevant
+Price: Low to High
+Price: High to Low
+Newest
 ```
 
-Local enquiry/viewing records are explicitly not delivered or scheduled.
+---
 
+# Pagination
 
-## Agent Application
+LarHub uses traditional pagination rather than infinite scrolling.
 
-LarHub now includes a complete frontend Agent workspace:
+This provides:
 
-- Overview
-- My Listings
-- Add/Edit Property
-- Listing lifecycle management
-- Enquiries
-- Performance
-- Profile settings
+* predictable navigation
+* easier browser history
+* clear result boundaries
+* improved accessibility
+* simpler future backend integration
 
-Management lifecycle includes:
+---
+
+# Property Cards
+
+Property Cards are reusable components used throughout the application.
+
+They appear in:
+
+* Home
+* Properties
+* Agent Profile
+* Saved Properties
+* Recently Viewed
+* Similar Properties
+
+Cards can display:
+
+* property image
+* public status
+* price
+* title
+* location
+* key property facts
+* save control
+
+Property facts adapt according to the property type.
+
+For example, residential properties may display:
+
+```text
+3 beds
+2 baths
+180 m²
+```
+
+while land or commercial properties can display more appropriate information.
+
+This prevents the component architecture from assuming every property is residential.
+
+---
+
+# Property Details
+
+The Property Details page provides a deeper evaluation experience.
+
+It includes:
+
+* breadcrumb navigation
+* image gallery
+* public property status
+* property title
+* location
+* price
+* reference number
+* key facts
+* description
+* property features
+* agent information
+* enquiry form
+* viewing request form
+* location context
+* similar properties
+
+---
+
+## Property Gallery
+
+Properties support multiple images.
+
+The gallery includes:
+
+* primary image
+* supporting images
+* image count
+* View All Photos control
+* lightbox
+* previous/next navigation
+* close control
+* keyboard interaction
+
+The lightbox supports keyboard-oriented interaction such as:
+
+```text
+Escape → Close
+Left Arrow → Previous
+Right Arrow → Next
+```
+
+---
+
+# Agents
+
+LarHub includes a dedicated public Agent Directory.
+
+Agent cards display information such as:
+
+* portrait
+* name
+* agency
+* service areas
+* active listing count
+* profile link
+
+Agent profiles provide:
+
+* portrait
+* biography
+* agency
+* areas served
+* specialisations
+* contact information
+* active public listings
+
+Only active public listings contribute to the public listing count.
+
+Internal records such as Draft, Sold, Rented, or Archived properties are not presented as active public listings.
+
+---
+
+# Authentication
+
+LarHub includes complete frontend interfaces for:
+
+* Login
+* Registration
+* Forgot Password
+
+Authentication UI includes:
+
+* visible labels
+* validation
+* password visibility controls
+* password confirmation
+* account-type selection
+* accessible error states
+
+---
+
+## Social Authentication UI
+
+The interface includes controls for:
+
+```text
+Google
+Facebook
+Apple
+```
+
+These represent the intended production interface.
+
+They are **not currently connected to real OAuth providers**.
+
+The frontend does not pretend that authentication has succeeded when those services are unavailable.
+
+---
+
+# Demo Access
+
+LarHub includes a separate Demo Access mechanism.
+
+Demo Access allows the frontend portfolio to demonstrate role-specific interfaces without pretending that real authentication exists.
+
+Available demonstration roles include:
+
+```text
+Property Seeker
+Agent
+Admin
+```
+
+Demo Access is explicitly different from production authentication.
+
+```text
+Login / Register / OAuth
+= intended production authentication UI
+
+Demo Access
+= local frontend portfolio mechanism
+```
+
+---
+
+# User Application
+
+The User Application represents the property seeker's personal workspace.
+
+It contains:
+
+```text
+Overview
+Saved Properties
+Enquiries
+Recently Viewed
+Profile
+```
+
+---
+
+## User Dashboard
+
+The dashboard provides a summary of user activity.
+
+It can include:
+
+* saved property count
+* enquiry count
+* recently viewed count
+* recent activity
+* saved-property previews
+
+---
+
+## Saved Properties
+
+Users can save properties from public marketplace interfaces.
+
+Saved property IDs are persisted locally.
+
+The Saved Properties workspace reuses the same Property Card architecture used by the public marketplace.
+
+---
+
+## Recently Viewed
+
+Opening a valid property can add it to a recently viewed history.
+
+This allows the user workspace to demonstrate browsing history without requiring a backend.
+
+---
+
+## Enquiries
+
+Property enquiry and viewing-request interactions can create local demonstration records.
+
+These records exist only in the browser.
+
+LarHub does **not** falsely claim that:
+
+* an email was sent
+* an agent received the enquiry
+* a viewing was scheduled
+
+A real implementation would connect these interfaces to backend services.
+
+---
+
+# Agent Application
+
+The Agent Application demonstrates a property-management workspace.
+
+It contains:
+
+```text
+Overview
+My Listings
+Add Property
+Edit Property
+Enquiries
+Performance
+Profile
+```
+
+---
+
+## Agent Listings
+
+Agents can manage demonstration property records through lifecycle states such as:
 
 ```text
 Draft
@@ -400,156 +839,780 @@ Sold
 Rented
 ```
 
-Sold and Rented remain management-only states.
+Management interfaces intentionally support Sold and Rented states even though these properties are not considered active public marketplace listings.
 
-Agent workspace edits are stored locally under:
+---
+
+## Add and Edit Property
+
+LarHub uses a shared Property Form architecture for both creation and editing.
+
+The form can contain sections for:
 
 ```text
+Basic Information
+Location
+Property Details
+Features
+Description
+Images
+Listing Settings
+```
+
+Fields adapt according to property type where appropriate.
+
+For example, a land listing should not require bedroom and bathroom fields simply because residential listings use them.
+
+---
+
+## Agent Performance
+
+The Performance area intentionally avoids invented analytics.
+
+It focuses on metrics that can be supported by the demonstration state, such as:
+
+* published listings
+* properties under offer
+* Sold/Rented records
+* listing lifecycle distribution
+* locally recorded enquiries
+
+The project does not invent:
+
+* revenue
+* impressions
+* conversion rates
+* traffic
+* production lead statistics
+
+---
+
+# Admin Application
+
+The Admin Application demonstrates marketplace governance and moderation.
+
+It includes:
+
+```text
+Overview
+Property Moderation
+Users
+Agents
+Activity
+Settings
+```
+
+The Admin interface is intentionally more operational and data-focused than the public marketplace.
+
+---
+
+## Property Moderation
+
+Administrative moderation can demonstrate states such as:
+
+```text
+Pending Review
+Approved
+Rejected
+Flagged
+Removed
+```
+
+Moderation actions may include:
+
+* approve
+* reject
+* flag
+* remove
+
+Actions that require explanations can request a reason.
+
+For example:
+
+```text
+Incomplete listing
+Incorrect information
+Misleading content
+Poor images
+Duplicate listing
+Policy violation
+Other
+```
+
+These operations modify frontend demonstration state only.
+
+---
+
+## User Management
+
+Administrative user states can include:
+
+```text
+Active
+Suspended
+Disabled
+```
+
+Possible actions include:
+
+* View
+* Suspend
+* Reactivate
+
+Permanent deletion is intentionally not treated as a casual default administrative action.
+
+---
+
+## Agent Management
+
+Agent management can demonstrate states such as:
+
+```text
+Pending Approval
+Approved
+Rejected
+Suspended
+```
+
+The project avoids inventing regulatory verification requirements that have not been defined.
+
+---
+
+# Property Status Architecture
+
+One important LarHub design decision is the separation of different types of property status.
+
+These concepts are not treated as one generic status field.
+
+Conceptually:
+
+```text
+Property
+├── publicStatus
+├── lifecycleStatus
+└── moderationStatus
+```
+
+---
+
+## Public Status
+
+Public users may encounter statuses such as:
+
+```text
+FOR SALE
+TO RENT
+NEW
+UNDER OFFER
+```
+
+Featured can also be used as merchandising metadata.
+
+---
+
+## Agent Lifecycle Status
+
+Agent management can include:
+
+```text
+DRAFT
+PUBLISHED
+UNDER OFFER
+SOLD
+RENTED
+ARCHIVED
+```
+
+---
+
+## Admin Moderation Status
+
+Administrative workflows can include:
+
+```text
+PENDING REVIEW
+APPROVED
+REJECTED
+FLAGGED
+REMOVED
+```
+
+---
+
+## Sold and Rented Properties
+
+A key platform rule is:
+
+> **Sold and Rented properties are management states, not active public discovery states.**
+
+They may appear inside Agent or Admin interfaces but should normally disappear from active marketplace discovery.
+
+This keeps public availability separate from historical management information.
+
+---
+
+# Demo Data and Local Storage
+
+LarHub uses browser-local storage to demonstrate persistent frontend behavior.
+
+Example storage areas include:
+
+```text
+larhub.savedProperties
+larhub.recentlyViewed
+larhub.demoEnquiries
+larhub.demoUserProfile
+larhub.demoSession
 larhub.demoAgentListings
 larhub.demoAgentProfile
 ```
 
-They do not mutate the static public marketplace dataset or claim backend persistence.
+Additional administrative demonstration state may also be stored locally.
 
+---
 
-## Admin Application
+## Why IDs Are Stored
 
-LarHub now includes a complete frontend Admin workspace:
+Where practical, LarHub stores identifiers rather than duplicating entire domain objects.
 
-- Overview
-- Property moderation
-- Agent management
-- User management
-- Marketplace activity
-- Settings
-
-Admin state is browser-local only.
-
-Primary local keys:
+For example:
 
 ```text
-larhub.demoAdminPropertyState
-larhub.demoAdminAgentState
-larhub.demoAdminUsers
-larhub.demoAdminSettings
+larhub.savedProperties
 ```
 
-The Admin workspace does not mutate the static public datasets or claim that production
-moderation/configuration has occurred.
+stores property IDs.
 
+The application can then retrieve the current property information through the Property Service.
 
-## Frontend Completion Status
+This avoids unnecessarily duplicating property records.
 
-The LarHub frontend implementation is now complete through **Increment 12 — Final QA and Consolidation**.
+---
 
-Implemented areas:
+# Responsive Design
+
+LarHub was designed for:
+
+* mobile
+* large mobile
+* tablet
+* desktop
+* large desktop
+
+The responsive system is content-driven rather than based purely on device names.
+
+Conceptual ranges include:
 
 ```text
-Public Marketplace
-Authentication UI
-User Application
-Agent Application
-Admin Application
+< 640px
+Mobile
+
+640px – 767px
+Large mobile / small tablet
+
+768px – 1023px
+Tablet
+
+1024px – 1279px
+Desktop
+
+1280px+
+Large desktop
 ```
 
-Final static QA result:
+---
+
+## Responsive Property Grid
+
+Property results adapt approximately as follows:
 
 ```text
-PASS
+Desktop
+3 columns
+
+Tablet
+2 columns
+
+Mobile
+1 column
 ```
 
-See:
+The filter sidebar becomes a mobile filter interface when screen space becomes limited.
 
-```text
-docs/FINAL_QA_REPORT.md
-docs/RELEASE_NOTES.md
-docs/PROJECT_STATE.md
-docs/QA_CHECKLIST.md
+---
+
+## Responsive Application Shell
+
+User, Agent, and Admin interfaces use a shared application-shell architecture.
+
+Desktop interfaces use persistent navigation where appropriate.
+
+Smaller screens use an accessible mobile navigation pattern rather than squeezing the desktop sidebar into the viewport.
+
+---
+
+# Accessibility
+
+Accessibility was treated as part of the component architecture rather than a final add-on.
+
+The project includes practices such as:
+
+* semantic HTML
+* labelled forms
+* keyboard-accessible controls
+* visible focus states
+* `:focus-visible`
+* image alternative text
+* accessible navigation
+* meaningful button labels
+* validation messages
+* dialog/drawer focus handling
+* reduced-motion support
+
+LarHub also respects:
+
+```css
+@media (prefers-reduced-motion: reduce)
 ```
 
-### Important
+to minimize unnecessary motion when requested by the operating system.
 
-LarHub is currently a complete **frontend demonstration**, not a production-connected marketplace.
+---
 
-Authentication, OAuth, database persistence, real enquiry delivery, scheduling, production moderation, and real analytics still require backend integration.
+# Imagery
 
-The project intentionally separates UI, services, data, features, and page logic so these backend integrations can be added later without redesigning the entire frontend.
+LarHub uses explicit image elements for meaningful property and agent imagery.
 
+The project includes imagery for:
 
-## Visual Polish Phase
+* homepage hero
+* property cards
+* property galleries
+* agent portraits
+* About page
+* authentication interfaces
 
-Functional frontend development and static QA are complete. Phase 13 now replaces structural/demo imagery with a consistent final LarHub visual system.
+Property Cards use a consistent image ratio.
 
-The complete visual asset plan is documented in:
+Agent Cards use consistent portrait framing.
+
+Fallback imagery remains available for locally created demonstration records that do not yet have uploaded media.
+
+The image architecture is documented in:
 
 ```text
-docs/IMAGERY_AUDIT.md
 docs/IMAGE_ASSET_INVENTORY.md
 ```
 
-Phase 13.1 established a target of **69 final visual assets**: 60 property images, 6 agent portraits, and 3 editorial site images. Technical fallback SVGs remain separate.
+---
 
+# Design System
 
-### Phase 13.2 — Home Imagery
+LarHub uses a restrained architectural visual language.
 
-The Home hero placeholder has been replaced by a real raster visual:
+The main brand color is a deep architectural green.
 
-```text
-assets/images/home/home-hero.jpg
-```
-
-Featured Property Cards continue to use the central property dataset; their final photography is introduced in Phase 13.3 so property imagery is maintained in one place.
-
-### Phase 13.6 — UI Polish
-
-A final shared polish layer now refines:
-
-- typography and content wrapping
-- spacing and section rhythm
-- image/card presentation
-- keyboard focus states
-- hover behavior
-- reduced motion
-- authentication layout
-- User/Agent/Admin application density
-
-The polish layer is intentionally separate from the core design tokens:
+Example design tokens include:
 
 ```text
-css/components/polish.css
+Primary              #173F35
+Primary Hover        #0F3028
+Primary Soft         #E7EFEC
+
+Background           #F7F6F2
+Surface              #FFFFFF
+Secondary Surface    #F0F0EB
+
+Primary Text         #1D211F
+Secondary Text       #606762
+Muted Text           #7B827E
+
+Border               #DADDD9
+Strong Border        #B8BDB9
 ```
 
-This keeps the base design system reusable while allowing project-wide finishing refinements.
+Semantic colors are reserved for information such as:
 
-## Phase 13 Complete — Final Visual Integration
+* success
+* warning
+* error
+* informational states
 
-The LarHub frontend now includes its integrated portfolio imagery and final shared UI polish.
+Status is never intended to rely on color alone.
 
-Final imagery:
+---
+
+# Typography
+
+LarHub primarily uses a clean sans-serif typography system.
+
+The visual hierarchy includes:
+
+* display text
+* page headings
+* section headings
+* card headings
+* body copy
+* labels
+* captions
+
+Typography is responsive and uses balanced wrapping where appropriate.
+
+---
+
+# Running the Project
+
+LarHub uses ES modules.
+
+Because of this, the project should be served through a local HTTP server rather than opened directly using `file://`.
+
+---
+
+## Option 1 — Python
+
+If Python is installed:
+
+```bash
+cd larhub
+python -m http.server 5500
+```
+
+On Windows, this can also be:
+
+```powershell
+cd larhub
+py -m http.server 5500
+```
+
+Then open:
 
 ```text
-60 property JPEGs
-6 agent portraits
-1 Home hero
-1 About editorial image
-1 Authentication image
+http://localhost:5500
 ```
 
-Total:
+---
+
+## Option 2 — VS Code Live Server
+
+If you use Visual Studio Code:
+
+1. Open the LarHub project folder.
+2. Install the **Live Server** extension if necessary.
+3. Open `index.html`.
+4. Select **Open with Live Server**.
+
+---
+
+# Development Principles
+
+Several engineering principles guided the project.
+
+## Separation of concerns
 
 ```text
-69 final visual assets
+HTML
+= structure and meaning
+
+CSS
+= presentation and layout
+
+JavaScript
+= behavior and application logic
 ```
 
-Seeded properties and agents no longer depend on generic placeholders.
+---
 
-The following fallback files intentionally remain for new/unseeded browser-local demo records:
+## Modular JavaScript
+
+Responsibilities are separated into:
 
 ```text
-assets/images/properties/property-placeholder.svg
-assets/images/agents/agent-placeholder.svg
+components
+features
+services
+data
+utilities
+page modules
 ```
 
-Phase 13 is complete.
+Large application behavior is not placed into one global JavaScript file.
 
-The next recommended step is manual browser/device QA before deployment or backend integration.
+---
+
+## Service boundaries
+
+Pages do not directly own all application data.
+
+Instead:
+
+```text
+Page
+↓
+Service
+↓
+Data Source
+```
+
+This makes future API integration substantially easier.
+
+---
+
+## Reusable components
+
+LarHub reuses meaningful domain components such as:
+
+* Property Card
+* Agent Card
+* public navigation
+* application navigation
+* search controls
+* forms
+* status indicators
+* empty states
+
+The goal is meaningful reuse rather than abstraction for its own sake.
+
+---
+
+## Progressive enhancement
+
+HTML provides the structural foundation.
+
+JavaScript adds richer functionality where needed.
+
+The project avoids rendering every static element through JavaScript simply because JavaScript is available.
+
+---
+
+## No Fake Backend Functionality
+
+One of LarHub's most important development rules is that the frontend should not pretend that backend functionality exists.
+
+For example, the project does not falsely claim that:
+
+* authentication succeeded
+* OAuth succeeded
+* an account was created on a server
+* an enquiry was delivered
+* a viewing was scheduled
+* a property was persisted to a database
+* an administrator changed production data
+
+Where local demonstration behavior exists, it is treated as **demo state**.
+
+---
+
+# Testing and QA
+
+LarHub underwent static project auditing throughout development.
+
+Checks included:
+
+* HTML file references
+* JavaScript imports
+* CSS imports
+* page titles
+* viewport metadata
+* main landmarks
+* heading structure
+* duplicate IDs
+* image references
+* image alternative text
+* shared-shell consistency
+* public property eligibility
+* Sold/Rented visibility rules
+* authentication honesty
+* JavaScript syntax validation
+* responsive architecture review
+
+JavaScript files were also checked using:
+
+```bash
+node --check
+```
+
+Additional QA documentation is available in:
+
+```text
+docs/QA_CHECKLIST.md
+```
+
+and project state information is available in:
+
+```text
+docs/PROJECT_STATE.md
+```
+
+---
+
+# Current Limitations
+
+LarHub is currently a **frontend application demonstration**.
+
+It does not yet include:
+
+* production backend
+* database
+* real authentication
+* real OAuth
+* server-side sessions
+* authorization
+* persistent cloud storage
+* real property image uploads
+* real enquiry delivery
+* email notifications
+* viewing scheduling backend
+* production moderation
+* audit logs
+* real analytics
+* payment processing
+
+These are intentionally treated as future system integrations rather than simulated production functionality.
+
+---
+
+# Future Development
+
+The existing frontend architecture provides a foundation for future full-stack development.
+
+A possible architecture could evolve into:
+
+```text
+LarHub Frontend
+      ↓
+REST / GraphQL API
+      ↓
+Authentication
+      ↓
+Application Services
+      ↓
+Database
+      ↓
+Object Storage
+```
+
+Potential future additions include:
+
+### Backend
+
+* Node.js / Express
+* Python / FastAPI
+* another suitable backend framework
+
+### Database
+
+* PostgreSQL
+* Supabase
+* Firebase
+* another relational/cloud database
+
+### Authentication
+
+* email/password authentication
+* Google OAuth
+* Facebook OAuth
+* Apple authentication
+* role-based authorization
+
+### Property Management
+
+* persistent listings
+* image uploads
+* cloud image storage
+* moderation workflows
+* listing history
+
+### Communication
+
+* real enquiries
+* email notifications
+* agent notifications
+* viewing scheduling
+
+### Administration
+
+* persistent moderation
+* audit logs
+* role management
+* marketplace reporting
+
+### Search
+
+Future marketplace search could eventually support:
+
+* database-backed filtering
+* full-text search
+* geospatial search
+* map search
+* saved searches
+* search alerts
+
+---
+
+# Portfolio Value
+
+LarHub demonstrates frontend development beyond simple static page construction.
+
+The project includes examples of:
+
+* application-scale Vanilla JavaScript
+* modular architecture
+* reusable components
+* service-layer design
+* domain modelling
+* data-driven rendering
+* search/filter algorithms
+* sorting
+* pagination
+* URL state
+* local persistence
+* multiple application roles
+* lifecycle modelling
+* moderation workflows
+* responsive application design
+* complex forms
+* accessibility
+* design-system implementation
+* honest frontend/backend boundaries
+
+It demonstrates the ability to think about a frontend as an **application system**, rather than simply a collection of webpages.
+
+---
+
+# Project Status
+
+```text
+Product Planning             Complete
+UX Architecture              Complete
+Design System                Complete
+Frontend Foundation          Complete
+Public Marketplace           Complete
+Property Discovery           Complete
+Property Details             Complete
+Agents                       Complete
+Authentication UI            Complete
+User Application             Complete
+Agent Application            Complete
+Admin Application            Complete
+Responsive Design            Complete
+Imagery Integration          Complete
+Frontend QA                  Complete
+Backend Integration          Future
+Production Authentication   Future
+Database                     Future
+Deployment                   Future
+```
+
+---
+
+# Author
+
+Developed as a frontend software development and portfolio project.
+
+---
+
+# License
+
+No open-source license has been assigned to this project unless a `LICENSE` file is included in the repository.
+
+All rights are reserved by default.
