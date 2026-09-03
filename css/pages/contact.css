@@ -1,6 +1,103 @@
 /*
- * LarHub — pages / contact
- *
- * Placeholder created in Increment 0.1.
- * Implementation belongs to a later increment.
+ * LarHub Contact Page
  */
+
+.contact-hero {
+  padding-block: var(--space-7);
+
+  background: var(--color-surface);
+
+  border-bottom:
+    var(--border-width)
+    solid
+    var(--color-border);
+}
+
+.contact-hero__inner {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.contact-layout {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.contact-guidance {
+  display: grid;
+  align-content: start;
+  gap: var(--space-6);
+}
+
+.contact-guidance__items {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.contact-guidance__items article {
+  display: grid;
+  gap: var(--space-3);
+
+  padding-top: var(--space-4);
+
+  border-top:
+    var(--border-width)
+    solid
+    var(--color-border);
+}
+
+.contact-form-wrap {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.contact-form {
+  padding: var(--space-5);
+}
+
+.form-error {
+  min-height: 1.3em;
+
+  color: var(--color-error);
+}
+
+.contact-form
+[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+
+.contact-form__status {
+  min-height: 1.5rem;
+}
+
+.contact-form__notice {
+  padding: var(--space-4);
+
+  color: var(--color-text);
+  background: var(--color-brand-soft);
+
+  border:
+    var(--border-width)
+    solid
+    var(--color-brand);
+  border-radius: var(--radius-control);
+}
+
+.contact-status-note {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 64rem) {
+  .contact-layout {
+    grid-template-columns:
+      minmax(0, 0.8fr)
+      minmax(24rem, 1.2fr);
+    align-items: start;
+  }
+
+  .contact-form-wrap {
+    position: sticky;
+    top: 6rem;
+  }
+}

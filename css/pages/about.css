@@ -1,6 +1,163 @@
 /*
- * LarHub — pages / about
- *
- * Placeholder created in Increment 0.1.
- * Implementation belongs to a later increment.
+ * LarHub About Page
  */
+
+.about-hero {
+  padding-block:
+    clamp(
+      var(--space-7),
+      8vw,
+      var(--section-space-large)
+    );
+
+  background: var(--color-surface);
+}
+
+.about-hero__grid {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.about-hero__content {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.about-hero__media {
+  overflow: hidden;
+
+  margin: 0;
+
+  background: var(--color-brand-soft);
+
+  border-radius: var(--radius-lg);
+}
+
+.about-hero__media img {
+  width: 100%;
+  height: 100%;
+
+  min-height: 22rem;
+
+  object-fit: cover;
+}
+
+.about-section-grid {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.about-process {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.about-process article {
+  display: grid;
+  gap: var(--space-3);
+
+  padding-top: var(--space-4);
+
+  border-top:
+    var(--border-width)
+    solid
+    var(--color-border-strong);
+}
+
+.about-section-heading {
+  margin-bottom: var(--space-6);
+}
+
+.about-audience-card {
+  display: grid;
+  gap: var(--space-3);
+
+  padding: var(--space-5);
+
+  background: var(--color-background);
+
+  border:
+    var(--border-width)
+    solid
+    var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.about-principles {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.about-principles__list {
+  display: grid;
+  gap: var(--space-4);
+
+  margin: 0;
+}
+
+.about-principles__list > div {
+  display: grid;
+  gap: var(--space-2);
+
+  padding:
+    var(--space-4)
+    0;
+
+  border-bottom:
+    var(--border-width)
+    solid
+    var(--color-border);
+}
+
+.about-principles__list dt {
+  color: var(--color-text);
+
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.about-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+}
+
+@media (min-width: 48rem) {
+  .about-process {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .about-principles {
+    grid-template-columns:
+      minmax(0, 0.85fr)
+      minmax(0, 1.15fr);
+    align-items: start;
+  }
+
+  .about-status {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 64rem) {
+  .about-hero__grid {
+    grid-template-columns:
+      minmax(0, 1.1fr)
+      minmax(22rem, 0.9fr);
+  }
+
+  .about-hero__media img {
+    min-height: 34rem;
+  }
+
+  .about-section-grid {
+    grid-template-columns:
+      minmax(0, 0.75fr)
+      minmax(0, 1.25fr);
+  }
+}
