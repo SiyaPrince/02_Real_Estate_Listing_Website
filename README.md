@@ -252,3 +252,24 @@ LarHub Home now includes:
 The Home search passes its state into the future Properties experience using query parameters.
 
 The current hero asset is a temporary structural placeholder and is explicitly referenced through an `<img>` element.
+
+
+## Properties Marketplace
+
+The public Properties page now supports:
+
+- URL-backed search state
+- Buy/Rent filtering
+- Location filtering
+- Property Type filtering
+- Price filtering
+- Bedroom/bathroom filtering
+- Feature filtering
+- Sorting
+- Active filter chips
+- Result counts
+- Pagination
+- Empty states
+- Responsive mobile filter drawer
+
+The marketplace continues to use only public-property records from the Property Service.

@@ -2,7 +2,7 @@
 
 ## Current Increment
 
-**Increment 3 — Home**
+**Increment 4 — Properties**
 
 Status:
 
@@ -17,9 +17,9 @@ PLANNING / DESIGN          COMPLETE
 FOUNDATION                 COMPLETE + LOCKED
 PUBLIC SHELL               COMPLETE
 PROPERTY DATA FOUNDATION   COMPLETE
-HOME                       IMPLEMENTED
-PROPERTIES                 NEXT
-PROPERTY DETAILS           NOT STARTED
+HOME                       COMPLETE
+PROPERTIES                 IMPLEMENTED
+PROPERTY DETAILS           NEXT
 AGENTS                     NOT STARTED
 AUTHENTICATION UI          NOT STARTED
 USER APPLICATION           NOT STARTED
@@ -29,100 +29,111 @@ ADMIN APPLICATION          NOT STARTED
 
 ---
 
-## Increment 3 Completed
+## Increment 4 Completed
 
-### Home Hero
+### Query-State Marketplace
 
-Implemented:
-
-- LarHub eyebrow
-- Primary H1
-- Supporting copy
-- Explicit hero image element
-- Responsive two-column desktop composition
-- Mobile stacked composition
-
-### Home Search
-
-Implemented:
+Properties reads and writes:
 
 ```text
-Buy / Rent
-Location
-Property Type
-Search Properties
-```
-
-Search submission creates query parameters and sends the user to:
-
-```text
-properties.html
+listing
+location
+type
+minPrice
+maxPrice
+bedrooms
+bathrooms
+features
+sort
+page
 ```
 
 Example:
 
 ```text
-/properties.html?listing=sale&location=Johannesburg&type=house
+/properties.html?listing=sale&location=Johannesburg&type=house&bedrooms=3
 ```
 
-The full Properties filtering system remains deferred to Increment 4.
+Browser back/forward is supported through `popstate`.
 
-### Featured Properties
-
-Implemented:
-
-- 3 featured public properties
-- Data sourced through `getFeaturedProperties()`
-- Shared Property Card renderer
-- Link to full marketplace
-
-### Discovery
+### Search
 
 Implemented:
 
-- Buy discovery card
-- Rent discovery card
-- Johannesburg link
-- Cape Town link
-- Pretoria link
-- Durban link
+- Buy / Rent
+- Location
+- Property Type
 
-### Platform Value
+### Filters
 
 Implemented:
+
+- Minimum price
+- Maximum price
+- Minimum bedrooms
+- Minimum bathrooms
+- Garden
+- Security
+- Solar
+- Fibre
+
+Feature filtering uses AND logic across selected features.
+
+### Sorting
+
+Implemented:
+
+- Most relevant
+- Price low to high
+- Price high to low
+- Newest
+
+### Results
+
+Implemented:
+
+- Dynamic result count
+- Shared Property Card rendering
+- Active filter chips
+- Individual filter removal
+- Clear-all
+- Empty state
+- Pagination
+- Responsive grid
+
+### Mobile Filters
+
+Implemented:
+
+- Filter drawer
+- Backdrop
+- Escape-to-close
+- Focus restoration
+- Basic focus trapping
+- Desktop reset behavior
+
+### Pagination
+
+Current page size:
 
 ```text
-Search clearly
-Compare quickly
-Connect confidently
-```
-
-No fake marketplace statistics were added.
-
-### Final CTA
-
-Implemented:
-
-```text
-Browse Properties
+6 properties
 ```
 
 ---
 
-## Hero Image
+## Public Data Boundary
 
-Current Home hero uses:
+Properties uses:
 
 ```text
-assets/images/home/home-hero-placeholder.svg
+getPublicProperties()
 ```
 
-This is a temporary structural placeholder.
-
-The `<img>` placement is now explicit and can later be replaced without restructuring the Home page.
+and therefore excludes Sold, Rented, Draft, and other management-only records.
 
 ---
 
 ## Next
 
-**Increment 4 — Properties**
+**Increment 5 — Property Details**

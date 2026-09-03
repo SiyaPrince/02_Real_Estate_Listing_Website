@@ -369,3 +369,67 @@ Full visual/browser interaction QA remains intentionally deferred until implemen
 - [ ] Verify Buy/Rent cards remain balanced.
 - [ ] Verify location-row hover/focus states.
 - [ ] Replace hero placeholder with final photography when imagery is available.
+
+
+# 8. Increment 4 — Properties QA
+
+## URL State
+
+- [x] Query parameters initialize Properties state.
+- [x] Search updates query state.
+- [x] Filter submission updates query state.
+- [x] Sort updates query state.
+- [x] Pagination updates query state.
+- [x] Browser back/forward rehydrates state.
+- [x] Empty/default values are omitted from the URL where practical.
+
+## Search / Filters
+
+- [x] Buy/Rent filter works.
+- [x] Location filter checks suburb/city/province.
+- [x] Property Type filter works.
+- [x] Minimum price works.
+- [x] Maximum price works.
+- [x] Minimum bedrooms works.
+- [x] Minimum bathrooms works.
+- [x] Feature filters work.
+- [x] Selected features use AND logic.
+
+## Sorting
+
+- [x] Relevance/default sorting exists.
+- [x] Price ascending exists.
+- [x] Price descending exists.
+- [x] Newest exists.
+
+## Results
+
+- [x] Result count is announced through `aria-live`.
+- [x] Shared Property Card is reused.
+- [x] Empty state exists.
+- [x] Active filter chips exist.
+- [x] One filter can be removed.
+- [x] All filters can be cleared.
+- [x] Pagination exists.
+- [x] Page number is clamped to valid range.
+
+## Mobile Drawer
+
+- [x] Drawer opens from Filters button.
+- [x] `aria-expanded` updates.
+- [x] Escape closes drawer.
+- [x] Backdrop closes drawer.
+- [x] Focus returns to prior control.
+- [x] Focus is contained while drawer is open.
+- [x] Desktop breakpoint clears mobile drawer state.
+
+## Pending Browser Acceptance
+
+- [ ] Verify filter drawer width on narrow phones.
+- [ ] Verify no horizontal overflow.
+- [ ] Verify 2-column tablet grid.
+- [ ] Verify desktop sidebar alignment.
+- [ ] Verify 3-column large-desktop grid.
+- [ ] Verify chips wrap gracefully.
+- [ ] Verify pagination layout on mobile.
+- [ ] Verify browser Back/Forward visually restores controls.
