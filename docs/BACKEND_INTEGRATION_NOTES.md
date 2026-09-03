@@ -275,3 +275,16 @@ When a frontend feature introduces a future backend dependency:
 3. Do not invent unnecessary backend architecture.
 4. Do not claim unavailable server behaviour exists.
 5. Update this document when the real backend contract is eventually defined.
+
+
+### Increment 7 Contact UI Status
+
+The Contact frontend is now implemented.
+
+Future connection point:
+
+```text
+POST /contact
+```
+
+The current frontend validates and prepares the message but explicitly does not claim delivery.

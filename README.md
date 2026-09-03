@@ -310,3 +310,26 @@ agent.html?id=agent-001
 
 Public active listing counts are derived from public property data, so Sold, Rented, Draft,
 and other management-only listings are not included.
+
+
+## Supporting Public Pages
+
+LarHub now includes completed public About and Contact interfaces.
+
+About covers:
+
+- Marketplace purpose
+- Discovery process
+- User groups
+- Platform principles
+- Current frontend-only project stage
+
+Contact includes:
+
+- General-enquiry guidance
+- Accessible client-side validation
+- Inline errors
+- First-invalid-field focus
+- Honest frontend-only result messaging
+
+The form does not claim a message was delivered because no backend is connected yet.

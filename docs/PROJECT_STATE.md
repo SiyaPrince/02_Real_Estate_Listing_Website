@@ -2,7 +2,7 @@
 
 ## Current Increment
 
-**Increment 6 — Agents**
+**Increment 7 — Supporting Public Pages**
 
 Status:
 
@@ -20,9 +20,9 @@ PROPERTY DATA FOUNDATION   COMPLETE
 HOME                       COMPLETE
 PROPERTIES                 COMPLETE
 PROPERTY DETAILS           COMPLETE
-AGENTS                     IMPLEMENTED
-SUPPORTING PUBLIC PAGES    NEXT
-AUTHENTICATION UI          NOT STARTED
+AGENTS                     COMPLETE
+SUPPORTING PUBLIC PAGES    IMPLEMENTED
+AUTHENTICATION UI          NEXT
 USER APPLICATION           NOT STARTED
 AGENT APPLICATION          NOT STARTED
 ADMIN APPLICATION          NOT STARTED
@@ -30,79 +30,55 @@ ADMIN APPLICATION          NOT STARTED
 
 ---
 
-## Increment 6 Completed
+## Increment 7 Completed
 
-### Agent Directory
-
-Implemented:
-
-- Public agent directory
-- Search by agent name
-- Search by agency
-- Search by area served
-- Query parameter state through `?q=`
-- Browser Back/Forward restoration
-- Dynamic result count
-- Empty state
-- Clear search
-- Shared Agent Card rendering
-
-### Public Listing Counts
-
-Agent cards now receive:
-
-```text
-activeListingCount
-```
-
-computed from:
-
-```text
-getPublicPropertiesByAgent()
-```
-
-The count therefore excludes:
-
-- Sold
-- Rented
-- Draft
-- Pending
-- Other management-only records
-
-### Agent Profile
-
-Dynamic route:
-
-```text
-agent.html?id=agent-001
-```
+### About
 
 Implemented:
 
-- Portrait
-- Name
-- Role
-- Agency
-- Areas served
-- Biography
-- Specialisations
-- Public active listing count
-- Phone
-- Email
-- Active public listings
-- Shared Property Card rendering
-- Unavailable profile state
+- About hero
+- Explicit meaningful image element
+- What LarHub does
+- Discover / Refine / Explore / Connect process
+- Property seeker / Agent / Admin audiences
+- Platform principles
+- Current frontend-only project-stage explanation
+- Marketplace CTA
 
-Only approved public agent profiles render.
+No fake awards, fake history, or fake market statistics were added.
+
+### Contact
+
+Implemented:
+
+- General-contact guidance
+- Property enquiry guidance
+- Agent enquiry guidance
+- General contact form
+- Name validation
+- Email validation
+- Subject validation
+- Message validation
+- First-invalid-field focus
+- Inline field errors
+- `aria-invalid`
+- Live form-status feedback
+- Explicit frontend-only delivery message
+
+The Contact form never claims that a message was delivered.
+
+### Shared Form Validation
+
+Activated:
+
+```text
+js/features/forms.js
+```
+
+with reusable error-setting, clearing, and invalid-field focus helpers.
 
 ---
 
 ## Next
 
-**Increment 7 — Supporting Public Pages**
-
-Planned:
-
-- About
-- Contact
-- Contact validation
+**Increment 8 — Authentication**

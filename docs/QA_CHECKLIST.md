@@ -544,3 +544,41 @@ Full visual/browser interaction QA remains intentionally deferred until implemen
 - [ ] Verify Agent Profile hero balance.
 - [ ] Verify sticky contact panel.
 - [ ] Verify active listing cards align correctly.
+
+
+# 11. Increment 7 — Supporting Public Pages QA
+
+## About
+
+- [x] About page has one H1.
+- [x] Meaningful About imagery uses explicit `<img>` markup.
+- [x] What LarHub Does section exists.
+- [x] Discover/Refine/Explore/Connect flow exists.
+- [x] Seeker/Agent/Admin audiences are represented.
+- [x] Platform principles are represented.
+- [x] No fake awards, history, or scale statistics are shown.
+- [x] Current frontend-only stage is stated truthfully.
+
+## Contact
+
+- [x] General-contact purpose is clear.
+- [x] Property-specific enquiry is redirected conceptually to Property Details.
+- [x] Agent-specific enquiry is redirected conceptually to Agent Profile.
+- [x] Name field is validated.
+- [x] Email field is validated.
+- [x] Subject is validated.
+- [x] Message is validated.
+- [x] Errors appear next to the relevant fields.
+- [x] Invalid fields use `aria-invalid`.
+- [x] Focus moves to first invalid field.
+- [x] Form result is announced with `aria-live`.
+- [x] Successful frontend validation does not claim backend delivery.
+
+## Pending Browser Acceptance
+
+- [ ] Verify About image balance on mobile/desktop.
+- [ ] Verify About grids stack cleanly.
+- [ ] Verify Contact form width on narrow mobile.
+- [ ] Verify sticky Contact form on desktop.
+- [ ] Verify visible error/focus states.
+- [ ] Verify long status messages wrap safely.

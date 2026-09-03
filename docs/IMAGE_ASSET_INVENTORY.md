@@ -152,3 +152,12 @@ Replacing the placeholder later requires only changing the image asset/source, n
 | PROPERTY-DETAIL-FALLBACK-004 | `property-detail-04.svg` | `assets/images/properties/` | Gallery test image 4 | PLACED |
 
 These exist to make the gallery/lightbox fully testable before final photography is introduced.
+
+
+## Increment 7 — About
+
+| Asset ID | Filename | Location | Purpose | Status |
+|---|---|---|---|---|
+| ABOUT-PLACEHOLDER-001 | `about-property-placeholder.svg` | `assets/images/about/` | Temporary About architectural visual | PLACED |
+
+The About page now has explicit image markup and can later swap in final photography without restructuring the page.
