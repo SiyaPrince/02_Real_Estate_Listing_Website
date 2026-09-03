@@ -81,3 +81,73 @@ export function searchPublicProperties(
     ? transform(publicProperties)
     : publicProperties;
 }
+
+
+/**
+ * Return similar public properties.
+ *
+ * Similarity is intentionally simple for the frontend demo:
+ * same city is preferred, then same property type.
+ *
+ * @param {object} property
+ * @param {number} [limit=3]
+ * @returns {object[]}
+ */
+export function getSimilarPublicProperties(
+  property,
+  limit = 3
+) {
+  if (!property) {
+    return [];
+  }
+
+  return getPublicProperties()
+    .filter(
+      (candidate) =>
+        candidate.id !== property.id
+    )
+    .map(
+      (candidate) => {
+        let score = 0;
+
+        if (
+          candidate.location?.city
+          === property.location?.city
+        ) {
+          score += 2;
+        }
+
+        if (
+          candidate.propertyType
+          === property.propertyType
+        ) {
+          score += 1;
+        }
+
+        if (
+          candidate.listingType
+          === property.listingType
+        ) {
+          score += 1;
+        }
+
+        return {
+          candidate,
+          score
+        };
+      }
+    )
+    .sort(
+      (a, b) =>
+        b.score - a.score
+        || new Date(
+          b.candidate.listedDate
+        ) - new Date(
+          a.candidate.listedDate
+        )
+    )
+    .slice(0, limit)
+    .map(
+      ({ candidate }) => candidate
+    );
+}

@@ -13,7 +13,13 @@ export const properties = [
     location: { suburb: "Rosebank", city: "Johannesburg", province: "Gauteng" },
     facts: { bedrooms: 3, bathrooms: 2, parking: 2, floorArea: 250, landArea: 480 },
     features: ["Swimming Pool", "Garden", "Solar", "Security"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    description: "A calm, contemporary family home with generous living areas, natural light, and a private garden designed for everyday comfort. The home combines practical family spaces with considered finishes, solar support, and a secure Rosebank location.",
+    images: [
+      "/assets/images/properties/property-detail-01.svg",
+      "/assets/images/properties/property-detail-02.svg",
+      "/assets/images/properties/property-detail-03.svg",
+      "/assets/images/properties/property-detail-04.svg"
+    ],
     agentId: "agent-001",
     publicStatus: "for-sale",
     lifecycleStatus: "published",
@@ -31,7 +37,12 @@ export const properties = [
     location: { suburb: "Sandton", city: "Johannesburg", province: "Gauteng" },
     facts: { bedrooms: 2, bathrooms: 2, parking: 1, floorArea: 118, landArea: null },
     features: ["Balcony", "Security", "Fibre", "Backup Power"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    description: "A well-positioned city apartment with open-plan living, skyline views, and easy access to Sandton business and lifestyle amenities. The apartment suits buyers looking for a low-maintenance urban home.",
+    images: [
+      "/assets/images/properties/property-detail-02.svg",
+      "/assets/images/properties/property-detail-03.svg",
+      "/assets/images/properties/property-detail-04.svg"
+    ],
     agentId: "agent-002",
     publicStatus: "new",
     lifecycleStatus: "published",
@@ -68,7 +79,12 @@ export const properties = [
     location: { suburb: "Green Point", city: "Cape Town", province: "Western Cape" },
     facts: { bedrooms: 2, bathrooms: 2, parking: 1, floorArea: 105, landArea: null },
     features: ["Furnished", "Balcony", "Security", "Fibre"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    description: "A furnished Green Point apartment offering a practical lock-up-and-go rental close to the Atlantic Seaboard. The layout includes bright living spaces, a private balcony, and secure parking.",
+    images: [
+      "/assets/images/properties/property-detail-03.svg",
+      "/assets/images/properties/property-detail-04.svg",
+      "/assets/images/properties/property-detail-01.svg"
+    ],
     agentId: "agent-004",
     publicStatus: "to-rent",
     lifecycleStatus: "published",
@@ -86,7 +102,12 @@ export const properties = [
     location: { suburb: "Waterkloof", city: "Pretoria", province: "Gauteng" },
     facts: { bedrooms: 4, bathrooms: 3, parking: 3, floorArea: 380, landArea: 980 },
     features: ["Swimming Pool", "Garden", "Solar", "Double Garage"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    description: "A substantial Waterkloof family home set on a generous stand with multiple living areas, landscaped outdoor space, and strong energy resilience through solar support.",
+    images: [
+      "/assets/images/properties/property-detail-04.svg",
+      "/assets/images/properties/property-detail-01.svg",
+      "/assets/images/properties/property-detail-02.svg"
+    ],
     agentId: "agent-005",
     publicStatus: "for-sale",
     lifecycleStatus: "published",

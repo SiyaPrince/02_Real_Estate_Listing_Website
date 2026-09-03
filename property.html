@@ -2,31 +2,166 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
+
   <meta
     name="description"
-    content="LarHub real estate listing platform."
+    content="View LarHub property details, key facts, gallery, agent information, and enquiry options."
   >
 
   <title>Property Details | LarHub</title>
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/pages/property-details.css">
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/pages/property-details.css"
+  >
 </head>
 
 <body class="page">
   <header data-public-header></header>
 
   <main id="main-content">
-    <h1>Property Details</h1>
+    <div
+      class="container property-page"
+      data-property-page
+    >
+      <nav
+        class="property-breadcrumb text-small"
+        aria-label="Breadcrumb"
+      >
+        <a href="/index.html">
+          Home
+        </a>
+
+        <span aria-hidden="true">
+          /
+        </span>
+
+        <a href="/properties.html">
+          Properties
+        </a>
+
+        <span aria-hidden="true">
+          /
+        </span>
+
+        <span data-breadcrumb-current>
+          Property
+        </span>
+      </nav>
+
+      <div
+        class="property-loading"
+        data-property-loading
+      >
+        Loading property details…
+      </div>
+
+      <section
+        class="property-not-found empty-state"
+        data-property-not-found
+        hidden
+      >
+        <p class="text-eyebrow">
+          Property unavailable
+        </p>
+
+        <h1>
+          We couldn't find this property.
+        </h1>
+
+        <p>
+          The property may no longer be available,
+          or the link may be incorrect.
+        </p>
+
+        <a
+          class="button button--secondary"
+          href="/properties.html"
+        >
+          Browse Properties
+        </a>
+      </section>
+
+      <div
+        data-property-content
+        hidden
+      ></div>
+    </div>
+
+    <div
+      class="property-lightbox"
+      data-gallery-lightbox
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Property image gallery"
+    >
+      <div class="property-lightbox__panel">
+        <div class="property-lightbox__topbar">
+          <p
+            class="text-small"
+            data-lightbox-count
+          ></p>
+
+          <button
+            class="icon-button"
+            type="button"
+            aria-label="Close gallery"
+            data-lightbox-close
+          >
+            <span aria-hidden="true">
+              ×
+            </span>
+          </button>
+        </div>
+
+        <img
+          class="property-lightbox__image"
+          data-lightbox-image
+          alt=""
+        >
+
+        <div class="property-lightbox__actions">
+          <button
+            class="button button--secondary"
+            type="button"
+            data-lightbox-prev
+          >
+            Previous
+          </button>
+
+          <button
+            class="button button--secondary"
+            type="button"
+            data-lightbox-next
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer data-public-footer></footer>
 
-  <script type="module" src="/js/main.js"></script>
-  <script type="module" src="/js/pages/property-details.js"></script>
+  <script
+    type="module"
+    src="/js/main.js"
+  ></script>
+
+  <script
+    type="module"
+    src="/js/pages/property-details.js"
+  ></script>
 </body>
 </html>
