@@ -351,3 +351,28 @@ password reset delivery, or provider OAuth succeeded.
 
 A separate Demo Access mode allows User, Agent, and Admin application areas to be previewed
 without pretending a real authenticated session exists.
+
+
+## User Application
+
+LarHub now includes a complete frontend User workspace:
+
+- Overview
+- Saved Properties
+- Recently Viewed
+- Enquiries
+- Profile
+
+The workspace reuses the shared Property Card and Property Service and uses browser-local
+demonstration persistence.
+
+Important local keys:
+
+```text
+larhub.savedProperties
+larhub.recentlyViewed
+larhub.demoEnquiries
+larhub.demoUserProfile
+```
+
+Local enquiry/viewing records are explicitly not delivered or scheduled.

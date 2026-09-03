@@ -644,3 +644,68 @@ Full visual/browser interaction QA remains intentionally deferred until implemen
 - [ ] Verify password strength colors/text.
 - [ ] Verify inline error messages.
 - [ ] Verify Demo Access routes correctly.
+
+
+# 13. Increment 9 — User Application QA
+
+## Application Shell
+
+- [x] User sidebar exists.
+- [x] Mobile application navigation exists.
+- [x] Mobile backdrop exists.
+- [x] Escape closes mobile navigation.
+- [x] Active page uses `aria-current`.
+- [x] Public marketplace link exists.
+- [x] Demo role state is visible.
+- [x] Exit Demo clears demo session.
+
+## Overview
+
+- [x] Saved count is data-driven.
+- [x] Recent count is data-driven.
+- [x] Demo enquiry count is data-driven.
+- [x] Recently Viewed preview reuses Property Card.
+- [x] Missing Demo Access is explained truthfully.
+
+## Saved Properties
+
+- [x] Saved IDs come from `larhub.savedProperties`.
+- [x] IDs resolve through Property Service.
+- [x] Management-only properties cannot render.
+- [x] Empty state exists.
+- [x] Shared Property Card is reused.
+
+## Recently Viewed
+
+- [x] Property Details records valid public property views.
+- [x] Recently Viewed stores IDs only.
+- [x] History is capped.
+- [x] Clear history exists.
+- [x] Empty state exists.
+- [x] Shared Property Card is reused.
+
+## Enquiries
+
+- [x] Valid Property Details forms create local demo records.
+- [x] Enquiries page reads local demo records.
+- [x] Viewing request records are distinguishable.
+- [x] Records are explicitly marked Local Demo.
+- [x] UI never claims an enquiry was sent.
+- [x] UI never claims a viewing was scheduled.
+- [x] Clear demo records exists.
+
+## Profile
+
+- [x] Demo profile loads locally.
+- [x] Demo profile saves locally.
+- [x] Required field validation remains.
+- [x] UI explicitly states no server account was updated.
+
+## Pending Browser Acceptance
+
+- [ ] Verify sidebar/mobile drawer layout.
+- [ ] Verify dashboard cards on mobile/tablet/desktop.
+- [ ] Verify saved state updates after Property Details interactions.
+- [ ] Verify recently viewed ordering.
+- [ ] Verify local enquiry records after submitting property forms.
+- [ ] Verify profile state survives refresh.

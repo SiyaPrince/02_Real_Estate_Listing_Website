@@ -311,3 +311,34 @@ Demo Access is separate from real authentication and uses:
 ```text
 larhub.demoSession
 ```
+
+
+### Increment 9 User Application Status
+
+The User workspace is now implemented with browser-local demonstration state.
+
+Current local keys:
+
+```text
+larhub.savedProperties
+larhub.recentlyViewed
+larhub.demoEnquiries
+larhub.demoUserProfile
+larhub.demoSession
+```
+
+Future backend replacements:
+
+```text
+GET /me
+PATCH /me
+GET /me/saved-properties
+POST /me/saved-properties/:propertyId
+DELETE /me/saved-properties/:propertyId
+GET /me/recently-viewed
+GET /me/enquiries
+POST /enquiries
+```
+
+The frontend service/component boundaries should remain while persistence moves from local demo
+storage to authenticated backend operations.

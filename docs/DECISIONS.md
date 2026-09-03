@@ -300,3 +300,27 @@ moderationStatus
 
 This allows Sold/Rented/Draft records to remain available for future Agent/Admin interfaces
 without appearing in public marketplace discovery.
+
+
+## DEC-014 — Demo User State
+
+**Date:** 2026-09-03  
+**Status:** LOCKED
+
+### Decision
+
+The frontend-only User Application may persist demonstration state in browser storage.
+
+Keys:
+
+```text
+larhub.savedProperties
+larhub.recentlyViewed
+larhub.demoEnquiries
+larhub.demoUserProfile
+```
+
+### Constraint
+
+Browser-local records must never be presented as server-backed account data, delivered enquiries,
+or scheduled viewings.

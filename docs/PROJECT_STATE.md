@@ -2,7 +2,7 @@
 
 ## Current Increment
 
-**Increment 8 — Authentication**
+**Increment 9 — User Application**
 
 Status:
 
@@ -15,116 +15,133 @@ Status:
 ```text
 PLANNING / DESIGN          COMPLETE
 FOUNDATION                 COMPLETE + LOCKED
-PUBLIC SHELL               COMPLETE
-PROPERTY DATA FOUNDATION   COMPLETE
-HOME                       COMPLETE
-PROPERTIES                 COMPLETE
-PROPERTY DETAILS           COMPLETE
-AGENTS                     COMPLETE
-SUPPORTING PUBLIC PAGES    COMPLETE
-AUTHENTICATION UI          IMPLEMENTED
-USER APPLICATION           NEXT
-AGENT APPLICATION          NOT STARTED
+PUBLIC EXPERIENCE          COMPLETE
+AUTHENTICATION UI          COMPLETE
+USER APPLICATION           IMPLEMENTED
+AGENT APPLICATION          NEXT
 ADMIN APPLICATION          NOT STARTED
+FINAL QA / CONSOLIDATION   NOT STARTED
 ```
 
 ---
 
-## Increment 8 Completed
+## Increment 9 Completed
 
-### Login
+### Shared Application Shell
 
-Implemented:
-
-- Email
-- Password
-- Show/Hide password
-- Forgot Password link
-- Google
-- Facebook
-- Apple
-- Validation
-- Frontend-only authentication status
-
-No login is claimed to have succeeded.
-
-### Registration
-
-Implemented:
-
-- Full name
-- Email
-- Password
-- Confirm Password
-- Password-strength feedback
-- Demo acknowledgement checkbox
-- Google
-- Facebook
-- Apple
-- Validation
-- Frontend-only result messaging
-
-No account is created.
-
-### Forgot Password
-
-Implemented:
-
-- Email validation
-- Reset-request UI
-- Frontend-only result messaging
-
-No email is sent.
-
-### Provider Authentication
-
-UI exists for:
+Activated:
 
 ```text
-Google
-Facebook
-Apple
+js/components/app-navigation.js
+css/components/dashboard.css
 ```
 
-All provider buttons explicitly report that the provider is not connected.
+The shell supports:
+
+- Responsive application sidebar
+- Mobile application menu
+- Backdrop
+- Escape-to-close
+- Active navigation state
+- Public marketplace link
+- Demo role badge
+- Exit Demo action
+
+The component is structured for reuse in Agent/Admin increments.
+
+### User Overview
+
+Implemented:
+
+- Saved Properties count
+- Recently Viewed count
+- Local Demo Enquiries count
+- Recently Viewed preview
+- Demo Access notice when User demo role is not active
+
+### Saved Properties
+
+Reads:
+
+```text
+larhub.savedProperties
+```
+
+and resolves IDs through the Property Service.
+
+Only currently public properties render.
+
+### Recently Viewed
+
+Activated:
+
+```text
+larhub.recentlyViewed
+```
+
+Property Details records a property when a valid public detail page is opened.
+
+History:
+
+- is browser-local
+- stores property IDs only
+- is capped at 12 IDs
+- can be cleared
+
+### Enquiries
+
+Activated local demonstration records:
+
+```text
+larhub.demoEnquiries
+```
+
+Valid Property Details enquiry/viewing forms now save a local demo record.
+
+Important:
+
+- no enquiry is sent
+- no viewing is scheduled
+- records exist only in the current browser
+- the UI says this explicitly
+
+### Profile
+
+Activated local demonstration profile:
+
+```text
+larhub.demoUserProfile
+```
+
+Fields:
+
+- Name
+- Email
+- Phone
+- Preferred location
+- Buying/Renting preference
+
+No server account is updated.
 
 ### Demo Access
 
-Login includes an explicitly labeled Demo Access section.
-
-Roles:
-
-```text
-User
-Agent
-Admin
-```
-
-Demo Access:
-
-- is not authentication
-- stores only a frontend demo role/session marker
-- uses `localStorage`
-- routes to the relevant application area
-
-Storage key:
+The User workspace recognizes:
 
 ```text
 larhub.demoSession
 ```
 
-### Architecture
-
-Activated:
+with:
 
 ```text
-js/services/auth-service.js
-js/features/auth.js
-js/pages/auth.js
+role: "user"
 ```
+
+The UI remains viewable without Demo Access because this is a frontend portfolio build,
+but clearly warns that User Demo Access is not active.
 
 ---
 
 ## Next
 
-**Increment 9 — User Application**
+**Increment 10 — Agent Application**
