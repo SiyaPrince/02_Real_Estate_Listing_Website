@@ -1,6 +1,7 @@
 /**
  * LarHub Agent Service
  */
+
 import {
   agents
 } from "../data/agents.js";
@@ -9,12 +10,36 @@ import {
   getPublicPropertiesByAgent
 } from "./property-service.js";
 
-export function getPublicAgents() {
-  return agents.filter(
-    (agent) => agent.accountStatus === "approved"
-  );
+function withPublicListingCount(agent) {
+  return {
+    ...agent,
+    activeListingCount:
+      getPublicPropertiesByAgent(
+        agent.id
+      ).length
+  };
 }
 
+/**
+ * Return approved public agents with active listing counts.
+ *
+ * @returns {object[]}
+ */
+export function getPublicAgents() {
+  return agents
+    .filter(
+      (agent) =>
+        agent.accountStatus === "approved"
+    )
+    .map(withPublicListingCount);
+}
+
+/**
+ * Return one agent by ID.
+ *
+ * @param {string} id
+ * @returns {object|null}
+ */
 export function getAgentById(id) {
   return (
     agents.find(
@@ -23,16 +48,67 @@ export function getAgentById(id) {
   );
 }
 
+/**
+ * Return an approved public agent profile.
+ *
+ * @param {string} id
+ * @returns {object|null}
+ */
 export function getPublicAgentProfile(id) {
-  const agent = getAgentById(id);
+  const agent =
+    getAgentById(id);
 
-  if (!agent) {
+  if (
+    !agent
+    || agent.accountStatus
+      !== "approved"
+  ) {
     return null;
   }
 
-  return {
-    ...agent,
-    activeListingCount:
-      getPublicPropertiesByAgent(id).length
-  };
+  return withPublicListingCount(agent);
+}
+
+/**
+ * Search approved public agents.
+ *
+ * Search matches:
+ * - name
+ * - agency
+ * - areas served
+ *
+ * @param {string} query
+ * @returns {object[]}
+ */
+export function searchPublicAgents(
+  query = ""
+) {
+  const normalized =
+    String(query)
+      .trim()
+      .toLowerCase();
+
+  const publicAgents =
+    getPublicAgents();
+
+  if (!normalized) {
+    return publicAgents;
+  }
+
+  return publicAgents.filter(
+    (agent) => {
+      const haystack = [
+        agent.name,
+        agent.agency,
+        ...(agent.areasServed ?? [])
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+      return haystack.includes(
+        normalized
+      );
+    }
+  );
 }
