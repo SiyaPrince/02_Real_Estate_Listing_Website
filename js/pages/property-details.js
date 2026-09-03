@@ -38,6 +38,14 @@ import {
   setPropertySaved
 } from "../features/saved-properties.js";
 
+import {
+  recordRecentlyViewed
+} from "../features/recently-viewed.js";
+
+import {
+  createDemoEnquiry
+} from "../services/enquiry-service.js";
+
 const PUBLIC_STATUS_LABELS = {
   "for-sale": "For Sale",
   "to-rent": "To Rent",
@@ -736,7 +744,7 @@ function renderProperty(property) {
 
   initSaveButton(property.id);
   initCopyLink();
-  initDemoForms();
+  initDemoForms(property);
 }
 
 function initSaveButton(
@@ -816,7 +824,8 @@ function initCopyLink() {
 function bindDemoForm(
   selector,
   statusSelector,
-  message
+  property,
+  type
 ) {
   const form =
     select(selector);
@@ -845,22 +854,54 @@ function bindDemoForm(
         return;
       }
 
-      status.textContent = message;
+      const formData =
+        new FormData(form);
+
+      createDemoEnquiry({
+        type,
+        propertyId:
+          property.id,
+        propertyReference:
+          property.reference,
+        propertyTitle:
+          property.title,
+        name:
+          formData.get("name"),
+        email:
+          formData.get("email"),
+        phone:
+          formData.get("phone"),
+        preferredDate:
+          formData.get("date"),
+        preferredTime:
+          formData.get("time"),
+        message:
+          formData.get("message")
+      });
+
+      status.textContent =
+        type === "viewing"
+          ? "Your viewing request was saved locally for Demo Access. It has not been scheduled or sent."
+          : "Your enquiry was saved locally for Demo Access. It has not been sent.";
     }
   );
 }
 
-function initDemoForms() {
+function initDemoForms(
+  property
+) {
   bindDemoForm(
     "[data-property-enquiry]",
     "[data-enquiry-status]",
-    "Your enquiry form is complete. Message delivery is not connected in this frontend build."
+    property,
+    "enquiry"
   );
 
   bindDemoForm(
     "[data-viewing-request]",
     "[data-viewing-status]",
-    "Your viewing request form is complete. Scheduling is not connected in this frontend build."
+    property,
+    "viewing"
   );
 }
 
@@ -909,6 +950,10 @@ function initPropertyDetails() {
   )?.setAttribute(
     "hidden",
     ""
+  );
+
+  recordRecentlyViewed(
+    property.id
   );
 
   renderProperty(property);
