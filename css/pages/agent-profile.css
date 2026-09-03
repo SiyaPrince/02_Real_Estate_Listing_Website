@@ -1,6 +1,202 @@
 /*
- * LarHub — pages / agent profile
- *
- * Placeholder created in Increment 0.1.
- * Implementation belongs to a later increment.
+ * LarHub Public Agent Profile
  */
+
+.agent-profile-page {
+  padding-block:
+    var(--space-6)
+    var(--section-space-desktop);
+}
+
+.agent-profile-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+
+  margin-bottom: var(--space-6);
+
+  color: var(--color-text-muted);
+}
+
+.agent-profile-breadcrumb a {
+  color: var(--color-text-secondary);
+}
+
+.agent-profile-loading {
+  padding-block: var(--space-8);
+
+  color: var(--color-text-secondary);
+}
+
+.agent-profile-hero {
+  display: grid;
+  gap: var(--space-6);
+
+  padding-bottom: var(--space-7);
+
+  border-bottom:
+    var(--border-width)
+    solid
+    var(--color-border);
+}
+
+.agent-profile-hero__media {
+  width: min(100%, 22rem);
+
+  overflow: hidden;
+
+  border-radius: var(--radius-lg);
+}
+
+.agent-profile-hero__media img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.agent-profile-hero__content {
+  display: grid;
+  align-content: center;
+  gap: var(--space-3);
+}
+
+.agent-profile-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+
+  margin-top: var(--space-3);
+}
+
+.agent-profile-layout {
+  display: grid;
+  gap: var(--space-7);
+
+  padding-block: var(--space-7);
+}
+
+.agent-profile-main {
+  min-width: 0;
+}
+
+.agent-profile-section {
+  display: grid;
+  gap: var(--space-4);
+
+  padding-block: var(--space-6);
+
+  border-bottom:
+    var(--border-width)
+    solid
+    var(--color-border);
+}
+
+.agent-profile-section:first-child {
+  padding-top: 0;
+}
+
+.agent-profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+
+  list-style: none;
+}
+
+.agent-profile-tags li {
+  padding:
+    var(--space-2)
+    var(--space-3);
+
+  color: var(--color-brand);
+  background: var(--color-brand-soft);
+
+  font-size: var(--font-size-small);
+
+  border-radius: var(--radius-pill);
+}
+
+.agent-profile-contact {
+  display: grid;
+  gap: var(--space-4);
+
+  padding: var(--space-5);
+
+  background: var(--color-surface);
+
+  border:
+    var(--border-width)
+    solid
+    var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.agent-profile-contact dl {
+  display: grid;
+  gap: var(--space-4);
+
+  margin: 0;
+}
+
+.agent-profile-contact dl > div {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.agent-profile-contact dt {
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-small);
+}
+
+.agent-profile-contact dd {
+  color: var(--color-text);
+}
+
+.agent-profile-listings {
+  display: grid;
+  gap: var(--space-6);
+
+  padding-top: var(--space-7);
+
+  border-top:
+    var(--border-width)
+    solid
+    var(--color-border);
+}
+
+.agent-profile-listings__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (min-width: 48rem) {
+  .agent-profile-hero {
+    grid-template-columns:
+      minmax(14rem, 0.55fr)
+      minmax(0, 1.45fr);
+    align-items: center;
+  }
+
+  .agent-profile-listings__heading {
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 64rem) {
+  .agent-profile-layout {
+    grid-template-columns:
+      minmax(0, 1.55fr)
+      minmax(18rem, 0.65fr);
+    align-items: start;
+  }
+
+  .agent-profile-contact {
+    position: sticky;
+    top: 6rem;
+  }
+}
