@@ -852,3 +852,79 @@ Full visual/browser interaction QA remains intentionally deferred until implemen
 - [ ] Verify Agent cards at mobile/tablet widths.
 - [ ] Verify Admin settings persistence.
 - [ ] Verify reset behavior.
+
+
+# 16. Increment 12 — Final QA and Consolidation
+
+## Static Project Audit
+
+- [x] Local HTML href/src targets resolve.
+- [x] Relative JavaScript module imports resolve.
+- [x] CSS imports resolve.
+- [x] Every page has viewport metadata.
+- [x] Every page has a document title.
+- [x] Every page has a main-content target.
+- [x] Static H1 structure passes.
+- [x] Static HTML IDs are unique.
+- [x] Static image elements have alt attributes.
+- [x] Module script targets exist.
+- [x] Public shared header/footer mounts are consistent.
+- [x] User/Agent/Admin workspace-shell mounts are consistent.
+- [x] Public property visibility boundary remains intact.
+- [x] Sold/Rented management states remain available outside public discovery.
+- [x] Authentication/OAuth UI remains explicit about missing backend/providers.
+- [x] All documented browser-local demo storage keys exist.
+- [x] Referenced image assets exist.
+- [x] No duplicate `main.css` component imports were detected.
+- [x] JavaScript files pass Node syntax validation.
+- [x] Gross JavaScript/CSS brace balance passes.
+
+## Consolidation
+
+- [x] Project State marked frontend-complete.
+- [x] Final QA Report created.
+- [x] Release Notes created.
+- [x] README updated with consolidated status.
+- [x] Full consolidated ZIP generated.
+
+## Remaining Manual Browser QA
+
+- [ ] Desktop visual pass.
+- [ ] Tablet visual pass.
+- [ ] Narrow-mobile visual pass.
+- [ ] Keyboard-only navigation pass.
+- [ ] Gallery/lightbox manual pass.
+- [ ] Properties filter/pagination manual pass.
+- [ ] Browser Back/Forward state pass.
+- [ ] User local-state persistence pass.
+- [ ] Agent local-management-state pass.
+- [ ] Admin local-moderation-state pass.
+- [ ] Final imagery replacement/polish pass.
+
+
+# 17. Phase 13.1 — Full Imagery Audit
+
+- [x] Home hero placeholder identified.
+- [x] About placeholder identified.
+- [x] Authentication placeholder identified.
+- [x] Generic property fallback identified.
+- [x] Gallery-test SVG reuse identified.
+- [x] Shared agent portrait placeholder identified.
+- [x] All property-driven image surfaces mapped.
+- [x] All agent-driven image surfaces mapped.
+- [x] Pages that should remain image-light identified.
+- [x] Final property naming convention defined.
+- [x] Final agent naming convention defined.
+- [x] Source resolution/aspect standards defined.
+- [x] Technical fallback retention policy defined.
+- [x] Temporary placeholder deletion policy defined.
+- [x] Full final asset count established.
+
+## Next Visual QA
+
+- [ ] 13.2 Home imagery replacement.
+- [ ] 13.3 Property imagery replacement.
+- [ ] 13.4 Agent portrait replacement.
+- [ ] 13.5 About/Auth imagery replacement.
+- [ ] 13.6 UI visual polish.
+- [ ] 13.7 Final imagery integration audit.

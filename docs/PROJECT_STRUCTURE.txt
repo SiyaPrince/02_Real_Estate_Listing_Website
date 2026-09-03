@@ -1,46 +1,54 @@
-larhub/
-├── admin
-│   ├── agent-review.html
+LarHub/
+├── admin/
+│   ├── activity.html
 │   ├── agents.html
 │   ├── index.html
-│   ├── listing-review.html
-│   ├── listings.html
-│   ├── moderation.html
+│   ├── properties.html
 │   ├── settings.html
 │   └── users.html
-├── agent
+├── agent/
 │   ├── enquiries.html
 │   ├── index.html
 │   ├── listings.html
 │   ├── performance.html
 │   ├── profile.html
 │   └── property-form.html
-├── assets
-│   ├── icons
+├── assets/
+│   ├── icons/
 │   │   └── .gitkeep
-│   └── images
-│       ├── about
-│       │   └── .gitkeep
-│       ├── agents
-│       │   └── .gitkeep
-│       ├── auth
-│       │   └── .gitkeep
-│       ├── home
-│       │   └── .gitkeep
-│       └── properties
-│           └── .gitkeep
-├── auth
+│   └── images/
+│       ├── about/
+│       │   ├── .gitkeep
+│       │   └── about-property-placeholder.svg
+│       ├── agents/
+│       │   ├── .gitkeep
+│       │   └── agent-placeholder.svg
+│       ├── auth/
+│       │   ├── .gitkeep
+│       │   └── auth-property-placeholder.svg
+│       ├── home/
+│       │   ├── .gitkeep
+│       │   └── home-hero-placeholder.svg
+│       └── properties/
+│           ├── .gitkeep
+│           ├── property-detail-01.svg
+│           ├── property-detail-02.svg
+│           ├── property-detail-03.svg
+│           ├── property-detail-04.svg
+│           └── property-placeholder.svg
+├── auth/
 │   ├── forgot-password.html
 │   ├── login.html
 │   └── register.html
-├── css
-│   ├── components
+├── css/
+│   ├── components/
 │   │   ├── agent-card.css
 │   │   ├── buttons.css
 │   │   ├── dashboard.css
 │   │   ├── dialogs.css
 │   │   ├── empty-state.css
 │   │   ├── filters.css
+│   │   ├── footer.css
 │   │   ├── forms.css
 │   │   ├── gallery.css
 │   │   ├── navigation.css
@@ -49,8 +57,9 @@ larhub/
 │   │   ├── search.css
 │   │   ├── status.css
 │   │   └── tables.css
-│   ├── pages
+│   ├── pages/
 │   │   ├── about.css
+│   │   ├── admin-dashboard.css
 │   │   ├── admin.css
 │   │   ├── agent-dashboard.css
 │   │   ├── agent-profile.css
@@ -67,13 +76,19 @@ larhub/
 │   ├── tokens.css
 │   ├── typography.css
 │   └── utilities.css
-├── docs
+├── docs/
 │   ├── BACKEND_INTEGRATION_NOTES.md
+│   ├── DECISIONS.md
+│   ├── FINAL_QA_REPORT.md
+│   ├── FOUNDATION_LOCK.md
+│   ├── FOUNDATION_VERIFICATION.md
 │   ├── IMAGE_ASSET_INVENTORY.md
 │   ├── PROJECT_STATE.md
-│   └── QA_CHECKLIST.md
-├── js
-│   ├── components
+│   ├── PROJECT_STRUCTURE.txt
+│   ├── QA_CHECKLIST.md
+│   └── RELEASE_NOTES.md
+├── js/
+│   ├── components/
 │   │   ├── agent-card.js
 │   │   ├── app-navigation.js
 │   │   ├── pagination.js
@@ -81,12 +96,12 @@ larhub/
 │   │   ├── public-footer.js
 │   │   ├── public-header.js
 │   │   └── status-badge.js
-│   ├── data
+│   ├── data/
 │   │   ├── agents.js
 │   │   ├── enquiries.js
 │   │   ├── properties.js
 │   │   └── users.js
-│   ├── features
+│   ├── features/
 │   │   ├── auth.js
 │   │   ├── dialogs.js
 │   │   ├── forms.js
@@ -99,30 +114,36 @@ larhub/
 │   │   ├── property-sort.js
 │   │   ├── recently-viewed.js
 │   │   └── saved-properties.js
-│   ├── pages
+│   ├── pages/
 │   │   ├── admin-dashboard.js
 │   │   ├── agent-dashboard.js
 │   │   ├── agent-profile.js
 │   │   ├── agents.js
 │   │   ├── auth.js
+│   │   ├── contact.js
 │   │   ├── home.js
 │   │   ├── properties.js
 │   │   ├── property-details.js
 │   │   └── user-dashboard.js
-│   ├── services
+│   ├── services/
+│   │   ├── admin-activity-service.js
+│   │   ├── admin-service.js
+│   │   ├── agent-listing-service.js
+│   │   ├── agent-profile-service.js
 │   │   ├── agent-service.js
 │   │   ├── auth-service.js
 │   │   ├── enquiry-service.js
+│   │   ├── profile-service.js
 │   │   ├── property-service.js
 │   │   └── storage-service.js
-│   ├── utils
+│   ├── utils/
 │   │   ├── currency.js
 │   │   ├── dates.js
 │   │   ├── dom.js
 │   │   ├── url.js
 │   │   └── validation.js
 │   └── main.js
-├── user
+├── user/
 │   ├── enquiries.html
 │   ├── index.html
 │   ├── profile.html

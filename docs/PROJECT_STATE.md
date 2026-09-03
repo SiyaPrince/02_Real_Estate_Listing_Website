@@ -1,16 +1,18 @@
 # LarHub — Project State
 
-## Current Increment
+## Current Phase
 
-**Increment 11 — Admin Application**
+**Phase 13 — Visual Polish & Final Imagery**
 
-Status:
+### Current Increment
 
-**COMPLETE — pending browser acceptance**
+**13.1 — Full Imagery Audit**
+
+Status: **COMPLETE**
 
 ---
 
-## Current Project Phase
+## Frontend Functional State
 
 ```text
 PLANNING / DESIGN          COMPLETE
@@ -19,139 +21,45 @@ PUBLIC EXPERIENCE          COMPLETE
 AUTHENTICATION UI          COMPLETE
 USER APPLICATION           COMPLETE
 AGENT APPLICATION          COMPLETE
-ADMIN APPLICATION          IMPLEMENTED
-FINAL QA / CONSOLIDATION   NEXT
+ADMIN APPLICATION          COMPLETE
+STATIC QA                  PASS
+FUNCTIONAL CONSOLIDATION   COMPLETE
 ```
 
----
-
-## Increment 11 Completed
-
-### Admin Application Shell
-
-Admin navigation is now active:
+## Visual Polish State
 
 ```text
-Overview
-Properties
-Agents
-Users
-Activity
-Settings
+13.1 FULL IMAGERY AUDIT        COMPLETE
+13.2 HOME IMAGERY              NEXT
+13.3 PROPERTY IMAGERY          NOT STARTED
+13.4 AGENT IMAGERY             NOT STARTED
+13.5 ABOUT + AUTH IMAGERY      NOT STARTED
+13.6 UI VISUAL POLISH          NOT STARTED
+13.7 IMAGE INTEGRATION AUDIT   NOT STARTED
 ```
 
-Admin Demo Access uses:
+## 13.1 Findings
+
+- Current image placement architecture is correct.
+- Home, About, and Authentication use explicit image elements but still reference placeholder SVGs.
+- All six seeded agents use one shared portrait placeholder.
+- 11 of 15 properties directly use the generic property placeholder.
+- 4 properties reuse gallery-test SVGs that are not listing-specific photography.
+- Shared Property Card / Agent Card architecture means User, Agent, and Admin image surfaces will automatically improve when the source data is updated.
+- Contact and operational dashboard pages do not require decorative standalone imagery.
+
+## Final Visual Asset Plan
 
 ```text
-larhub.demoSession
-role: "admin"
+60 property images
+6 agent portraits
+3 editorial site images
+-----------------------
+69 final visual assets
 ```
 
-### Overview
-
-Data-driven summary:
-
-- Total properties
-- Approved properties
-- Pending properties
-- Rejected properties
-- Approved agents
-- Active users
-- Demo enquiries
-- Suspended accounts
-
-### Property Moderation
-
-Implemented:
-
-- All property records
-- Moderation filter
-- Approved
-- Pending Review
-- Rejected
-- Browser-local moderation override
-
-Storage:
-
-```text
-larhub.demoAdminPropertyState
-```
-
-No static public property record is mutated.
-
-### Agent Administration
-
-Implemented:
-
-- Public agent list
-- Approved state
-- Suspended state
-- Browser-local account override
-
-Storage:
-
-```text
-larhub.demoAdminAgentState
-```
-
-### User Administration
-
-Implemented explicit demo user records with:
-
-- Active
-- Suspended
-
-Storage:
-
-```text
-larhub.demoAdminUsers
-```
-
-These are not real LarHub user accounts.
-
-### Activity
-
-Only honest computed marketplace values are shown:
-
-- Pending properties
-- Rejected properties
-- Suspended agents
-- Suspended users
-- Total properties
-- Approved agents
-- Active users
-- Demo enquiries
-
-No fake:
-
-- traffic
-- growth
-- revenue
-- conversion
-- impressions
-
-analytics are generated.
-
-### Settings
-
-Browser-local Admin settings:
-
-- Marketplace name
-- Support email
-- Demo registration UI
-- Agent approval requirement
-- Listing approval requirement
-
-Storage:
-
-```text
-larhub.demoAdminSettings
-```
-
-Reset Admin Demo State is included.
-
----
+Technical fallback SVGs remain outside this count.
 
 ## Next
 
-**Increment 12 — Final QA and Consolidation**
+**13.2 — Home Imagery**

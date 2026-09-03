@@ -2,171 +2,75 @@
 
 ## Purpose
 
-Every meaningful content image planned for LarHub should be recorded here before or when it is
-implemented.
+This inventory is the source of truth for LarHub meaningful imagery and technical image fallbacks.
 
-This avoids the problem of planning imagery conceptually but failing to create explicit image
-placement in the markup.
+For the full visual rationale and property-by-property subject plan, see `docs/IMAGERY_AUDIT.md`.
 
----
-
-## Rules
-
-For each meaningful image, record:
-
-- Asset ID
-- Filename
-- Directory
-- Page/component
-- Purpose
-- Subject
-- Recommended aspect ratio
-- Semantic status
-- Alt-text requirement
-- Loading strategy
-- Current implementation status
-
-Meaningful content imagery should use explicit `<img>` elements.
-
-CSS background images should be reserved for genuinely decorative imagery.
-
----
-
-## Status Values
-
-Use:
+## Final Imagery Standard
 
 ```text
-PLANNED
-CREATED
-PLACED
-VERIFIED
-REPLACED
-REMOVED
+Property images   4:3 · 1600×1200 · JPG
+Agent portraits   1:1 · 1000×1000 · JPG
+Home hero         4:3 · 1800×1350 · JPG
+About image       4:3 · 1600×1200 · JPG
+Auth image        4:5 · 1600×2000 · JPG
 ```
 
----
+## Editorial Assets
 
-## Current Inventory
+| Asset ID | Final filename | Directory | Placement | Ratio | Current state | Final state |
+|---|---|---|---|---|---|---|
+| HOME-001 | `home-hero.jpg` | `assets/images/home/` | Home hero | 4:3 | `home-hero-placeholder.svg` is placed | PLANNED |
+| ABOUT-001 | `about-property.jpg` | `assets/images/about/` | About hero | 4:3 | `about-property-placeholder.svg` is placed | PLANNED |
+| AUTH-001 | `auth-property.jpg` | `assets/images/auth/` | Login/Register/Forgot desktop visual | 4:5 | `auth-property-placeholder.svg` is placed | PLANNED |
 
-| Asset ID | Filename | Location | Purpose | Ratio | Semantic | Alt | Status |
-|---|---|---|---|---|---|---|---|
-| HOME-001 | `home-hero.jpg` | `assets/images/home/` | Home hero property image | 4:3 / responsive | Meaningful | Required | PLANNED |
-| AUTH-001 | `auth-property.jpg` | `assets/images/auth/` | Shared auth-side property image | Responsive portrait/landscape | Meaningful | Required | PLANNED |
-| ABOUT-001 | `about-property.jpg` | `assets/images/about/` | Optional About property context | 3:2 / 4:3 | Meaningful if used | Required if used | PLANNED |
+## Property Asset Convention
 
----
-
-## Property Listing Convention
-
-Property assets should use a predictable naming scheme:
+Every seeded property receives four unique final images:
 
 ```text
-property-001-01.jpg
-property-001-02.jpg
-property-001-03.jpg
+assets/images/properties/property-001-01.jpg
+assets/images/properties/property-001-02.jpg
+assets/images/properties/property-001-03.jpg
+assets/images/properties/property-001-04.jpg
 ```
 
-Recommended directory:
+This pattern continues through `property-015-04.jpg`.
 
-```text
-assets/images/properties/
-```
-
-Each property should identify:
-
-- Primary image
-- Gallery images
-- Alt text for each meaningful image
-- Expected crop/aspect treatment
-
----
+| Property range | Images/property | Final asset count | Current condition | Final state |
+|---|---:|---:|---|---|
+| `property-001` → `property-015` | 4 | 60 | Generic placeholder or shared gallery-test SVGs | PLANNED |
 
 ## Agent Portrait Convention
 
-Example:
+| Agent | Final filename | Ratio | Current condition | Final state |
+|---|---|---:|---|---|
+| agent-001 — Nomsa Dlamini | `agent-001.jpg` | 1:1 | Shared `agent-placeholder.svg` | PLANNED |
+| agent-002 — Thabo Molefe | `agent-002.jpg` | 1:1 | Shared `agent-placeholder.svg` | PLANNED |
+| agent-003 — Lerato Mokoena | `agent-003.jpg` | 1:1 | Shared `agent-placeholder.svg` | PLANNED |
+| agent-004 — Ayesha Khan | `agent-004.jpg` | 1:1 | Shared `agent-placeholder.svg` | PLANNED |
+| agent-005 — Kagiso Maseko | `agent-005.jpg` | 1:1 | Shared `agent-placeholder.svg` | PLANNED |
+| agent-006 — Zanele Ndlovu | `agent-006.jpg` | 1:1 | Shared `agent-placeholder.svg` | PLANNED |
 
-```text
-agent-001.jpg
-agent-002.jpg
-```
+## Technical Fallback Assets
 
-Recommended directory:
+| Asset | Purpose | Policy |
+|---|---|---|
+| `assets/images/properties/property-placeholder.svg` | Missing image / locally-created Agent demo listing | **KEEP** as defensive fallback |
+| `assets/images/agents/agent-placeholder.svg` | Missing agent portrait | **KEEP** as defensive fallback unless fallback strategy changes |
+| `property-detail-01.svg` → `property-detail-04.svg` | Temporary gallery testing | **REMOVE in 13.7** after seeded data has no references |
+| Home/About/Auth placeholder SVGs | Temporary structural imagery | **REMOVE in 13.7** after final JPG references are verified |
 
-```text
-assets/images/agents/
-```
+## Current Image QA
 
-Default aspect ratio:
-
-```text
-1:1
-```
-
-Agent portrait alt text should generally identify the agent by name.
-
----
-
-## Image QA
-
-Before accepting an image implementation:
-
-- [ ] Asset exists at the documented path.
-- [ ] Markup explicitly references the asset.
-- [ ] Meaningful image has useful alt text.
-- [ ] Decorative image uses an appropriate empty alt/background treatment.
-- [ ] Image does not overflow its container.
-- [ ] Crop remains sensible at mobile/tablet/desktop widths.
-- [ ] Lazy loading is used where appropriate.
-- [ ] Above-the-fold critical imagery is not unnecessarily lazy-loaded.
-
-
-## Increment 2 Structural Fallback Assets
-
-| Asset ID | Filename | Location | Purpose | Ratio | Status |
-|---|---|---|---|---|---|
-| PROPERTY-FALLBACK-001 | `property-placeholder.svg` | `assets/images/properties/` | Temporary Property Card fallback | 4:3 | PLACED |
-| AGENT-FALLBACK-001 | `agent-placeholder.svg` | `assets/images/agents/` | Temporary Agent Card fallback | 1:1 | PLACED |
-
-These are structural fallbacks, not final portfolio imagery.
-
-
-## Increment 3 — Home
-
-| Asset ID | Filename | Location | Purpose | Ratio | Status |
-|---|---|---|---|---|---|
-| HOME-PLACEHOLDER-001 | `home-hero-placeholder.svg` | `assets/images/home/` | Temporary Home hero visual until final property photography is added | Responsive | PLACED |
-
-The Home hero now contains explicit meaningful image markup.
-
-Replacing the placeholder later requires only changing the image asset/source, not rebuilding the Home hero.
-
-
-## Increment 5 — Property Detail Gallery Fallbacks
-
-| Asset ID | Filename | Location | Purpose | Status |
-|---|---|---|---|---|
-| PROPERTY-DETAIL-FALLBACK-001 | `property-detail-01.svg` | `assets/images/properties/` | Gallery test image 1 | PLACED |
-| PROPERTY-DETAIL-FALLBACK-002 | `property-detail-02.svg` | `assets/images/properties/` | Gallery test image 2 | PLACED |
-| PROPERTY-DETAIL-FALLBACK-003 | `property-detail-03.svg` | `assets/images/properties/` | Gallery test image 3 | PLACED |
-| PROPERTY-DETAIL-FALLBACK-004 | `property-detail-04.svg` | `assets/images/properties/` | Gallery test image 4 | PLACED |
-
-These exist to make the gallery/lightbox fully testable before final photography is introduced.
-
-
-## Increment 7 — About
-
-| Asset ID | Filename | Location | Purpose | Status |
-|---|---|---|---|---|
-| ABOUT-PLACEHOLDER-001 | `about-property-placeholder.svg` | `assets/images/about/` | Temporary About architectural visual | PLACED |
-
-The About page now has explicit image markup and can later swap in final photography without restructuring the page.
-
-
-## Increment 8 — Authentication
-
-| Asset ID | Filename | Location | Purpose | Status |
-|---|---|---|---|---|
-| AUTH-PLACEHOLDER-001 | `auth-property-placeholder.svg` | `assets/images/auth/` | Temporary desktop authentication-side visual | PLACED |
-
-The authentication layout now has explicit imagery placement and can later swap in final photography.
+- [x] Meaningful image placements are explicit in markup/components.
+- [x] Property and agent imagery are data-driven.
+- [x] Gallery/lightbox has a real image-array contract.
+- [x] Technical fallbacks are distinct from final visual assets.
+- [ ] Final Home hero installed.
+- [ ] 60 unique seeded property images installed.
+- [ ] 6 unique agent portraits installed.
+- [ ] Final About image installed.
+- [ ] Final Auth image installed.
+- [ ] Temporary visual-test SVG references removed.
+- [ ] Final image crop/alt/loading browser QA completed.
