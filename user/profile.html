@@ -2,34 +2,199 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
+
   <meta
     name="description"
-    content="LarHub user interface."
+    content="LarHub user workspace — Profile."
   >
 
   <title>Profile | LarHub</title>
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/pages/user.css">
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/pages/user.css"
+  >
 </head>
 
-<body data-app-area="user">
-  <div data-app-shell>
-    <nav
-      aria-label="User navigation"
+<body
+  class="app-page"
+  data-app-area="user"
+  data-user-page="profile"
+>
+  <div class="app-shell">
+    <aside
+      class="app-shell__nav"
+      id="app-navigation"
       data-app-navigation
-    ></nav>
+    ></aside>
 
-    <main id="main-content">
-      <h1>Profile</h1>
-    </main>
+    <div class="app-shell__body">
+      <header
+        class="app-topbar"
+        data-app-topbar
+      ></header>
+
+      <main
+        class="app-main"
+        id="main-content"
+      >
+        <div class="app-content">
+          <header class="app-page-heading">
+            <div class="flow-sm">
+              <p class="text-eyebrow">
+                LarHub User
+              </p>
+
+              <h1>
+                Profile
+              </h1>
+
+              <p class="text-measure">
+                Manage local demonstration preferences without pretending a backend account exists.
+              </p>
+            </div>
+          </header>
+
+          
+          <section
+            class="user-access-note"
+            data-user-access-note
+            hidden
+          ></section>
+
+          <section class="app-section user-profile-layout">
+            <div class="user-profile-intro">
+              <p class="text-eyebrow">
+                Demo profile
+              </p>
+
+              <h2>
+                Personal details
+              </h2>
+
+              <p>
+                Profile changes are stored locally for this
+                frontend demonstration. No account record is
+                updated on a server.
+              </p>
+            </div>
+
+            <form
+              class="property-form user-profile-form"
+              data-user-profile-form
+              novalidate
+            >
+              <label>
+                <span class="text-label">
+                  Full name
+                </span>
+
+                <input
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                >
+              </label>
+
+              <label>
+                <span class="text-label">
+                  Email
+                </span>
+
+                <input
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                >
+              </label>
+
+              <label>
+                <span class="text-label">
+                  Phone
+                </span>
+
+                <input
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                >
+              </label>
+
+              <label>
+                <span class="text-label">
+                  Preferred location
+                </span>
+
+                <input
+                  name="preferredLocation"
+                  type="text"
+                  placeholder="e.g. Johannesburg"
+                >
+              </label>
+
+              <label>
+                <span class="text-label">
+                  Property preference
+                </span>
+
+                <select
+                  name="preferredListingType"
+                >
+                  <option value="">
+                    No preference
+                  </option>
+
+                  <option value="sale">
+                    Buying
+                  </option>
+
+                  <option value="rent">
+                    Renting
+                  </option>
+                </select>
+              </label>
+
+              <button
+                class="button"
+                type="submit"
+              >
+                Save Demo Profile
+              </button>
+
+              <p
+                class="form-status"
+                data-user-profile-status
+                aria-live="polite"
+              ></p>
+            </form>
+          </section>
+
+        </div>
+      </main>
+    </div>
   </div>
 
-  <script type="module" src="/js/main.js"></script>
-  <script type="module" src="/js/pages/user-dashboard.js"></script>
+  <div
+    class="app-nav-backdrop"
+    data-app-nav-backdrop
+    hidden
+  ></div>
+
+  <script
+    type="module"
+    src="/js/pages/user-dashboard.js"
+  ></script>
 </body>
 </html>

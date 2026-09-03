@@ -2,34 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
+
   <meta
     name="description"
-    content="LarHub user interface."
+    content="LarHub user workspace — Recently Viewed."
   >
 
   <title>Recently Viewed | LarHub</title>
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/pages/user.css">
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/pages/user.css"
+  >
 </head>
 
-<body data-app-area="user">
-  <div data-app-shell>
-    <nav
-      aria-label="User navigation"
+<body
+  class="app-page"
+  data-app-area="user"
+  data-user-page="recent"
+>
+  <div class="app-shell">
+    <aside
+      class="app-shell__nav"
+      id="app-navigation"
       data-app-navigation
-    ></nav>
+    ></aside>
 
-    <main id="main-content">
-      <h1>Recently Viewed</h1>
-    </main>
+    <div class="app-shell__body">
+      <header
+        class="app-topbar"
+        data-app-topbar
+      ></header>
+
+      <main
+        class="app-main"
+        id="main-content"
+      >
+        <div class="app-content">
+          <header class="app-page-heading">
+            <div class="flow-sm">
+              <p class="text-eyebrow">
+                LarHub User
+              </p>
+
+              <h1>
+                Recently Viewed
+              </h1>
+
+              <p class="text-measure">
+                Pick up where you left off across public Property Details pages.
+              </p>
+            </div>
+          </header>
+
+          
+          <section
+            class="user-access-note"
+            data-user-access-note
+            hidden
+          ></section>
+
+          <section class="app-section">
+            <div class="app-section__heading">
+              <div>
+                <p class="text-eyebrow">
+                  Browsing history
+                </p>
+
+                <h2>
+                  Recently viewed properties
+                </h2>
+              </div>
+
+              <button
+                class="button button--tertiary"
+                type="button"
+                data-clear-recent
+              >
+                Clear history
+              </button>
+            </div>
+
+            <div
+              class="user-property-grid"
+              data-user-recent-grid
+            ></div>
+
+            <div
+              class="empty-state"
+              data-user-recent-empty
+              hidden
+            >
+              <h3>
+                No recently viewed properties
+              </h3>
+
+              <p>
+                Property Details pages you open will appear here.
+              </p>
+
+              <a
+                class="button button--secondary"
+                href="/properties.html"
+              >
+                Browse Properties
+              </a>
+            </div>
+          </section>
+
+        </div>
+      </main>
+    </div>
   </div>
 
-  <script type="module" src="/js/main.js"></script>
-  <script type="module" src="/js/pages/user-dashboard.js"></script>
+  <div
+    class="app-nav-backdrop"
+    data-app-nav-backdrop
+    hidden
+  ></div>
+
+  <script
+    type="module"
+    src="/js/pages/user-dashboard.js"
+  ></script>
 </body>
 </html>
