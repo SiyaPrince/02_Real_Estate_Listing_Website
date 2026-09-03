@@ -2,34 +2,373 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
+
   <meta
     name="description"
-    content="LarHub agent interface."
+    content="LarHub Agent workspace — Property Form."
   >
 
   <title>Property Form | LarHub</title>
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/pages/agent-dashboard.css">
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/pages/agent-dashboard.css"
+  >
 </head>
 
-<body data-app-area="agent">
-  <div data-app-shell>
-    <nav
-      aria-label="Agent navigation"
+<body
+  class="app-page"
+  data-app-area="agent"
+  data-agent-page="property-form"
+>
+  <div class="app-shell">
+    <aside
+      class="app-shell__nav"
+      id="app-navigation"
       data-app-navigation
-    ></nav>
+    ></aside>
 
-    <main id="main-content">
-      <h1>Property Form</h1>
-    </main>
+    <div class="app-shell__body">
+      <header
+        class="app-topbar"
+        data-app-topbar
+      ></header>
+
+      <main
+        class="app-main"
+        id="main-content"
+      >
+        <div class="app-content">
+          <header class="app-page-heading">
+            <div class="flow-sm">
+              <p class="text-eyebrow">
+                LarHub Agent
+              </p>
+
+              <h1>
+                Property Form
+              </h1>
+
+              <p class="text-measure">
+                Create or edit a browser-local listing record for the Agent workspace.
+              </p>
+            </div>
+          </header>
+
+          <section
+            class="agent-access-note"
+            data-agent-access-note
+            hidden
+          ></section>
+
+          
+          <section class="agent-form-layout">
+            <div class="agent-form-intro">
+              <p class="text-eyebrow">
+                Listing editor
+              </p>
+
+              <h2 data-agent-form-title>
+                Add property
+              </h2>
+
+              <p>
+                This form saves a browser-local Agent
+                workspace record. It does not publish
+                to a real backend or database.
+              </p>
+            </div>
+
+            <form
+              class="property-form agent-property-form"
+              data-agent-property-form
+              novalidate
+            >
+              <label>
+                <span class="text-label">
+                  Title
+                </span>
+
+                <input
+                  name="title"
+                  type="text"
+                  required
+                >
+              </label>
+
+              <div class="agent-form-grid">
+                <label>
+                  <span class="text-label">
+                    Listing type
+                  </span>
+
+                  <select
+                    name="listingType"
+                    required
+                  >
+                    <option value="sale">
+                      For Sale
+                    </option>
+
+                    <option value="rent">
+                      To Rent
+                    </option>
+                  </select>
+                </label>
+
+                <label>
+                  <span class="text-label">
+                    Property type
+                  </span>
+
+                  <select
+                    name="propertyType"
+                    required
+                  >
+                    <option value="house">
+                      House
+                    </option>
+
+                    <option value="apartment">
+                      Apartment
+                    </option>
+
+                    <option value="townhouse">
+                      Townhouse
+                    </option>
+
+                    <option value="commercial">
+                      Commercial
+                    </option>
+
+                    <option value="land">
+                      Land
+                    </option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="agent-form-grid">
+                <label>
+                  <span class="text-label">
+                    Price (ZAR)
+                  </span>
+
+                  <input
+                    name="price"
+                    type="number"
+                    min="0"
+                    step="1000"
+                    required
+                  >
+                </label>
+
+                <label>
+                  <span class="text-label">
+                    Lifecycle status
+                  </span>
+
+                  <select
+                    name="lifecycleStatus"
+                  >
+                    <option value="draft">
+                      Draft
+                    </option>
+
+                    <option value="published">
+                      Published
+                    </option>
+
+                    <option value="under-offer">
+                      Under Offer
+                    </option>
+
+                    <option value="sold">
+                      Sold
+                    </option>
+
+                    <option value="rented">
+                      Rented
+                    </option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="agent-form-grid">
+                <label>
+                  <span class="text-label">
+                    Suburb
+                  </span>
+
+                  <input
+                    name="suburb"
+                    type="text"
+                    required
+                  >
+                </label>
+
+                <label>
+                  <span class="text-label">
+                    City
+                  </span>
+
+                  <input
+                    name="city"
+                    type="text"
+                    required
+                  >
+                </label>
+              </div>
+
+              <label>
+                <span class="text-label">
+                  Province
+                </span>
+
+                <input
+                  name="province"
+                  type="text"
+                  required
+                >
+              </label>
+
+              <div class="agent-form-grid agent-form-grid--facts">
+                <label>
+                  <span class="text-label">
+                    Bedrooms
+                  </span>
+
+                  <input
+                    name="bedrooms"
+                    type="number"
+                    min="0"
+                  >
+                </label>
+
+                <label>
+                  <span class="text-label">
+                    Bathrooms
+                  </span>
+
+                  <input
+                    name="bathrooms"
+                    type="number"
+                    min="0"
+                  >
+                </label>
+
+                <label>
+                  <span class="text-label">
+                    Parking
+                  </span>
+
+                  <input
+                    name="parking"
+                    type="number"
+                    min="0"
+                  >
+                </label>
+
+                <label>
+                  <span class="text-label">
+                    Floor area (m²)
+                  </span>
+
+                  <input
+                    name="floorArea"
+                    type="number"
+                    min="0"
+                  >
+                </label>
+
+                <label>
+                  <span class="text-label">
+                    Land area (m²)
+                  </span>
+
+                  <input
+                    name="landArea"
+                    type="number"
+                    min="0"
+                  >
+                </label>
+              </div>
+
+              <label>
+                <span class="text-label">
+                  Features
+                </span>
+
+                <input
+                  name="features"
+                  type="text"
+                  placeholder="Garden, Solar, Fibre"
+                >
+
+                <span class="text-small">
+                  Separate features with commas.
+                </span>
+              </label>
+
+              <label>
+                <span class="text-label">
+                  Description
+                </span>
+
+                <textarea
+                  name="description"
+                  rows="6"
+                ></textarea>
+              </label>
+
+              <div class="agent-form-actions">
+                <button
+                  class="button"
+                  type="submit"
+                >
+                  Save Demo Listing
+                </button>
+
+                <a
+                  class="button button--secondary"
+                  href="/agent/listings.html"
+                >
+                  Cancel
+                </a>
+              </div>
+
+              <p
+                class="form-status"
+                data-agent-property-status
+                aria-live="polite"
+              ></p>
+            </form>
+          </section>
+
+        </div>
+      </main>
+    </div>
   </div>
 
-  <script type="module" src="/js/main.js"></script>
-  <script type="module" src="/js/pages/agent-dashboard.js"></script>
+  <div
+    class="app-nav-backdrop"
+    data-app-nav-backdrop
+    hidden
+  ></div>
+
+  <script
+    type="module"
+    src="/js/pages/agent-dashboard.js"
+  ></script>
 </body>
 </html>

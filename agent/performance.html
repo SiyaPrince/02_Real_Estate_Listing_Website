@@ -2,34 +2,185 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
+
   <meta
     name="description"
-    content="LarHub agent interface."
+    content="LarHub Agent workspace — Performance."
   >
 
   <title>Performance | LarHub</title>
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/pages/agent-dashboard.css">
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/pages/agent-dashboard.css"
+  >
 </head>
 
-<body data-app-area="agent">
-  <div data-app-shell>
-    <nav
-      aria-label="Agent navigation"
+<body
+  class="app-page"
+  data-app-area="agent"
+  data-agent-page="performance"
+>
+  <div class="app-shell">
+    <aside
+      class="app-shell__nav"
+      id="app-navigation"
       data-app-navigation
-    ></nav>
+    ></aside>
 
-    <main id="main-content">
-      <h1>Performance</h1>
-    </main>
+    <div class="app-shell__body">
+      <header
+        class="app-topbar"
+        data-app-topbar
+      ></header>
+
+      <main
+        class="app-main"
+        id="main-content"
+      >
+        <div class="app-content">
+          <header class="app-page-heading">
+            <div class="flow-sm">
+              <p class="text-eyebrow">
+                LarHub Agent
+              </p>
+
+              <h1>
+                Performance
+              </h1>
+
+              <p class="text-measure">
+                Inspect honest demo metrics derived only from local listing and enquiry records.
+              </p>
+            </div>
+          </header>
+
+          <section
+            class="agent-access-note"
+            data-agent-access-note
+            hidden
+          ></section>
+
+          
+          <section
+            class="agent-performance-note"
+          >
+            <p class="text-eyebrow">
+              Demo analytics
+            </p>
+
+            <h2>
+              Computed from local listing data only
+            </h2>
+
+            <p>
+              LarHub is not inventing page views, leads,
+              conversion rates, or revenue. These metrics
+              are counts derived from the current demo
+              listings and local enquiry records.
+            </p>
+          </section>
+
+          <section
+            class="dashboard-stats"
+            aria-label="Agent demo metrics"
+          >
+            <article class="dashboard-stat">
+              <p class="text-small">
+                Published
+              </p>
+
+              <p
+                class="dashboard-stat__value"
+                data-performance-published
+              >
+                0
+              </p>
+            </article>
+
+            <article class="dashboard-stat">
+              <p class="text-small">
+                Under offer
+              </p>
+
+              <p
+                class="dashboard-stat__value"
+                data-performance-offer
+              >
+                0
+              </p>
+            </article>
+
+            <article class="dashboard-stat">
+              <p class="text-small">
+                Sold / Rented
+              </p>
+
+              <p
+                class="dashboard-stat__value"
+                data-performance-closed
+              >
+                0
+              </p>
+            </article>
+
+            <article class="dashboard-stat">
+              <p class="text-small">
+                Demo enquiries
+              </p>
+
+              <p
+                class="dashboard-stat__value"
+                data-performance-enquiries
+              >
+                0
+              </p>
+            </article>
+          </section>
+
+          <section class="app-section">
+            <div class="app-section__heading">
+              <div>
+                <p class="text-eyebrow">
+                  Listing lifecycle
+                </p>
+
+                <h2>
+                  Current distribution
+                </h2>
+              </div>
+            </div>
+
+            <div
+              class="agent-performance-list"
+              data-performance-status-list
+            ></div>
+          </section>
+
+        </div>
+      </main>
+    </div>
   </div>
 
-  <script type="module" src="/js/main.js"></script>
-  <script type="module" src="/js/pages/agent-dashboard.js"></script>
+  <div
+    class="app-nav-backdrop"
+    data-app-nav-backdrop
+    hidden
+  ></div>
+
+  <script
+    type="module"
+    src="/js/pages/agent-dashboard.js"
+  ></script>
 </body>
 </html>

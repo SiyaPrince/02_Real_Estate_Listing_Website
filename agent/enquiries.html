@@ -2,34 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
+
   <meta
     name="description"
-    content="LarHub agent interface."
+    content="LarHub Agent workspace — Agent Enquiries."
   >
 
   <title>Agent Enquiries | LarHub</title>
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/pages/agent-dashboard.css">
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/pages/agent-dashboard.css"
+  >
 </head>
 
-<body data-app-area="agent">
-  <div data-app-shell>
-    <nav
-      aria-label="Agent navigation"
+<body
+  class="app-page"
+  data-app-area="agent"
+  data-agent-page="enquiries"
+>
+  <div class="app-shell">
+    <aside
+      class="app-shell__nav"
+      id="app-navigation"
       data-app-navigation
-    ></nav>
+    ></aside>
 
-    <main id="main-content">
-      <h1>Agent Enquiries</h1>
-    </main>
+    <div class="app-shell__body">
+      <header
+        class="app-topbar"
+        data-app-topbar
+      ></header>
+
+      <main
+        class="app-main"
+        id="main-content"
+      >
+        <div class="app-content">
+          <header class="app-page-heading">
+            <div class="flow-sm">
+              <p class="text-eyebrow">
+                LarHub Agent
+              </p>
+
+              <h1>
+                Enquiries
+              </h1>
+
+              <p class="text-measure">
+                Review local demo enquiry records associated with this Demo Agent's property inventory.
+              </p>
+            </div>
+          </header>
+
+          <section
+            class="agent-access-note"
+            data-agent-access-note
+            hidden
+          ></section>
+
+          
+          <section class="app-section">
+            <div class="app-section__heading">
+              <div>
+                <p class="text-eyebrow">
+                  Local demo records
+                </p>
+
+                <h2>
+                  Listing enquiries
+                </h2>
+              </div>
+            </div>
+
+            <p class="agent-demo-note text-small">
+              These records exist only when a local
+              Property Details enquiry references one of
+              this Demo Agent's listings. Nothing was sent.
+            </p>
+
+            <div
+              class="agent-enquiry-list"
+              data-agent-enquiries
+            ></div>
+
+            <div
+              class="empty-state"
+              data-agent-enquiries-empty
+              hidden
+            >
+              <h3>
+                No demo enquiries for your listings
+              </h3>
+
+              <p>
+                Public Property Details forms can create
+                browser-local demo records.
+              </p>
+            </div>
+          </section>
+
+        </div>
+      </main>
+    </div>
   </div>
 
-  <script type="module" src="/js/main.js"></script>
-  <script type="module" src="/js/pages/agent-dashboard.js"></script>
+  <div
+    class="app-nav-backdrop"
+    data-app-nav-backdrop
+    hidden
+  ></div>
+
+  <script
+    type="module"
+    src="/js/pages/agent-dashboard.js"
+  ></script>
 </body>
 </html>

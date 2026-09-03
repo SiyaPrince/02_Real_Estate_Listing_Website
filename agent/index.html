@@ -2,34 +2,174 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
+
   <meta
     name="description"
-    content="LarHub agent interface."
+    content="LarHub Agent workspace — Agent Overview."
   >
 
   <title>Agent Overview | LarHub</title>
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/pages/agent-dashboard.css">
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/pages/agent-dashboard.css"
+  >
 </head>
 
-<body data-app-area="agent">
-  <div data-app-shell>
-    <nav
-      aria-label="Agent navigation"
+<body
+  class="app-page"
+  data-app-area="agent"
+  data-agent-page="overview"
+>
+  <div class="app-shell">
+    <aside
+      class="app-shell__nav"
+      id="app-navigation"
       data-app-navigation
-    ></nav>
+    ></aside>
 
-    <main id="main-content">
-      <h1>Agent Overview</h1>
-    </main>
+    <div class="app-shell__body">
+      <header
+        class="app-topbar"
+        data-app-topbar
+      ></header>
+
+      <main
+        class="app-main"
+        id="main-content"
+      >
+        <div class="app-content">
+          <header class="app-page-heading">
+            <div class="flow-sm">
+              <p class="text-eyebrow">
+                LarHub Agent
+              </p>
+
+              <h1>
+                Overview
+              </h1>
+
+              <p class="text-measure">
+                Manage the local demonstration state for your LarHub listings and enquiries.
+              </p>
+            </div>
+          </header>
+
+          <section
+            class="agent-access-note"
+            data-agent-access-note
+            hidden
+          ></section>
+
+          
+          <section
+            class="dashboard-stats"
+            aria-label="Agent listing summary"
+          >
+            <article class="dashboard-stat">
+              <p class="text-small">
+                Active listings
+              </p>
+
+              <p
+                class="dashboard-stat__value text-tabular"
+                data-agent-active-count
+              >
+                0
+              </p>
+
+              <a
+                class="text-link text-small"
+                href="/agent/listings.html"
+              >
+                Manage listings
+              </a>
+            </article>
+
+            <article class="dashboard-stat">
+              <p class="text-small">
+                Under offer
+              </p>
+
+              <p
+                class="dashboard-stat__value text-tabular"
+                data-agent-offer-count
+              >
+                0
+              </p>
+            </article>
+
+            <article class="dashboard-stat">
+              <p class="text-small">
+                Demo enquiries
+              </p>
+
+              <p
+                class="dashboard-stat__value text-tabular"
+                data-agent-enquiry-count
+              >
+                0
+              </p>
+
+              <a
+                class="text-link text-small"
+                href="/agent/enquiries.html"
+              >
+                View enquiries
+              </a>
+            </article>
+          </section>
+
+          <section class="app-section">
+            <div class="app-section__heading">
+              <div>
+                <p class="text-eyebrow">
+                  Listing management
+                </p>
+
+                <h2>
+                  Recent listings
+                </h2>
+              </div>
+
+              <a
+                class="button"
+                href="/agent/property-form.html"
+              >
+                Add Property
+              </a>
+            </div>
+
+            <div
+              class="agent-listing-list"
+              data-agent-overview-listings
+            ></div>
+          </section>
+
+        </div>
+      </main>
+    </div>
   </div>
 
-  <script type="module" src="/js/main.js"></script>
-  <script type="module" src="/js/pages/agent-dashboard.js"></script>
+  <div
+    class="app-nav-backdrop"
+    data-app-nav-backdrop
+    hidden
+  ></div>
+
+  <script
+    type="module"
+    src="/js/pages/agent-dashboard.js"
+  ></script>
 </body>
 </html>

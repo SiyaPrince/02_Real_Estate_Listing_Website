@@ -2,34 +2,221 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
+
   <meta
     name="description"
-    content="LarHub agent interface."
+    content="LarHub Agent workspace — Agent Profile Settings."
   >
 
-  <title>Agent Profile | LarHub</title>
+  <title>Agent Profile Settings | LarHub</title>
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/pages/agent-dashboard.css">
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/pages/agent-dashboard.css"
+  >
 </head>
 
-<body data-app-area="agent">
-  <div data-app-shell>
-    <nav
-      aria-label="Agent navigation"
+<body
+  class="app-page"
+  data-app-area="agent"
+  data-agent-page="profile"
+>
+  <div class="app-shell">
+    <aside
+      class="app-shell__nav"
+      id="app-navigation"
       data-app-navigation
-    ></nav>
+    ></aside>
 
-    <main id="main-content">
-      <h1>Agent Profile</h1>
-    </main>
+    <div class="app-shell__body">
+      <header
+        class="app-topbar"
+        data-app-topbar
+      ></header>
+
+      <main
+        class="app-main"
+        id="main-content"
+      >
+        <div class="app-content">
+          <header class="app-page-heading">
+            <div class="flow-sm">
+              <p class="text-eyebrow">
+                LarHub Agent
+              </p>
+
+              <h1>
+                Profile
+              </h1>
+
+              <p class="text-measure">
+                Edit the browser-local demonstration version of the Agent workspace profile.
+              </p>
+            </div>
+          </header>
+
+          <section
+            class="agent-access-note"
+            data-agent-access-note
+            hidden
+          ></section>
+
+          
+          <section class="agent-profile-settings">
+            <div class="agent-form-intro">
+              <p class="text-eyebrow">
+                Demo agent profile
+              </p>
+
+              <h2>
+                Public profile settings
+              </h2>
+
+              <p>
+                These local edits do not change the public
+                Agent Profile dataset or a server account.
+              </p>
+            </div>
+
+            <form
+              class="property-form"
+              data-agent-profile-form
+              novalidate
+            >
+              <label>
+                <span class="text-label">
+                  Name
+                </span>
+
+                <input
+                  name="name"
+                  type="text"
+                  required
+                >
+              </label>
+
+              <label>
+                <span class="text-label">
+                  Agency
+                </span>
+
+                <input
+                  name="agency"
+                  type="text"
+                  required
+                >
+              </label>
+
+              <label>
+                <span class="text-label">
+                  Role
+                </span>
+
+                <input
+                  name="role"
+                  type="text"
+                  required
+                >
+              </label>
+
+              <label>
+                <span class="text-label">
+                  Phone
+                </span>
+
+                <input
+                  name="phone"
+                  type="tel"
+                  required
+                >
+              </label>
+
+              <label>
+                <span class="text-label">
+                  Email
+                </span>
+
+                <input
+                  name="email"
+                  type="email"
+                  required
+                >
+              </label>
+
+              <label>
+                <span class="text-label">
+                  Areas served
+                </span>
+
+                <input
+                  name="areasServed"
+                  type="text"
+                  placeholder="Rosebank, Parkhurst, Bryanston"
+                >
+              </label>
+
+              <label>
+                <span class="text-label">
+                  Specialisations
+                </span>
+
+                <input
+                  name="specialisations"
+                  type="text"
+                  placeholder="Residential Sales, Rentals"
+                >
+              </label>
+
+              <label>
+                <span class="text-label">
+                  Biography
+                </span>
+
+                <textarea
+                  name="biography"
+                  rows="6"
+                ></textarea>
+              </label>
+
+              <button
+                class="button"
+                type="submit"
+              >
+                Save Demo Profile
+              </button>
+
+              <p
+                class="form-status"
+                data-agent-profile-status
+                aria-live="polite"
+              ></p>
+            </form>
+          </section>
+
+        </div>
+      </main>
+    </div>
   </div>
 
-  <script type="module" src="/js/main.js"></script>
-  <script type="module" src="/js/pages/agent-dashboard.js"></script>
+  <div
+    class="app-nav-backdrop"
+    data-app-nav-backdrop
+    hidden
+  ></div>
+
+  <script
+    type="module"
+    src="/js/pages/agent-dashboard.js"
+  ></script>
 </body>
 </html>
