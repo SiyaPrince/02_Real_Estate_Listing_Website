@@ -2,7 +2,7 @@
 
 ## Current Increment
 
-**Increment 7 — Supporting Public Pages**
+**Increment 8 — Authentication**
 
 Status:
 
@@ -21,64 +21,110 @@ HOME                       COMPLETE
 PROPERTIES                 COMPLETE
 PROPERTY DETAILS           COMPLETE
 AGENTS                     COMPLETE
-SUPPORTING PUBLIC PAGES    IMPLEMENTED
-AUTHENTICATION UI          NEXT
-USER APPLICATION           NOT STARTED
+SUPPORTING PUBLIC PAGES    COMPLETE
+AUTHENTICATION UI          IMPLEMENTED
+USER APPLICATION           NEXT
 AGENT APPLICATION          NOT STARTED
 ADMIN APPLICATION          NOT STARTED
 ```
 
 ---
 
-## Increment 7 Completed
+## Increment 8 Completed
 
-### About
-
-Implemented:
-
-- About hero
-- Explicit meaningful image element
-- What LarHub does
-- Discover / Refine / Explore / Connect process
-- Property seeker / Agent / Admin audiences
-- Platform principles
-- Current frontend-only project-stage explanation
-- Marketplace CTA
-
-No fake awards, fake history, or fake market statistics were added.
-
-### Contact
+### Login
 
 Implemented:
 
-- General-contact guidance
-- Property enquiry guidance
-- Agent enquiry guidance
-- General contact form
-- Name validation
+- Email
+- Password
+- Show/Hide password
+- Forgot Password link
+- Google
+- Facebook
+- Apple
+- Validation
+- Frontend-only authentication status
+
+No login is claimed to have succeeded.
+
+### Registration
+
+Implemented:
+
+- Full name
+- Email
+- Password
+- Confirm Password
+- Password-strength feedback
+- Demo acknowledgement checkbox
+- Google
+- Facebook
+- Apple
+- Validation
+- Frontend-only result messaging
+
+No account is created.
+
+### Forgot Password
+
+Implemented:
+
 - Email validation
-- Subject validation
-- Message validation
-- First-invalid-field focus
-- Inline field errors
-- `aria-invalid`
-- Live form-status feedback
-- Explicit frontend-only delivery message
+- Reset-request UI
+- Frontend-only result messaging
 
-The Contact form never claims that a message was delivered.
+No email is sent.
 
-### Shared Form Validation
+### Provider Authentication
+
+UI exists for:
+
+```text
+Google
+Facebook
+Apple
+```
+
+All provider buttons explicitly report that the provider is not connected.
+
+### Demo Access
+
+Login includes an explicitly labeled Demo Access section.
+
+Roles:
+
+```text
+User
+Agent
+Admin
+```
+
+Demo Access:
+
+- is not authentication
+- stores only a frontend demo role/session marker
+- uses `localStorage`
+- routes to the relevant application area
+
+Storage key:
+
+```text
+larhub.demoSession
+```
+
+### Architecture
 
 Activated:
 
 ```text
-js/features/forms.js
+js/services/auth-service.js
+js/features/auth.js
+js/pages/auth.js
 ```
-
-with reusable error-setting, clearing, and invalid-field focus helpers.
 
 ---
 
 ## Next
 
-**Increment 8 — Authentication**
+**Increment 9 — User Application**

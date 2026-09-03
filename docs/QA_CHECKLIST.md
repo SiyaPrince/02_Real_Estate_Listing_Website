@@ -582,3 +582,65 @@ Full visual/browser interaction QA remains intentionally deferred until implemen
 - [ ] Verify sticky Contact form on desktop.
 - [ ] Verify visible error/focus states.
 - [ ] Verify long status messages wrap safely.
+
+
+# 12. Increment 8 — Authentication QA
+
+## Login
+
+- [x] Email field exists.
+- [x] Password field exists.
+- [x] Password visibility toggle exists.
+- [x] Forgot Password link exists.
+- [x] Google button exists.
+- [x] Facebook button exists.
+- [x] Apple button exists.
+- [x] Invalid email is rejected locally.
+- [x] Missing password is rejected locally.
+- [x] Frontend does not claim authentication succeeded.
+
+## Registration
+
+- [x] Name field exists.
+- [x] Email field exists.
+- [x] Password field exists.
+- [x] Confirm Password exists.
+- [x] Password length validation exists.
+- [x] Matching-password validation exists.
+- [x] Password-strength feedback exists.
+- [x] Demo acknowledgement checkbox exists.
+- [x] Social-provider buttons exist.
+- [x] Frontend does not claim an account was created.
+
+## Forgot Password
+
+- [x] Email validation exists.
+- [x] Reset request interface exists.
+- [x] Frontend does not claim an email was sent.
+
+## Provider Authentication
+
+- [x] Google UI exists.
+- [x] Facebook UI exists.
+- [x] Apple UI exists.
+- [x] Provider clicks return explicit not-connected status.
+
+## Demo Access
+
+- [x] Demo Access is explicitly labeled.
+- [x] User role exists.
+- [x] Agent role exists.
+- [x] Admin role exists.
+- [x] Demo session is stored separately from real authentication.
+- [x] Demo session uses `larhub.demoSession`.
+- [x] Demo Access does not claim real authentication.
+
+## Pending Browser Acceptance
+
+- [ ] Verify auth layout on narrow mobile.
+- [ ] Verify two-column desktop composition.
+- [ ] Verify provider buttons fit without wrapping badly.
+- [ ] Verify password toggles remain keyboard accessible.
+- [ ] Verify password strength colors/text.
+- [ ] Verify inline error messages.
+- [ ] Verify Demo Access routes correctly.

@@ -288,3 +288,26 @@ POST /contact
 ```
 
 The current frontend validates and prepares the message but explicitly does not claim delivery.
+
+
+### Increment 8 Authentication UI Status
+
+The authentication frontend is now implemented.
+
+Current service functions are explicit frontend-only placeholders:
+
+```text
+loginWithEmail()
+registerAccount()
+requestPasswordReset()
+continueWithProvider()
+```
+
+Future backend/provider integration can replace the service implementation while preserving the
+current Login/Register/Forgot Password interfaces.
+
+Demo Access is separate from real authentication and uses:
+
+```text
+larhub.demoSession
+```

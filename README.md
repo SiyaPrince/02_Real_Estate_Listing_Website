@@ -333,3 +333,21 @@ Contact includes:
 - Honest frontend-only result messaging
 
 The form does not claim a message was delivered because no backend is connected yet.
+
+
+## Authentication UI
+
+LarHub now includes frontend-only authentication interfaces for:
+
+- Login
+- Registration
+- Forgot Password
+- Google
+- Facebook
+- Apple
+
+The UI validates locally but never claims that authentication, account creation,
+password reset delivery, or provider OAuth succeeded.
+
+A separate Demo Access mode allows User, Agent, and Admin application areas to be previewed
+without pretending a real authenticated session exists.

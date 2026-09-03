@@ -161,3 +161,12 @@ These exist to make the gallery/lightbox fully testable before final photography
 | ABOUT-PLACEHOLDER-001 | `about-property-placeholder.svg` | `assets/images/about/` | Temporary About architectural visual | PLACED |
 
 The About page now has explicit image markup and can later swap in final photography without restructuring the page.
+
+
+## Increment 8 — Authentication
+
+| Asset ID | Filename | Location | Purpose | Status |
+|---|---|---|---|---|
+| AUTH-PLACEHOLDER-001 | `auth-property-placeholder.svg` | `assets/images/auth/` | Temporary desktop authentication-side visual | PLACED |
+
+The authentication layout now has explicit imagery placement and can later swap in final photography.
