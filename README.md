@@ -290,3 +290,23 @@ The Property Details experience now supports:
 - Request-viewing UI
 - Similar properties
 - Honest frontend-only messaging for backend-dependent actions
+
+
+## Agents
+
+LarHub now includes a public agent directory and agent profile experience.
+
+Directory search supports:
+
+- Agent name
+- Agency
+- Area served
+
+Agent profiles load through:
+
+```text
+agent.html?id=agent-001
+```
+
+Public active listing counts are derived from public property data, so Sold, Rented, Draft,
+and other management-only listings are not included.

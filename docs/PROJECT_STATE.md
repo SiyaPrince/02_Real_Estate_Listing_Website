@@ -2,7 +2,7 @@
 
 ## Current Increment
 
-**Increment 5 — Property Details**
+**Increment 6 — Agents**
 
 Status:
 
@@ -19,8 +19,9 @@ PUBLIC SHELL               COMPLETE
 PROPERTY DATA FOUNDATION   COMPLETE
 HOME                       COMPLETE
 PROPERTIES                 COMPLETE
-PROPERTY DETAILS           IMPLEMENTED
-AGENTS                     NEXT
+PROPERTY DETAILS           COMPLETE
+AGENTS                     IMPLEMENTED
+SUPPORTING PUBLIC PAGES    NEXT
 AUTHENTICATION UI          NOT STARTED
 USER APPLICATION           NOT STARTED
 AGENT APPLICATION          NOT STARTED
@@ -29,107 +30,79 @@ ADMIN APPLICATION          NOT STARTED
 
 ---
 
-## Increment 5 Completed
+## Increment 6 Completed
 
-### Dynamic Loading
-
-Property Details reads:
-
-```text
-property.html?id=property-001
-```
-
-and loads the matching record through the Property Service.
-
-Invalid, missing, Sold, Rented, Draft, or otherwise non-public records show the unavailable state.
-
-### Gallery
+### Agent Directory
 
 Implemented:
 
-- Main property image
-- Secondary images
-- View-all control
-- Full-screen lightbox
-- Previous / Next
-- Escape-to-close
-- Left / Right arrow navigation
-- Focus restoration after closing
+- Public agent directory
+- Search by agent name
+- Search by agency
+- Search by area served
+- Query parameter state through `?q=`
+- Browser Back/Forward restoration
+- Dynamic result count
+- Empty state
+- Clear search
+- Shared Agent Card rendering
 
-### Property Information
+### Public Listing Counts
+
+Agent cards now receive:
+
+```text
+activeListingCount
+```
+
+computed from:
+
+```text
+getPublicPropertiesByAgent()
+```
+
+The count therefore excludes:
+
+- Sold
+- Rented
+- Draft
+- Pending
+- Other management-only records
+
+### Agent Profile
+
+Dynamic route:
+
+```text
+agent.html?id=agent-001
+```
 
 Implemented:
 
-- Public status
-- Title
-- Full location
-- Price
-- Property reference
-- Property-type-aware key facts
-- Description
-- Features
-- Textual location context
-
-No fake map was added.
-
-### Saved Property
-
-Implemented with:
-
-```text
-localStorage
-```
-
-Key:
-
-```text
-larhub.savedProperties
-```
-
-Only property IDs are persisted.
-
-### Agent Panel
-
-Implemented:
-
-- Agent photo
+- Portrait
 - Name
+- Role
 - Agency
-- Public Agent Profile link
-- Call
+- Areas served
+- Biography
+- Specialisations
+- Public active listing count
+- Phone
 - Email
+- Active public listings
+- Shared Property Card rendering
+- Unavailable profile state
 
-### Enquiry UI
-
-Implemented:
-
-- General enquiry form
-- Request-viewing form
-- Required-field validation
-- Honest frontend-only result messaging
-
-No message or viewing request is claimed to have been sent.
-
-### Similar Properties
-
-Implemented using:
-
-```text
-getSimilarPublicProperties()
-```
-
-and the shared Property Card renderer.
-
----
-
-## Image Status
-
-Selected demo properties now have multi-image placeholder galleries so gallery behavior can be tested.
-
-These remain structural placeholders, not final property photography.
+Only approved public agent profiles render.
 
 ---
 
 ## Next
 
-**Increment 6 — Agents**
+**Increment 7 — Supporting Public Pages**
+
+Planned:
+
+- About
+- Contact
+- Contact validation

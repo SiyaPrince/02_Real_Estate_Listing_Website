@@ -500,3 +500,47 @@ Full visual/browser interaction QA remains intentionally deferred until implemen
 - [ ] Verify save state survives refresh.
 - [ ] Verify form controls fit narrow mobile widths.
 - [ ] Verify similar Property Cards align correctly.
+
+
+# 10. Increment 6 — Agents QA
+
+## Agent Directory
+
+- [x] Directory renders through Agent Service.
+- [x] Shared Agent Card is reused.
+- [x] Search matches agent name.
+- [x] Search matches agency.
+- [x] Search matches areas served.
+- [x] Search state uses `?q=`.
+- [x] Browser Back/Forward restores search.
+- [x] Result count is announced with `aria-live`.
+- [x] Empty state exists.
+- [x] Clear search exists.
+
+## Agent Counts
+
+- [x] Active listing counts derive from public property data.
+- [x] Sold/Rented/Draft records are excluded.
+- [x] Agent Card count is data-driven.
+
+## Agent Profile
+
+- [x] Profile loads from `?id=`.
+- [x] Approved public agent validation exists.
+- [x] Missing/unknown agent shows unavailable state.
+- [x] Biography renders.
+- [x] Areas served render.
+- [x] Specialisations render.
+- [x] Phone link exists.
+- [x] Email link exists.
+- [x] Active public listings render through Property Card.
+- [x] Sold/Rented history is not shown publicly.
+
+## Pending Browser Acceptance
+
+- [ ] Verify directory grid at mobile/tablet/desktop widths.
+- [ ] Verify long agency names do not overflow.
+- [ ] Verify agent portraits crop correctly.
+- [ ] Verify Agent Profile hero balance.
+- [ ] Verify sticky contact panel.
+- [ ] Verify active listing cards align correctly.
