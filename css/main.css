@@ -20,3 +20,6 @@
 @import "./components/filters.css";
 @import "./components/pagination.css";
 @import "./components/empty-state.css";
+
+@import "./components/forms.css";
+@import "./components/gallery.css";
