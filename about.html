@@ -2,30 +2,301 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
+
   <meta
     name="description"
-    content="LarHub real estate listing platform."
+    content="Learn how LarHub approaches clear, accessible property discovery across South Africa."
   >
 
   <title>About | LarHub</title>
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/pages/about.css">
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/pages/about.css"
+  >
 </head>
 
 <body class="page">
   <header data-public-header></header>
 
   <main id="main-content">
-    <h1>About</h1>
+    <section
+      class="about-hero"
+      aria-labelledby="about-title"
+    >
+      <div class="container about-hero__grid">
+        <div class="about-hero__content">
+          <p class="text-eyebrow">
+            About LarHub
+          </p>
+
+          <h1
+            class="text-display"
+            id="about-title"
+          >
+            Property discovery built around clarity.
+          </h1>
+
+          <p class="text-body-lg text-measure-narrow">
+            LarHub is a frontend real estate marketplace
+            concept designed to make finding, comparing,
+            and exploring property feel more structured
+            and less overwhelming.
+          </p>
+        </div>
+
+        <figure class="about-hero__media">
+          <img
+            src="/assets/images/about/about-property-placeholder.svg"
+            alt="Architectural property illustration representing the LarHub marketplace"
+          >
+        </figure>
+      </div>
+    </section>
+
+    <section
+      class="section"
+      aria-labelledby="about-does-title"
+    >
+      <div class="container about-section-grid">
+        <div class="flow-sm">
+          <p class="text-eyebrow">
+            What LarHub does
+          </p>
+
+          <h2 id="about-does-title">
+            A clearer path from search to enquiry.
+          </h2>
+        </div>
+
+        <div class="about-process">
+          <article>
+            <p class="text-eyebrow">
+              01
+            </p>
+
+            <h3>
+              Discover
+            </h3>
+
+            <p>
+              Start with sale or rental intent,
+              location, and property type.
+            </p>
+          </article>
+
+          <article>
+            <p class="text-eyebrow">
+              02
+            </p>
+
+            <h3>
+              Refine
+            </h3>
+
+            <p>
+              Narrow results using practical property
+              criteria rather than decorative noise.
+            </p>
+          </article>
+
+          <article>
+            <p class="text-eyebrow">
+              03
+            </p>
+
+            <h3>
+              Explore
+            </h3>
+
+            <p>
+              Review the details, features, imagery,
+              location context, and responsible agent.
+            </p>
+          </article>
+
+          <article>
+            <p class="text-eyebrow">
+              04
+            </p>
+
+            <h3>
+              Connect
+            </h3>
+
+            <p>
+              Move from discovery to an enquiry or
+              viewing request when you're ready.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section section-surface"
+      aria-labelledby="about-serves-title"
+    >
+      <div class="container">
+        <div class="flow-sm about-section-heading">
+          <p class="text-eyebrow">
+            Who LarHub serves
+          </p>
+
+          <h2 id="about-serves-title">
+            One marketplace, different responsibilities.
+          </h2>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="about-audience-card">
+            <h3>
+              Property seekers
+            </h3>
+
+            <p>
+              Search, compare, save, revisit, and
+              enquire about properties.
+            </p>
+          </article>
+
+          <article class="about-audience-card">
+            <h3>
+              Property agents
+            </h3>
+
+            <p>
+              Present listings clearly and eventually
+              manage listing lifecycle and enquiries.
+            </p>
+          </article>
+
+          <article class="about-audience-card">
+            <h3>
+              Platform administrators
+            </h3>
+
+            <p>
+              Eventually review listings, agents,
+              users, and marketplace moderation activity.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section"
+      aria-labelledby="about-principles-title"
+    >
+      <div class="container about-principles">
+        <div class="flow-sm">
+          <p class="text-eyebrow">
+            Platform principles
+          </p>
+
+          <h2 id="about-principles-title">
+            Designed to stay understandable.
+          </h2>
+        </div>
+
+        <dl class="about-principles__list">
+          <div>
+            <dt>
+              Clarity
+            </dt>
+
+            <dd>
+              Important property information should be
+              easy to identify and compare.
+            </dd>
+          </div>
+
+          <div>
+            <dt>
+              Discovery
+            </dt>
+
+            <dd>
+              Search and filtering should help users
+              move toward relevant listings quickly.
+            </dd>
+          </div>
+
+          <div>
+            <dt>
+              Transparency
+            </dt>
+
+            <dd>
+              The frontend should never pretend that
+              unavailable backend operations succeeded.
+            </dd>
+          </div>
+
+          <div>
+            <dt>
+              Accessibility
+            </dt>
+
+            <dd>
+              Navigation, forms, focus, semantics,
+              and responsive behaviour are core design
+              requirements rather than optional polish.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section
+      class="section section-surface-secondary"
+      aria-labelledby="about-status-title"
+    >
+      <div class="container about-status">
+        <div class="flow-sm">
+          <p class="text-eyebrow">
+            Current project stage
+          </p>
+
+          <h2 id="about-status-title">
+            A complete frontend direction first.
+          </h2>
+
+          <p class="text-body-lg text-measure">
+            LarHub is currently being implemented as a
+            modular HTML, CSS, and vanilla JavaScript
+            frontend. Backend services, real authentication,
+            database persistence, and provider integrations
+            are intentionally deferred.
+          </p>
+        </div>
+
+        <a
+          class="button button--secondary"
+          href="/properties.html"
+        >
+          Explore Properties
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer data-public-footer></footer>
 
-  <script type="module" src="/js/main.js"></script>
+  <script
+    type="module"
+    src="/js/main.js"
+  ></script>
 </body>
 </html>
