@@ -10,10 +10,10 @@
 
   <meta
     name="description"
-    content="LarHub Admin workspace — User Management."
+    content="LarHub Admin workspace — Property Moderation."
   >
 
-  <title>User Management | LarHub</title>
+  <title>Property Moderation | LarHub</title>
 
   <link
     rel="stylesheet"
@@ -29,7 +29,7 @@
 <body
   class="app-page"
   data-app-area="admin"
-  data-admin-page="users"
+  data-admin-page="properties"
 >
   <div class="app-shell">
     <aside
@@ -56,11 +56,11 @@
               </p>
 
               <h1>
-                Users
+                Properties
               </h1>
 
               <p class="text-measure">
-                Manage a small set of explicit demo user records for frontend completeness.
+                Review property moderation state and simulate approval or rejection locally.
               </p>
             </div>
           </header>
@@ -76,22 +76,51 @@
             <div class="app-section__heading">
               <div>
                 <p class="text-eyebrow">
-                  User administration
+                  Moderation
                 </p>
 
                 <h2>
-                  Marketplace users
+                  Property review
                 </h2>
               </div>
             </div>
 
+            <div class="admin-toolbar">
+              <label>
+                <span class="text-label">
+                  Moderation status
+                </span>
+
+                <select
+                  data-admin-property-filter
+                >
+                  <option value="">
+                    All properties
+                  </option>
+
+                  <option value="approved">
+                    Approved
+                  </option>
+
+                  <option value="pending-review">
+                    Pending Review
+                  </option>
+
+                  <option value="rejected">
+                    Rejected
+                  </option>
+                </select>
+              </label>
+            </div>
+
             <p class="admin-demo-note text-small">
-              These are demonstration user records, not real accounts.
+              Admin moderation changes are browser-local
+              and do not mutate the static public property dataset.
             </p>
 
             <div
               class="admin-table-wrap"
-              data-admin-users
+              data-admin-properties
             ></div>
           </section>
 

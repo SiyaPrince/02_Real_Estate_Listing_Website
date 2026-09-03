@@ -709,3 +709,78 @@ Full visual/browser interaction QA remains intentionally deferred until implemen
 - [ ] Verify recently viewed ordering.
 - [ ] Verify local enquiry records after submitting property forms.
 - [ ] Verify profile state survives refresh.
+
+
+# 14. Increment 10 — Agent Application QA
+
+## Application Shell
+
+- [x] Agent navigation is active.
+- [x] Overview link exists.
+- [x] My Listings link exists.
+- [x] Add Property link exists.
+- [x] Enquiries link exists.
+- [x] Performance link exists.
+- [x] Profile link exists.
+- [x] Active page state works.
+- [x] Agent Demo Access state is visible.
+
+## Listings
+
+- [x] Demo Agent base listings load.
+- [x] Local overrides merge with base listings.
+- [x] Local additions load.
+- [x] Status filtering works.
+- [x] Draft exists.
+- [x] Published exists.
+- [x] Under Offer exists.
+- [x] Sold exists.
+- [x] Rented exists.
+- [x] Sold/Rented are shown only in management UI.
+- [x] Local management changes do not mutate the public static dataset.
+- [x] Local listing reset exists.
+
+## Property Form
+
+- [x] Create mode exists.
+- [x] Edit mode exists through `?id=`.
+- [x] Required fields use native validation.
+- [x] Numeric property facts are normalized.
+- [x] Comma-separated features are normalized.
+- [x] New local listing receives ID/reference.
+- [x] Save result explicitly says it is browser-local.
+
+## Enquiries
+
+- [x] Agent view filters Demo Enquiries by managed listing IDs.
+- [x] Enquiry sender details render.
+- [x] Viewing requests remain distinguishable.
+- [x] Local Demo status is explicit.
+- [x] No delivery/scheduling success is claimed.
+
+## Performance
+
+- [x] Published count is computed.
+- [x] Under Offer count is computed.
+- [x] Sold/Rented count is computed.
+- [x] Demo enquiry count is computed.
+- [x] Lifecycle distribution is computed.
+- [x] No fake views/conversion/revenue metrics were added.
+
+## Profile
+
+- [x] Demo Agent profile loads from real demo Agent data.
+- [x] Local profile override exists.
+- [x] Areas served are editable locally.
+- [x] Specialisations are editable locally.
+- [x] UI explicitly states public profile data is unchanged.
+
+## Pending Browser Acceptance
+
+- [ ] Verify Agent sidebar/mobile navigation.
+- [ ] Verify listing cards at mobile/desktop widths.
+- [ ] Verify status control behavior.
+- [ ] Verify Add/Edit form on narrow screens.
+- [ ] Verify local additions survive refresh.
+- [ ] Verify Sold/Rented states remain management-only.
+- [ ] Verify performance counts after status changes.

@@ -342,3 +342,34 @@ POST /enquiries
 
 The frontend service/component boundaries should remain while persistence moves from local demo
 storage to authenticated backend operations.
+
+
+### Increment 10 Agent Application Status
+
+The Agent workspace is implemented with browser-local management state.
+
+Current local keys:
+
+```text
+larhub.demoAgentListings
+larhub.demoAgentProfile
+larhub.demoSession
+larhub.demoEnquiries
+```
+
+Future backend replacements will likely include:
+
+```text
+GET /agent/properties
+POST /properties
+PATCH /properties/:id
+DELETE /properties/:id
+GET /agent/enquiries
+PATCH /enquiries/:id
+GET /agent/profile
+PATCH /agent/profile
+```
+
+Listing lifecycle remains distinct from public listing status.
+
+Sold and Rented are management states and should not appear in active public discovery.

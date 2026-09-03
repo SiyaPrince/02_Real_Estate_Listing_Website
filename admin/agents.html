@@ -2,34 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
+
   <meta
     name="description"
-    content="LarHub admin interface."
+    content="LarHub Admin workspace — Agent Management."
   >
 
-  <title>Agents | LarHub</title>
+  <title>Agent Management | LarHub</title>
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/pages/admin.css">
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/pages/admin-dashboard.css"
+  >
 </head>
 
-<body data-app-area="admin">
-  <div data-app-shell>
-    <nav
-      aria-label="Admin navigation"
+<body
+  class="app-page"
+  data-app-area="admin"
+  data-admin-page="agents"
+>
+  <div class="app-shell">
+    <aside
+      class="app-shell__nav"
+      id="app-navigation"
       data-app-navigation
-    ></nav>
+    ></aside>
 
-    <main id="main-content">
-      <h1>Agents</h1>
-    </main>
+    <div class="app-shell__body">
+      <header
+        class="app-topbar"
+        data-app-topbar
+      ></header>
+
+      <main
+        class="app-main"
+        id="main-content"
+      >
+        <div class="app-content">
+          <header class="app-page-heading">
+            <div class="flow-sm">
+              <p class="text-eyebrow">
+                LarHub Admin
+              </p>
+
+              <h1>
+                Agents
+              </h1>
+
+              <p class="text-measure">
+                Review approved public agents and simulate account approval or suspension.
+              </p>
+            </div>
+          </header>
+
+          <section
+            class="admin-access-note"
+            data-admin-access-note
+            hidden
+          ></section>
+
+          
+          <section class="app-section">
+            <div class="app-section__heading">
+              <div>
+                <p class="text-eyebrow">
+                  Agent administration
+                </p>
+
+                <h2>
+                  Agent accounts
+                </h2>
+              </div>
+            </div>
+
+            <p class="admin-demo-note text-small">
+              Account approval/suspension changes are
+              local demonstration state only.
+            </p>
+
+            <div
+              class="admin-card-list"
+              data-admin-agents
+            ></div>
+          </section>
+
+        </div>
+      </main>
+    </div>
   </div>
 
-  <script type="module" src="/js/main.js"></script>
-  <script type="module" src="/js/pages/admin-dashboard.js"></script>
+  <div
+    class="app-nav-backdrop"
+    data-app-nav-backdrop
+    hidden
+  ></div>
+
+  <script
+    type="module"
+    src="/js/pages/admin-dashboard.js"
+  ></script>
 </body>
 </html>

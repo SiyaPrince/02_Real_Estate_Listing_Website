@@ -2,34 +2,194 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
+
   <meta
     name="description"
-    content="LarHub admin interface."
+    content="LarHub Admin workspace — Admin Settings."
   >
 
-  <title>Settings | LarHub</title>
+  <title>Admin Settings | LarHub</title>
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/pages/admin.css">
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/pages/admin-dashboard.css"
+  >
 </head>
 
-<body data-app-area="admin">
-  <div data-app-shell>
-    <nav
-      aria-label="Admin navigation"
+<body
+  class="app-page"
+  data-app-area="admin"
+  data-admin-page="settings"
+>
+  <div class="app-shell">
+    <aside
+      class="app-shell__nav"
+      id="app-navigation"
       data-app-navigation
-    ></nav>
+    ></aside>
 
-    <main id="main-content">
-      <h1>Settings</h1>
-    </main>
+    <div class="app-shell__body">
+      <header
+        class="app-topbar"
+        data-app-topbar
+      ></header>
+
+      <main
+        class="app-main"
+        id="main-content"
+      >
+        <div class="app-content">
+          <header class="app-page-heading">
+            <div class="flow-sm">
+              <p class="text-eyebrow">
+                LarHub Admin
+              </p>
+
+              <h1>
+                Settings
+              </h1>
+
+              <p class="text-measure">
+                Manage browser-local frontend settings and reset Admin demonstration state.
+              </p>
+            </div>
+          </header>
+
+          <section
+            class="admin-access-note"
+            data-admin-access-note
+            hidden
+          ></section>
+
+          
+          <section class="admin-settings-layout">
+            <div class="admin-settings-intro">
+              <p class="text-eyebrow">
+                Frontend settings
+              </p>
+
+              <h2>
+                Demo platform settings
+              </h2>
+
+              <p>
+                These settings are stored locally and
+                do not configure a backend, OAuth provider,
+                email system, or production marketplace.
+              </p>
+            </div>
+
+            <form
+              class="property-form"
+              data-admin-settings-form
+              novalidate
+            >
+              <label>
+                <span class="text-label">
+                  Marketplace name
+                </span>
+
+                <input
+                  name="marketplaceName"
+                  type="text"
+                  required
+                >
+              </label>
+
+              <label>
+                <span class="text-label">
+                  Support email
+                </span>
+
+                <input
+                  name="supportEmail"
+                  type="email"
+                  required
+                >
+              </label>
+
+              <label class="admin-checkbox">
+                <input
+                  name="allowDemoRegistration"
+                  type="checkbox"
+                >
+
+                <span>
+                  Allow demo registration UI
+                </span>
+              </label>
+
+              <label class="admin-checkbox">
+                <input
+                  name="requireAgentApproval"
+                  type="checkbox"
+                >
+
+                <span>
+                  Require agent approval
+                </span>
+              </label>
+
+              <label class="admin-checkbox">
+                <input
+                  name="requireListingApproval"
+                  type="checkbox"
+                >
+
+                <span>
+                  Require listing approval
+                </span>
+              </label>
+
+              <div class="admin-settings-actions">
+                <button
+                  class="button"
+                  type="submit"
+                >
+                  Save Demo Settings
+                </button>
+
+                <button
+                  class="button button--secondary"
+                  type="button"
+                  data-reset-admin-state
+                >
+                  Reset Admin Demo State
+                </button>
+              </div>
+
+              <p
+                class="form-status"
+                data-admin-settings-status
+                aria-live="polite"
+              ></p>
+            </form>
+          </section>
+
+        </div>
+      </main>
+    </div>
   </div>
 
-  <script type="module" src="/js/main.js"></script>
-  <script type="module" src="/js/pages/admin-dashboard.js"></script>
+  <div
+    class="app-nav-backdrop"
+    data-app-nav-backdrop
+    hidden
+  ></div>
+
+  <script
+    type="module"
+    src="/js/pages/admin-dashboard.js"
+  ></script>
 </body>
 </html>

@@ -324,3 +324,27 @@ larhub.demoUserProfile
 
 Browser-local records must never be presented as server-backed account data, delivered enquiries,
 or scheduled viewings.
+
+
+## DEC-015 — Agent Demo Listing Persistence
+
+**Date:** 2026-09-03  
+**Status:** LOCKED
+
+### Decision
+
+The frontend-only Agent workspace may use browser-local listing overrides and additions under:
+
+```text
+larhub.demoAgentListings
+```
+
+### Constraint
+
+Agent workspace changes do not mutate the static public marketplace dataset.
+
+This preserves an honest distinction between:
+
+- frontend management simulation
+- real backend publication/moderation
+- public marketplace state

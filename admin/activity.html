@@ -10,10 +10,10 @@
 
   <meta
     name="description"
-    content="LarHub Admin workspace — Admin Overview."
+    content="LarHub Admin workspace — Marketplace Activity."
   >
 
-  <title>Admin Overview | LarHub</title>
+  <title>Marketplace Activity | LarHub</title>
 
   <link
     rel="stylesheet"
@@ -29,7 +29,7 @@
 <body
   class="app-page"
   data-app-area="admin"
-  data-admin-page="overview"
+  data-admin-page="activity"
 >
   <div class="app-shell">
     <aside
@@ -56,11 +56,11 @@
               </p>
 
               <h1>
-                Overview
+                Activity
               </h1>
 
               <p class="text-measure">
-                Review the current LarHub marketplace demonstration state without pretending a real production admin backend exists.
+                Inspect only marketplace values that can be honestly computed from LarHub demonstration state.
               </p>
             </div>
           </header>
@@ -73,87 +73,78 @@
 
           
           <section
+            class="admin-demo-note"
+          >
+            <p class="text-eyebrow">
+              Activity
+            </p>
+
+            <h2>
+              Computed marketplace state
+            </h2>
+
+            <p>
+              LarHub is showing only values derivable from
+              current demo properties, agents, users, and
+              local enquiry records. No fake traffic,
+              financial, or growth analytics are generated.
+            </p>
+          </section>
+
+          <section
             class="dashboard-stats dashboard-stats--admin"
-            aria-label="Admin marketplace summary"
+            aria-label="Admin activity summary"
           >
             <article class="dashboard-stat">
               <p class="text-small">
-                Properties
+                Pending properties
               </p>
 
               <p
                 class="dashboard-stat__value"
-                data-admin-property-count
+                data-activity-pending
               >
                 0
               </p>
-
-              <a
-                class="text-link text-small"
-                href="/admin/properties.html"
-              >
-                Review properties
-              </a>
             </article>
 
             <article class="dashboard-stat">
               <p class="text-small">
-                Approved agents
+                Rejected properties
               </p>
 
               <p
                 class="dashboard-stat__value"
-                data-admin-agent-count
+                data-activity-rejected
               >
                 0
               </p>
-
-              <a
-                class="text-link text-small"
-                href="/admin/agents.html"
-              >
-                Manage agents
-              </a>
             </article>
 
             <article class="dashboard-stat">
               <p class="text-small">
-                Active users
+                Suspended agents
               </p>
 
               <p
                 class="dashboard-stat__value"
-                data-admin-user-count
+                data-activity-agents
               >
                 0
               </p>
-
-              <a
-                class="text-link text-small"
-                href="/admin/users.html"
-              >
-                Manage users
-              </a>
             </article>
 
             <article class="dashboard-stat">
               <p class="text-small">
-                Demo enquiries
+                Suspended users
               </p>
 
               <p
                 class="dashboard-stat__value"
-                data-admin-enquiry-count
+                data-activity-users
               >
                 0
               </p>
-
-              <a
-                class="text-link text-small"
-                href="/admin/activity.html"
-              >
-                View activity
-              </a>
             </article>
           </section>
 
@@ -161,18 +152,18 @@
             <div class="app-section__heading">
               <div>
                 <p class="text-eyebrow">
-                  Marketplace health
+                  Current state
                 </p>
 
                 <h2>
-                  Moderation snapshot
+                  Marketplace distribution
                 </h2>
               </div>
             </div>
 
             <div
               class="admin-overview-grid"
-              data-admin-overview
+              data-admin-activity-distribution
             ></div>
           </section>
 

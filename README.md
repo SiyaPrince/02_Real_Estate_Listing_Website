@@ -376,3 +376,37 @@ larhub.demoUserProfile
 ```
 
 Local enquiry/viewing records are explicitly not delivered or scheduled.
+
+
+## Agent Application
+
+LarHub now includes a complete frontend Agent workspace:
+
+- Overview
+- My Listings
+- Add/Edit Property
+- Listing lifecycle management
+- Enquiries
+- Performance
+- Profile settings
+
+Management lifecycle includes:
+
+```text
+Draft
+Published
+Under Offer
+Sold
+Rented
+```
+
+Sold and Rented remain management-only states.
+
+Agent workspace edits are stored locally under:
+
+```text
+larhub.demoAgentListings
+larhub.demoAgentProfile
+```
+
+They do not mutate the static public marketplace dataset or claim backend persistence.

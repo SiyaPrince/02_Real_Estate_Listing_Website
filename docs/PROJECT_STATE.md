@@ -2,7 +2,7 @@
 
 ## Current Increment
 
-**Increment 9 — User Application**
+**Increment 10 — Agent Application**
 
 Status:
 
@@ -17,131 +17,134 @@ PLANNING / DESIGN          COMPLETE
 FOUNDATION                 COMPLETE + LOCKED
 PUBLIC EXPERIENCE          COMPLETE
 AUTHENTICATION UI          COMPLETE
-USER APPLICATION           IMPLEMENTED
-AGENT APPLICATION          NEXT
-ADMIN APPLICATION          NOT STARTED
+USER APPLICATION           COMPLETE
+AGENT APPLICATION          IMPLEMENTED
+ADMIN APPLICATION          NEXT
 FINAL QA / CONSOLIDATION   NOT STARTED
 ```
 
 ---
 
-## Increment 9 Completed
+## Increment 10 Completed
 
-### Shared Application Shell
+### Agent Application Shell
 
-Activated:
-
-```text
-js/components/app-navigation.js
-css/components/dashboard.css
-```
-
-The shell supports:
-
-- Responsive application sidebar
-- Mobile application menu
-- Backdrop
-- Escape-to-close
-- Active navigation state
-- Public marketplace link
-- Demo role badge
-- Exit Demo action
-
-The component is structured for reuse in Agent/Admin increments.
-
-### User Overview
-
-Implemented:
-
-- Saved Properties count
-- Recently Viewed count
-- Local Demo Enquiries count
-- Recently Viewed preview
-- Demo Access notice when User demo role is not active
-
-### Saved Properties
-
-Reads:
+The shared application shell now supports Agent navigation:
 
 ```text
-larhub.savedProperties
+Overview
+My Listings
+Add Property
+Enquiries
+Performance
+Profile
 ```
 
-and resolves IDs through the Property Service.
-
-Only currently public properties render.
-
-### Recently Viewed
-
-Activated:
-
-```text
-larhub.recentlyViewed
-```
-
-Property Details records a property when a valid public detail page is opened.
-
-History:
-
-- is browser-local
-- stores property IDs only
-- is capped at 12 IDs
-- can be cleared
-
-### Enquiries
-
-Activated local demonstration records:
-
-```text
-larhub.demoEnquiries
-```
-
-Valid Property Details enquiry/viewing forms now save a local demo record.
-
-Important:
-
-- no enquiry is sent
-- no viewing is scheduled
-- records exist only in the current browser
-- the UI says this explicitly
-
-### Profile
-
-Activated local demonstration profile:
-
-```text
-larhub.demoUserProfile
-```
-
-Fields:
-
-- Name
-- Email
-- Phone
-- Preferred location
-- Buying/Renting preference
-
-No server account is updated.
-
-### Demo Access
-
-The User workspace recognizes:
+Agent Demo Access uses:
 
 ```text
 larhub.demoSession
+role: "agent"
 ```
 
-with:
+### Overview
+
+Implemented data-driven counts for:
+
+- Published/active listings
+- Under Offer listings
+- Demo enquiries associated with this Demo Agent
+- Recent listing-management cards
+
+### My Listings
+
+Implemented:
+
+- Demo Agent inventory
+- Status filter
+- Edit action
+- Lifecycle status control
+- Draft
+- Published
+- Under Offer
+- Sold
+- Rented
+- Reset local changes
+
+Important:
+
+Sold/Rented remain management-only states.
+
+Local Agent changes do not mutate the public marketplace demo dataset.
+
+### Add / Edit Property
+
+Implemented browser-local property editor:
+
+- Title
+- Listing type
+- Property type
+- Price
+- Lifecycle status
+- Suburb
+- City
+- Province
+- Bedrooms
+- Bathrooms
+- Parking
+- Floor area
+- Land area
+- Features
+- Description
+
+Existing static Demo Agent listings can be overridden locally.
+
+New listings receive local demo IDs/references.
+
+Storage:
 
 ```text
-role: "user"
+larhub.demoAgentListings
 ```
 
-The UI remains viewable without Demo Access because this is a frontend portfolio build,
-but clearly warns that User Demo Access is not active.
+### Agent Enquiries
+
+Agent Enquiries filters the local User enquiry records to listing IDs managed by this Demo Agent.
+
+No enquiry is claimed to have been delivered.
+
+### Performance
+
+Implemented only honest computed metrics:
+
+- Published listing count
+- Under Offer count
+- Sold/Rented count
+- Local Demo Enquiry count
+- Lifecycle distribution
+
+No fake:
+
+- page views
+- conversion rates
+- leads
+- revenue
+- impressions
+
+were added.
+
+### Agent Profile Settings
+
+Local Agent profile editing uses:
+
+```text
+larhub.demoAgentProfile
+```
+
+Changes remain browser-local and do not mutate the public Agent Profile dataset.
 
 ---
 
 ## Next
 
-**Increment 10 — Agent Application**
+**Increment 11 — Admin Application**
