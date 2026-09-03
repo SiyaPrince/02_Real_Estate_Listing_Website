@@ -129,3 +129,14 @@ Before accepting an image implementation:
 | AGENT-FALLBACK-001 | `agent-placeholder.svg` | `assets/images/agents/` | Temporary Agent Card fallback | 1:1 | PLACED |
 
 These are structural fallbacks, not final portfolio imagery.
+
+
+## Increment 3 — Home
+
+| Asset ID | Filename | Location | Purpose | Ratio | Status |
+|---|---|---|---|---|---|
+| HOME-PLACEHOLDER-001 | `home-hero-placeholder.svg` | `assets/images/home/` | Temporary Home hero visual until final property photography is added | Responsive | PLACED |
+
+The Home hero now contains explicit meaningful image markup.
+
+Replacing the placeholder later requires only changing the image asset/source, not rebuilding the Home hero.

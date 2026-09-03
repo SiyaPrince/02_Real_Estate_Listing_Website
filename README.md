@@ -235,3 +235,20 @@ css/components/agent-card.css
 ```
 
 Public property retrieval excludes Sold, Rented, Draft, and other management-only records.
+
+
+## Home Page
+
+LarHub Home now includes:
+
+- Responsive hero
+- Primary property search
+- Featured Property Cards
+- Buy/Rent discovery
+- Popular South African locations
+- Concise platform value section
+- Browse Properties CTA
+
+The Home search passes its state into the future Properties experience using query parameters.
+
+The current hero asset is a temporary structural placeholder and is explicitly referenced through an `<img>` element.

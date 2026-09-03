@@ -315,3 +315,57 @@ Full visual/browser interaction QA remains intentionally deferred until implemen
 - [ ] Verify long titles do not overflow.
 - [ ] Verify fallback media crops correctly.
 - [ ] Verify hover/focus states.
+
+
+# 7. Increment 3 — Home QA
+
+## Structure
+
+- [x] Home has one H1.
+- [x] Hero image uses explicit `<img>` markup.
+- [x] Home search uses a semantic `<form>`.
+- [x] Search controls have visible labels.
+- [x] Featured section has a labelled heading.
+- [x] Buy/Rent discovery uses real links.
+- [x] Popular locations use real links.
+- [x] Final CTA uses a real link.
+
+## Search
+
+- [x] Listing type is included in URL query state.
+- [x] Location is included only when provided.
+- [x] Property type is included only when provided.
+- [x] Empty optional values are omitted.
+- [x] Search routes to `properties.html`.
+- [x] Full Properties filtering logic remains deferred.
+
+## Data
+
+- [x] Featured listings are loaded through the Property Service.
+- [x] Shared Property Card is reused.
+- [x] Home does not duplicate raw property markup.
+
+## Content
+
+- [x] No fake user/listing/platform statistics are shown.
+- [x] South African context appears naturally in property/location content.
+- [x] Home remains concise rather than becoming a duplicate Properties page.
+
+## Responsive
+
+- [x] Hero starts stacked.
+- [x] Hero becomes two-column on desktop.
+- [x] Search stacks on mobile.
+- [x] Search becomes denser at larger widths.
+- [x] Featured listings use shared responsive grid.
+- [x] CTA stacks before becoming horizontal.
+
+## Pending Browser Acceptance
+
+- [ ] Verify hero visual balance on desktop.
+- [ ] Verify search-field spacing on mobile.
+- [ ] Verify search does not overflow narrow mobile widths.
+- [ ] Verify Property Cards appear consistently.
+- [ ] Verify Buy/Rent cards remain balanced.
+- [ ] Verify location-row hover/focus states.
+- [ ] Replace hero placeholder with final photography when imagery is available.
