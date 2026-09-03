@@ -1,0 +1,69 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1000 1200"
+>
+  <rect
+    width="1000"
+    height="1200"
+    fill="#e7efec"
+  />
+
+  <rect
+    x="110"
+    y="300"
+    width="780"
+    height="560"
+    rx="22"
+    fill="#ffffff"
+    stroke="#b8bdb9"
+    stroke-width="10"
+  />
+
+  <path
+    d="M160 400L500 175L840 400"
+    fill="none"
+    stroke="#173f35"
+    stroke-width="34"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <rect
+    x="210"
+    y="500"
+    width="220"
+    height="180"
+    fill="#f0f0eb"
+    stroke="#daddd9"
+    stroke-width="8"
+  />
+
+  <rect
+    x="570"
+    y="500"
+    width="220"
+    height="180"
+    fill="#f0f0eb"
+    stroke="#daddd9"
+    stroke-width="8"
+  />
+
+  <rect
+    x="445"
+    y="585"
+    width="110"
+    height="275"
+    fill="#173f35"
+  />
+
+  <text
+    x="500"
+    y="1040"
+    text-anchor="middle"
+    font-family="Arial, sans-serif"
+    font-size="42"
+    fill="#606762"
+  >
+    LarHub Authentication
+  </text>
+</svg>
