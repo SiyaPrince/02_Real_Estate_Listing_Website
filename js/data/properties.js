@@ -15,10 +15,10 @@ export const properties = [
     features: ["Swimming Pool", "Garden", "Solar", "Security"],
     description: "A calm, contemporary family home with generous living areas, natural light, and a private garden designed for everyday comfort. The home combines practical family spaces with considered finishes, solar support, and a secure Rosebank location.",
     images: [
-      "/assets/images/properties/property-detail-01.svg",
-      "/assets/images/properties/property-detail-02.svg",
-      "/assets/images/properties/property-detail-03.svg",
-      "/assets/images/properties/property-detail-04.svg"
+      "/assets/images/properties/property-001-01.jpg",
+      "/assets/images/properties/property-001-02.jpg",
+      "/assets/images/properties/property-001-03.jpg",
+      "/assets/images/properties/property-001-04.jpg"
     ],
     agentId: "agent-001",
     publicStatus: "for-sale",
@@ -39,9 +39,10 @@ export const properties = [
     features: ["Balcony", "Security", "Fibre", "Backup Power"],
     description: "A well-positioned city apartment with open-plan living, skyline views, and easy access to Sandton business and lifestyle amenities. The apartment suits buyers looking for a low-maintenance urban home.",
     images: [
-      "/assets/images/properties/property-detail-02.svg",
-      "/assets/images/properties/property-detail-03.svg",
-      "/assets/images/properties/property-detail-04.svg"
+      "/assets/images/properties/property-002-01.jpg",
+      "/assets/images/properties/property-002-02.jpg",
+      "/assets/images/properties/property-002-03.jpg",
+      "/assets/images/properties/property-002-04.jpg"
     ],
     agentId: "agent-002",
     publicStatus: "new",
@@ -60,7 +61,12 @@ export const properties = [
     location: { suburb: "Halfway Gardens", city: "Midrand", province: "Gauteng" },
     facts: { bedrooms: 3, bathrooms: 2, parking: 2, floorArea: 164, landArea: 220 },
     features: ["Private Garden", "Security Estate", "Fibre"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    images: [
+      "/assets/images/properties/property-003-01.jpg",
+      "/assets/images/properties/property-003-02.jpg",
+      "/assets/images/properties/property-003-03.jpg",
+      "/assets/images/properties/property-003-04.jpg"
+    ],
     agentId: "agent-003",
     publicStatus: "for-sale",
     lifecycleStatus: "published",
@@ -81,9 +87,10 @@ export const properties = [
     features: ["Furnished", "Balcony", "Security", "Fibre"],
     description: "A furnished Green Point apartment offering a practical lock-up-and-go rental close to the Atlantic Seaboard. The layout includes bright living spaces, a private balcony, and secure parking.",
     images: [
-      "/assets/images/properties/property-detail-03.svg",
-      "/assets/images/properties/property-detail-04.svg",
-      "/assets/images/properties/property-detail-01.svg"
+      "/assets/images/properties/property-004-01.jpg",
+      "/assets/images/properties/property-004-02.jpg",
+      "/assets/images/properties/property-004-03.jpg",
+      "/assets/images/properties/property-004-04.jpg"
     ],
     agentId: "agent-004",
     publicStatus: "to-rent",
@@ -104,9 +111,10 @@ export const properties = [
     features: ["Swimming Pool", "Garden", "Solar", "Double Garage"],
     description: "A substantial Waterkloof family home set on a generous stand with multiple living areas, landscaped outdoor space, and strong energy resilience through solar support.",
     images: [
-      "/assets/images/properties/property-detail-04.svg",
-      "/assets/images/properties/property-detail-01.svg",
-      "/assets/images/properties/property-detail-02.svg"
+      "/assets/images/properties/property-005-01.jpg",
+      "/assets/images/properties/property-005-02.jpg",
+      "/assets/images/properties/property-005-03.jpg",
+      "/assets/images/properties/property-005-04.jpg"
     ],
     agentId: "agent-005",
     publicStatus: "for-sale",
@@ -126,7 +134,12 @@ export const properties = [
     location: { suburb: "Umhlanga Ridge", city: "Durban", province: "KwaZulu-Natal" },
     facts: { bedrooms: 2, bathrooms: 2, parking: 2, floorArea: 112, landArea: null },
     features: ["Sea Views", "Security", "Gym", "Pool"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    images: [
+      "/assets/images/properties/property-006-01.jpg",
+      "/assets/images/properties/property-006-02.jpg",
+      "/assets/images/properties/property-006-03.jpg",
+      "/assets/images/properties/property-006-04.jpg"
+    ],
     agentId: "agent-006",
     publicStatus: "to-rent",
     lifecycleStatus: "published",
@@ -146,7 +159,12 @@ export const properties = [
     location: { suburb: "Sandton Central", city: "Johannesburg", province: "Gauteng" },
     facts: { bedrooms: null, bathrooms: 2, parking: 8, floorArea: 420, landArea: null },
     features: ["Backup Power", "Reception Area", "Boardroom", "Security"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    images: [
+      "/assets/images/properties/property-007-01.jpg",
+      "/assets/images/properties/property-007-02.jpg",
+      "/assets/images/properties/property-007-03.jpg",
+      "/assets/images/properties/property-007-04.jpg"
+    ],
     agentId: "agent-002",
     publicStatus: "to-rent",
     lifecycleStatus: "published",
@@ -164,7 +182,12 @@ export const properties = [
     location: { suburb: "Paradyskloof", city: "Stellenbosch", province: "Western Cape" },
     facts: { bedrooms: null, bathrooms: null, parking: null, floorArea: null, landArea: 1250 },
     features: ["Residential Zoning", "Mountain Views"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    images: [
+      "/assets/images/properties/property-008-01.jpg",
+      "/assets/images/properties/property-008-02.jpg",
+      "/assets/images/properties/property-008-03.jpg",
+      "/assets/images/properties/property-008-04.jpg"
+    ],
     agentId: "agent-004",
     publicStatus: "for-sale",
     lifecycleStatus: "published",
@@ -183,7 +206,12 @@ export const properties = [
     location: { suburb: "Lynnwood", city: "Pretoria", province: "Gauteng" },
     facts: { bedrooms: 2, bathrooms: 2, parking: 2, floorArea: 128, landArea: 180 },
     features: ["Security Estate", "Garden", "Pet Friendly", "Fibre"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    images: [
+      "/assets/images/properties/property-009-01.jpg",
+      "/assets/images/properties/property-009-02.jpg",
+      "/assets/images/properties/property-009-03.jpg",
+      "/assets/images/properties/property-009-04.jpg"
+    ],
     agentId: "agent-005",
     publicStatus: "to-rent",
     lifecycleStatus: "published",
@@ -201,7 +229,12 @@ export const properties = [
     location: { suburb: "Parkhurst", city: "Johannesburg", province: "Gauteng" },
     facts: { bedrooms: 3, bathrooms: 2, parking: 2, floorArea: 210, landArea: 495 },
     features: ["Garden", "Solar", "Fireplace", "Fibre"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    images: [
+      "/assets/images/properties/property-010-01.jpg",
+      "/assets/images/properties/property-010-02.jpg",
+      "/assets/images/properties/property-010-03.jpg",
+      "/assets/images/properties/property-010-04.jpg"
+    ],
     agentId: "agent-001",
     publicStatus: "under-offer",
     lifecycleStatus: "under-offer",
@@ -219,7 +252,12 @@ export const properties = [
     location: { suburb: "Maboneng", city: "Johannesburg", province: "Gauteng" },
     facts: { bedrooms: 1, bathrooms: 1, parking: 1, floorArea: 68, landArea: null },
     features: ["Security", "Fibre", "City Views"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    images: [
+      "/assets/images/properties/property-011-01.jpg",
+      "/assets/images/properties/property-011-02.jpg",
+      "/assets/images/properties/property-011-03.jpg",
+      "/assets/images/properties/property-011-04.jpg"
+    ],
     agentId: "agent-003",
     publicStatus: "new",
     lifecycleStatus: "published",
@@ -237,7 +275,12 @@ export const properties = [
     location: { suburb: "Durban North", city: "Durban", province: "KwaZulu-Natal" },
     facts: { bedrooms: 4, bathrooms: 3, parking: 2, floorArea: 290, landArea: 720 },
     features: ["Pool", "Garden", "Double Garage", "Security"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    images: [
+      "/assets/images/properties/property-012-01.jpg",
+      "/assets/images/properties/property-012-02.jpg",
+      "/assets/images/properties/property-012-03.jpg",
+      "/assets/images/properties/property-012-04.jpg"
+    ],
     agentId: "agent-006",
     publicStatus: "for-sale",
     lifecycleStatus: "published",
@@ -255,7 +298,12 @@ export const properties = [
     location: { suburb: "Bryanston", city: "Johannesburg", province: "Gauteng" },
     facts: { bedrooms: 4, bathrooms: 3, parking: 3, floorArea: 410, landArea: 1100 },
     features: ["Pool", "Garden", "Solar"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    images: [
+      "/assets/images/properties/property-013-01.jpg",
+      "/assets/images/properties/property-013-02.jpg",
+      "/assets/images/properties/property-013-03.jpg",
+      "/assets/images/properties/property-013-04.jpg"
+    ],
     agentId: "agent-001",
     publicStatus: null,
     lifecycleStatus: "sold",
@@ -274,7 +322,12 @@ export const properties = [
     location: { suburb: "Sea Point", city: "Cape Town", province: "Western Cape" },
     facts: { bedrooms: 2, bathrooms: 2, parking: 1, floorArea: 98, landArea: null },
     features: ["Sea Views", "Balcony", "Security"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    images: [
+      "/assets/images/properties/property-014-01.jpg",
+      "/assets/images/properties/property-014-02.jpg",
+      "/assets/images/properties/property-014-03.jpg",
+      "/assets/images/properties/property-014-04.jpg"
+    ],
     agentId: "agent-004",
     publicStatus: null,
     lifecycleStatus: "rented",
@@ -293,7 +346,12 @@ export const properties = [
     location: { suburb: "Centurion Central", city: "Pretoria", province: "Gauteng" },
     facts: { bedrooms: null, bathrooms: 2, parking: 10, floorArea: 360, landArea: null },
     features: ["Retail Frontage", "Parking", "Security"],
-    images: ["/assets/images/properties/property-placeholder.svg"],
+    images: [
+      "/assets/images/properties/property-015-01.jpg",
+      "/assets/images/properties/property-015-02.jpg",
+      "/assets/images/properties/property-015-03.jpg",
+      "/assets/images/properties/property-015-04.jpg"
+    ],
     agentId: "agent-005",
     publicStatus: null,
     lifecycleStatus: "draft",

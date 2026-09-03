@@ -474,3 +474,82 @@ LarHub is currently a complete **frontend demonstration**, not a production-conn
 Authentication, OAuth, database persistence, real enquiry delivery, scheduling, production moderation, and real analytics still require backend integration.
 
 The project intentionally separates UI, services, data, features, and page logic so these backend integrations can be added later without redesigning the entire frontend.
+
+
+## Visual Polish Phase
+
+Functional frontend development and static QA are complete. Phase 13 now replaces structural/demo imagery with a consistent final LarHub visual system.
+
+The complete visual asset plan is documented in:
+
+```text
+docs/IMAGERY_AUDIT.md
+docs/IMAGE_ASSET_INVENTORY.md
+```
+
+Phase 13.1 established a target of **69 final visual assets**: 60 property images, 6 agent portraits, and 3 editorial site images. Technical fallback SVGs remain separate.
+
+
+### Phase 13.2 — Home Imagery
+
+The Home hero placeholder has been replaced by a real raster visual:
+
+```text
+assets/images/home/home-hero.jpg
+```
+
+Featured Property Cards continue to use the central property dataset; their final photography is introduced in Phase 13.3 so property imagery is maintained in one place.
+
+### Phase 13.6 — UI Polish
+
+A final shared polish layer now refines:
+
+- typography and content wrapping
+- spacing and section rhythm
+- image/card presentation
+- keyboard focus states
+- hover behavior
+- reduced motion
+- authentication layout
+- User/Agent/Admin application density
+
+The polish layer is intentionally separate from the core design tokens:
+
+```text
+css/components/polish.css
+```
+
+This keeps the base design system reusable while allowing project-wide finishing refinements.
+
+## Phase 13 Complete — Final Visual Integration
+
+The LarHub frontend now includes its integrated portfolio imagery and final shared UI polish.
+
+Final imagery:
+
+```text
+60 property JPEGs
+6 agent portraits
+1 Home hero
+1 About editorial image
+1 Authentication image
+```
+
+Total:
+
+```text
+69 final visual assets
+```
+
+Seeded properties and agents no longer depend on generic placeholders.
+
+The following fallback files intentionally remain for new/unseeded browser-local demo records:
+
+```text
+assets/images/properties/property-placeholder.svg
+assets/images/agents/agent-placeholder.svg
+```
+
+Phase 13 is complete.
+
+The next recommended step is manual browser/device QA before deployment or backend integration.

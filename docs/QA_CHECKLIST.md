@@ -928,3 +928,104 @@ Full visual/browser interaction QA remains intentionally deferred until implemen
 - [ ] 13.5 About/Auth imagery replacement.
 - [ ] 13.6 UI visual polish.
 - [ ] 13.7 Final imagery integration audit.
+
+
+# 17. Phase 13.2 — Home Imagery
+
+- [x] Home hero uses a final JPG asset rather than the structural SVG placeholder.
+- [x] `index.html` references `assets/images/home/home-hero.jpg`.
+- [x] Hero image has meaningful alternative text.
+- [x] Existing Home search/layout behavior is unchanged.
+- [x] Home Property Cards remain data-driven.
+- [x] Property-card photography is deferred to the central Property Imagery increment rather than duplicated inside Home.
+- [ ] Final browser crop check at mobile/tablet/desktop widths.
+
+# 18. Phase 13.3 — Property Imagery
+
+- [x] Every seeded property references four local images.
+- [x] All referenced seeded property image files exist.
+- [x] Property cards retain shared Property Card rendering.
+- [x] Property Details retains gallery/lightbox architecture.
+- [x] Public lifecycle/moderation rules are unchanged.
+- [x] Sold/Rented properties remain management-only.
+- [x] Generic placeholder retained for new Agent demo listings.
+- [x] Image inventory updated.
+
+# 19. Phase 13.4 — Agent Imagery
+
+- [x] Every seeded agent references an individual local JPEG portrait.
+- [x] Every referenced portrait file exists.
+- [x] Agent Directory continues to use shared Agent Card rendering.
+- [x] Agent Profile uses the same source agent portrait.
+- [x] Agent service/data behavior is unchanged.
+- [x] Generic portrait placeholder remains available as fallback.
+- [x] Image inventory updated.
+
+# 20. Phase 13.5 — About and Authentication Imagery
+
+- [x] About meaningful image reference uses a local JPEG.
+- [x] Login auth-shell image uses a local JPEG.
+- [x] Register auth-shell image uses a local JPEG.
+- [x] Forgot Password auth-shell image uses a local JPEG.
+- [x] All new referenced files exist.
+- [x] Authentication functionality and honesty boundaries are unchanged.
+- [x] Meaningful imagery remains explicit HTML imagery.
+- [x] Image inventory updated.
+
+# 21. Phase 13.6 — UI Polish
+
+- [x] Final cross-project polish stylesheet exists.
+- [x] Typography wrapping is normalized.
+- [x] Property Card image ratio is normalized.
+- [x] Agent Card image ratio is normalized.
+- [x] Hover treatment uses progressive enhancement.
+- [x] Keyboard `:focus-visible` treatment exists.
+- [x] Reduced-motion preference is respected.
+- [x] Public section rhythm is normalized.
+- [x] Authentication spacing is refined.
+- [x] App workspace content width/padding is refined.
+- [x] Narrow-mobile listing/form actions are refined.
+- [x] No feature behavior was removed.
+- [x] No backend/demo honesty boundary changed.
+
+## Manual Visual Acceptance Remaining
+
+- [ ] Confirm Home hero crop on desktop.
+- [ ] Confirm property-card crop consistency.
+- [ ] Confirm Agent Card portrait framing.
+- [ ] Confirm About/Auth image crop.
+- [ ] Confirm mobile workspace spacing.
+- [ ] Confirm dashboard density.
+
+# 22. Phase 13.7 — Final Imagery Integration Audit
+
+- [x] All live image references resolve.
+- [x] 15 seeded properties each reference four local JPEG images.
+- [x] 60 seeded property JPEG files exist.
+- [x] Every seeded agent uses an individual local JPEG portrait.
+- [x] Home hero JPEG exists.
+- [x] About editorial JPEG exists.
+- [x] Shared Authentication JPEG exists.
+- [x] Seeded property records no longer use generic placeholders.
+- [x] Seeded agent records no longer use generic placeholders.
+- [x] Intentional fallback placeholders are retained only for future/unseeded demo records.
+- [x] Unreferenced obsolete imagery was removed where safe.
+- [x] HTML local routes/assets resolve.
+- [x] JavaScript imports resolve.
+- [x] CSS imports resolve.
+- [x] Public/management visibility rules remain intact.
+- [x] Authentication/OAuth honesty remains intact.
+- [x] Final polish layer remains active.
+- [x] Final Phase 13 package generated.
+
+## Remaining Manual Acceptance
+
+- [ ] Open every major public page in a browser.
+- [ ] Inspect Home hero crop at desktop/tablet/mobile sizes.
+- [ ] Inspect Property Card crop variation.
+- [ ] Inspect Property Details galleries/lightbox.
+- [ ] Inspect all six Agent portraits.
+- [ ] Inspect About/Auth image crops.
+- [ ] Verify User/Agent/Admin workspace responsive layouts.
+- [ ] Verify keyboard-only navigation and focus visibility.
+- [ ] Verify there is no narrow-screen horizontal overflow.

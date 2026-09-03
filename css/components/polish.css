@@ -1,0 +1,466 @@
+/*
+ * LarHub Final UI Polish
+ *
+ * Phase 13.6
+ *
+ * This file intentionally contains cross-project finishing refinements.
+ * It does not redefine the core design system; it normalizes rhythm,
+ * interactive states, media treatment, and application density.
+ */
+
+/* ---------------------------------------------------------
+ * Global vertical rhythm
+ * --------------------------------------------------------- */
+
+:where(
+  .home-section-heading,
+  .about-section-heading,
+  .properties-toolbar,
+  .agents-toolbar,
+  .property-similar__heading,
+  .agent-profile-listings__heading,
+  .app-section__heading
+) h2 {
+  text-wrap: balance;
+}
+
+:where(
+  .text-display,
+  h1,
+  h2,
+  h3
+) {
+  text-wrap: balance;
+}
+
+:where(
+  p,
+  dd,
+  li
+) {
+  text-wrap: pretty;
+}
+
+/* ---------------------------------------------------------
+ * Shared media treatment
+ * --------------------------------------------------------- */
+
+:where(
+  .home-hero__media,
+  .about-hero__media,
+  .property-card__media,
+  .agent-card__media,
+  .property-gallery__main,
+  .property-gallery__thumb,
+  .agent-profile-hero__media,
+  .agent-listing__media,
+  .auth-visual
+) img {
+  transition:
+    transform var(--duration-base)
+    var(--ease-standard);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :where(
+    .property-card,
+    .agent-card,
+    .home-intent-card,
+    .about-audience-card,
+    .dashboard-stat,
+    .admin-summary-card
+  ) {
+    transition:
+      transform var(--duration-fast)
+      var(--ease-standard),
+      border-color var(--duration-fast)
+      var(--ease-standard),
+      box-shadow var(--duration-fast)
+      var(--ease-standard);
+  }
+
+  :where(
+    .property-card,
+    .agent-card,
+    .home-intent-card,
+    .about-audience-card,
+    .dashboard-stat,
+    .admin-summary-card
+  ):hover {
+    transform: translateY(-2px);
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-subtle);
+  }
+
+  :where(
+    .property-card,
+    .agent-card
+  ):hover img {
+    transform: scale(1.025);
+  }
+}
+
+/* ---------------------------------------------------------
+ * Accessible interaction polish
+ * --------------------------------------------------------- */
+
+:where(
+  a,
+  button,
+  input,
+  select,
+  textarea
+):focus-visible {
+  outline:
+    3px
+    solid
+    color-mix(
+      in srgb,
+      var(--color-brand) 48%,
+      white
+    );
+
+  outline-offset: 3px;
+}
+
+:where(
+  button,
+  .button,
+  .text-link,
+  .app-nav__link,
+  .home-location
+) {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button {
+  font-weight: var(--font-weight-semibold);
+}
+
+.button--full {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------
+ * Shared surface refinement
+ * --------------------------------------------------------- */
+
+:where(
+  .property-form,
+  .property-agent-card,
+  .agent-profile-contact,
+  .dashboard-stat,
+  .agent-listing,
+  .user-enquiry,
+  .agent-enquiry,
+  .admin-agent-card,
+  .admin-summary-card,
+  .empty-state
+) {
+  box-shadow:
+    0 1px 0
+    rgb(0 0 0 / 0.02);
+}
+
+/* ---------------------------------------------------------
+ * Card image consistency
+ * --------------------------------------------------------- */
+
+.property-card__media {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+
+  background: var(--color-surface-secondary);
+}
+
+.property-card__media img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.agent-card__media {
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+
+  background: var(--color-surface-secondary);
+}
+
+.agent-card__media img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* ---------------------------------------------------------
+ * Content width + section rhythm
+ * --------------------------------------------------------- */
+
+.section {
+  padding-block:
+    clamp(
+      var(--space-7),
+      7vw,
+      var(--section-space-desktop)
+    );
+}
+
+.section-surface,
+.section-surface-secondary {
+  border-block:
+    var(--border-width)
+    solid
+    var(--color-border);
+}
+
+/* ---------------------------------------------------------
+ * Public shell
+ * --------------------------------------------------------- */
+
+.site-header {
+  backdrop-filter: blur(12px);
+}
+
+.site-header__inner,
+.site-footer__inner {
+  gap: var(--space-5);
+}
+
+.site-footer {
+  margin-top: 0;
+}
+
+/* ---------------------------------------------------------
+ * Public-page finishing
+ * --------------------------------------------------------- */
+
+.home-hero__content,
+.about-hero__content {
+  max-width: 46rem;
+}
+
+.home-featured__grid,
+.properties-grid,
+.agents-grid {
+  align-items: stretch;
+}
+
+.home-intent-card {
+  min-height: 18rem;
+}
+
+.home-location {
+  font-size:
+    clamp(
+      var(--font-size-body),
+      2vw,
+      var(--font-size-body-lg)
+    );
+}
+
+.property-summary__main {
+  max-width: 52rem;
+}
+
+.property-summary__actions {
+  align-self: flex-start;
+}
+
+.property-facts {
+  align-items: stretch;
+}
+
+.property-features li {
+  line-height: var(--line-height-body);
+}
+
+.agent-profile-hero__content {
+  max-width: 46rem;
+}
+
+/* ---------------------------------------------------------
+ * Auth finishing
+ * --------------------------------------------------------- */
+
+.auth-panel__inner {
+  padding-block:
+    clamp(
+      var(--space-4),
+      5vh,
+      var(--space-8)
+    );
+}
+
+.auth-provider,
+.auth-form input,
+.auth-form select,
+.auth-password-toggle {
+  transition:
+    border-color var(--duration-fast)
+    var(--ease-standard),
+    background var(--duration-fast)
+    var(--ease-standard),
+    color var(--duration-fast)
+    var(--ease-standard);
+}
+
+.auth-visual__image {
+  filter:
+    saturate(0.92)
+    contrast(1.02);
+}
+
+.auth-visual__overlay {
+  max-width: 30rem;
+}
+
+/* ---------------------------------------------------------
+ * Application shell finishing
+ * --------------------------------------------------------- */
+
+.app-content {
+  width: min(
+    100%,
+    92rem
+  );
+
+  margin-inline: auto;
+  padding:
+    var(--space-6)
+    var(--gutter-mobile)
+    var(--space-8);
+}
+
+.app-page-heading {
+  padding-bottom: var(--space-5);
+
+  border-bottom:
+    var(--border-width)
+    solid
+    var(--color-border);
+}
+
+.app-nav__link {
+  transition:
+    color var(--duration-fast)
+    var(--ease-standard),
+    background var(--duration-fast)
+    var(--ease-standard),
+    transform var(--duration-fast)
+    var(--ease-standard);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .app-nav__link:hover {
+    transform: translateX(2px);
+  }
+}
+
+.dashboard-stat__value {
+  letter-spacing: -0.04em;
+}
+
+.agent-listing__body,
+.user-enquiry,
+.agent-enquiry,
+.admin-agent-card {
+  min-width: 0;
+}
+
+/* ---------------------------------------------------------
+ * Table polish
+ * --------------------------------------------------------- */
+
+.admin-table tbody tr {
+  transition:
+    background var(--duration-fast)
+    var(--ease-standard);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .admin-table tbody tr:hover {
+    background: var(--color-surface-secondary);
+  }
+}
+
+/* ---------------------------------------------------------
+ * Responsive refinements
+ * --------------------------------------------------------- */
+
+@media (min-width: 48rem) {
+  .app-content {
+    padding-inline:
+      var(--gutter-tablet);
+  }
+
+  .property-summary__actions {
+    max-width: 24rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .app-content {
+    padding:
+      var(--space-8)
+      var(--gutter-desktop)
+      var(--space-9);
+  }
+
+  .home-hero,
+  .about-hero {
+    min-height: 42rem;
+  }
+
+  .home-hero__grid,
+  .about-hero__grid {
+    min-height: inherit;
+  }
+
+  .property-detail-layout,
+  .agent-profile-layout {
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 39.99rem) {
+  .button,
+  .auth-provider {
+    min-height: var(--touch-target-min);
+  }
+
+  .property-facts,
+  .property-features,
+  .agent-form-grid--facts {
+    grid-template-columns:
+      minmax(0, 1fr);
+  }
+
+  .app-page-heading {
+    margin-bottom: var(--space-6);
+  }
+
+  .agent-listing__actions {
+    display: grid;
+  }
+
+  .agent-listing__actions > * {
+    width: 100%;
+  }
+}
+
+/* ---------------------------------------------------------
+ * Reduced motion
+ * --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
