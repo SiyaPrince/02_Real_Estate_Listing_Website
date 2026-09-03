@@ -1,6 +1,49 @@
 /*
- * LarHub — components / pagination
- *
- * Placeholder created in Increment 0.1.
- * Implementation belongs to a later increment.
+ * LarHub Pagination
  */
+
+.pagination {
+  margin-top: var(--space-7);
+}
+
+.pagination__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.pagination__button {
+  min-width: var(--control-height-md);
+  min-height: var(--control-height-md);
+
+  padding-inline: var(--space-3);
+
+  color: var(--color-text);
+  background: var(--color-surface);
+
+  font-weight: var(--font-weight-medium);
+
+  border:
+    var(--border-width)
+    solid
+    var(--color-border);
+  border-radius: var(--radius-control);
+
+  cursor: pointer;
+}
+
+.pagination__button:hover:not(:disabled) {
+  border-color: var(--color-brand);
+}
+
+.pagination__button[aria-current="page"] {
+  color: var(--color-text-on-brand);
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+}
+
+.pagination__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}

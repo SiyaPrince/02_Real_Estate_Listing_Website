@@ -16,3 +16,7 @@
 @import "./components/agent-card.css";
 
 @import "./components/search.css";
+
+@import "./components/filters.css";
+@import "./components/pagination.css";
+@import "./components/empty-state.css";

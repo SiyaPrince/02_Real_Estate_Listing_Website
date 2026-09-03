@@ -1,6 +1,203 @@
 /*
- * LarHub — components / filters
- *
- * Placeholder created in Increment 0.1.
- * Implementation belongs to a later increment.
+ * LarHub Property Filters
  */
+
+.active-filters {
+  margin-bottom: var(--space-5);
+}
+
+.active-filters[hidden] {
+  display: none;
+}
+
+.active-filters__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.filter-chip {
+  display: inline-flex;
+  min-height: var(--control-height-sm);
+  align-items: center;
+  gap: var(--space-2);
+
+  padding-inline: var(--space-3);
+
+  color: var(--color-brand);
+  background: var(--color-brand-soft);
+
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+
+  border:
+    var(--border-width)
+    solid
+    var(--color-brand-soft);
+  border-radius: var(--radius-pill);
+
+  cursor: pointer;
+}
+
+.filter-chip:hover {
+  border-color: var(--color-brand);
+}
+
+.properties-filters {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-drawer);
+
+  width: min(90vw, 24rem);
+
+  padding: var(--space-5);
+
+  overflow-y: auto;
+
+  background: var(--color-surface);
+
+  box-shadow: var(--shadow-overlay);
+
+  transform: translateX(105%);
+
+  transition:
+    transform var(--duration-base)
+    var(--ease-emphasized);
+}
+
+.properties-filters.is-open {
+  transform: translateX(0);
+}
+
+.properties-filters__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+
+  margin-bottom: var(--space-6);
+}
+
+.properties-filter-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-backdrop);
+
+  background: rgb(29 33 31 / 0.44);
+}
+
+.filters-open {
+  overflow: hidden;
+}
+
+.filter-form {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.filter-group {
+  min-width: 0;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+}
+
+.filter-group legend {
+  margin-bottom: var(--space-3);
+
+  color: var(--color-text);
+
+  font-weight: var(--font-weight-semibold);
+}
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  min-height: var(--control-height-md);
+
+  padding-inline: var(--space-3);
+
+  background: var(--color-surface);
+
+  border:
+    var(--border-width)
+    solid
+    var(--color-border-strong);
+  border-radius: var(--radius-control);
+}
+
+.filter-price-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.filter-price-grid > div {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.filter-checks {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.filter-checks label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  color: var(--color-text-secondary);
+}
+
+.filter-checks input {
+  width: 1.1rem;
+  min-height: auto;
+  height: 1.1rem;
+
+  padding: 0;
+}
+
+.filter-form__actions {
+  display: grid;
+  gap: var(--space-3);
+}
+
+@media (min-width: 64rem) {
+  .properties-filters {
+    position: static;
+
+    width: auto;
+    padding: 0;
+
+    overflow: visible;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    transform: none;
+  }
+
+  .properties-filters__header {
+    margin-bottom: var(--space-5);
+  }
+
+  .properties-filters__close {
+    display: none;
+  }
+
+  .properties-filter-backdrop {
+    display: none !important;
+  }
+
+  .filters-open {
+    overflow: auto;
+  }
+}
