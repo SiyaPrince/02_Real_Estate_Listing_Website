@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#e7efec"/>
+  <rect x="110" y="180" width="580" height="300" rx="10" fill="#ffffff" stroke="#b8bdb9" stroke-width="8"/>
+  <path d="M150 230L400 90L650 230" fill="none" stroke="#173f35" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="180" y="265" width="150" height="120" fill="#f0f0eb" stroke="#daddd9" stroke-width="6"/>
+  <rect x="470" y="265" width="150" height="120" fill="#f0f0eb" stroke="#daddd9" stroke-width="6"/>
+  <rect x="355" y="315" width="90" height="165" fill="#173f35"/>
+  <text x="400" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#606762">LarHub Property</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <rect width="600" height="600" fill="#e7efec"/>
+  <circle cx="300" cy="215" r="105" fill="#b8bdb9"/>
+  <path d="M120 540c20-135 100-210 180-210s160 75 180 210" fill="#173f35"/>
+  <text x="300" y="575" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" fill="#606762">LarHub Agent</text>
+</svg>
