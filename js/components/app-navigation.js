@@ -83,7 +83,38 @@ const AREA_CONFIG = {
   admin: {
     label: "Admin",
     home: "/admin/index.html",
-    links: []
+    links: [
+      {
+        href: "/admin/index.html",
+        label: "Overview",
+        key: "overview"
+      },
+      {
+        href: "/admin/properties.html",
+        label: "Properties",
+        key: "properties"
+      },
+      {
+        href: "/admin/agents.html",
+        label: "Agents",
+        key: "agents"
+      },
+      {
+        href: "/admin/users.html",
+        label: "Users",
+        key: "users"
+      },
+      {
+        href: "/admin/activity.html",
+        label: "Activity",
+        key: "activity"
+      },
+      {
+        href: "/admin/settings.html",
+        label: "Settings",
+        key: "settings"
+      }
+    ]
   }
 };
 
@@ -166,6 +197,50 @@ function getCurrentKey(area) {
       )
     ) {
       return "profile";
+    }
+
+    return "overview";
+  }
+
+  if (area === "admin") {
+    if (
+      pathname.endsWith(
+        "/admin/properties.html"
+      )
+    ) {
+      return "properties";
+    }
+
+    if (
+      pathname.endsWith(
+        "/admin/agents.html"
+      )
+    ) {
+      return "agents";
+    }
+
+    if (
+      pathname.endsWith(
+        "/admin/users.html"
+      )
+    ) {
+      return "users";
+    }
+
+    if (
+      pathname.endsWith(
+        "/admin/activity.html"
+      )
+    ) {
+      return "activity";
+    }
+
+    if (
+      pathname.endsWith(
+        "/admin/settings.html"
+      )
+    ) {
+      return "settings";
     }
 
     return "overview";
