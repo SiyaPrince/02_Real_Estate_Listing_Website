@@ -283,3 +283,20 @@ single source of truth for navigation, active states, mobile behavior, and futur
 
 Public pages retain explicit semantic `<main>` content while shared public chrome is mounted into
 the existing header/footer placeholders.
+
+
+## DEC-013 — Property Data Model
+
+**Date:** 2026-09-03  
+**Status:** LOCKED
+
+LarHub separately stores:
+
+```text
+publicStatus
+lifecycleStatus
+moderationStatus
+```
+
+This allows Sold/Rented/Draft records to remain available for future Agent/Admin interfaces
+without appearing in public marketplace discovery.

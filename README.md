@@ -214,3 +214,24 @@ js/components/public-header.js
 js/components/public-footer.js
 js/features/navigation.js
 ```
+
+
+## Property Data Foundation
+
+Demo data and service boundaries now exist for properties and agents.
+
+Primary files:
+
+```text
+js/data/properties.js
+js/data/agents.js
+js/services/property-service.js
+js/services/agent-service.js
+js/utils/currency.js
+js/components/property-card.js
+js/components/agent-card.js
+css/components/property-card.css
+css/components/agent-card.css
+```
+
+Public property retrieval excludes Sold, Rented, Draft, and other management-only records.

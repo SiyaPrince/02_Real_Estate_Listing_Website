@@ -119,3 +119,13 @@ Before accepting an image implementation:
 - [ ] Crop remains sensible at mobile/tablet/desktop widths.
 - [ ] Lazy loading is used where appropriate.
 - [ ] Above-the-fold critical imagery is not unnecessarily lazy-loaded.
+
+
+## Increment 2 Structural Fallback Assets
+
+| Asset ID | Filename | Location | Purpose | Ratio | Status |
+|---|---|---|---|---|---|
+| PROPERTY-FALLBACK-001 | `property-placeholder.svg` | `assets/images/properties/` | Temporary Property Card fallback | 4:3 | PLACED |
+| AGENT-FALLBACK-001 | `agent-placeholder.svg` | `assets/images/agents/` | Temporary Agent Card fallback | 1:1 | PLACED |
+
+These are structural fallbacks, not final portfolio imagery.

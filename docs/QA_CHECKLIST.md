@@ -287,3 +287,31 @@ Full visual/browser interaction QA remains intentionally deferred until implemen
 - [ ] Verify footer composition on mobile/tablet/desktop.
 - [ ] Verify keyboard navigation in a real browser.
 - [ ] Verify focus visibility on all header/footer links.
+
+
+# 6. Increment 2 — Property Data Foundation QA
+
+- [x] Property IDs are unique.
+- [x] Property references are unique.
+- [x] Prices are numeric.
+- [x] Every property `agentId` resolves to an agent.
+- [x] Sale and rent data exist.
+- [x] House, apartment, townhouse, commercial, and land data exist.
+- [x] Multiple South African locations exist.
+- [x] Sold/Rented/Draft records are management-only.
+- [x] Public-property service excludes management-only records.
+- [x] Featured-property service exists.
+- [x] Public agent listing count derives from public property data.
+- [x] Currency formatting is centralized.
+- [x] Reusable Property Card exists.
+- [x] Reusable Agent Card exists.
+- [x] Cards use explicit image markup.
+- [x] Temporary fallback assets exist.
+
+## Pending Browser Acceptance
+
+- [ ] Render sample Property Cards.
+- [ ] Render sample Agent Cards.
+- [ ] Verify long titles do not overflow.
+- [ ] Verify fallback media crops correctly.
+- [ ] Verify hover/focus states.
