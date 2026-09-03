@@ -373,3 +373,37 @@ PATCH /agent/profile
 Listing lifecycle remains distinct from public listing status.
 
 Sold and Rented are management states and should not appear in active public discovery.
+
+
+### Increment 11 Admin Application Status
+
+The Admin workspace is implemented with browser-local moderation and settings state.
+
+Current local keys:
+
+```text
+larhub.demoAdminPropertyState
+larhub.demoAdminAgentState
+larhub.demoAdminUsers
+larhub.demoAdminSettings
+larhub.demoSession
+```
+
+Likely backend replacements:
+
+```text
+GET /admin/properties
+PATCH /admin/properties/:id/moderation
+
+GET /admin/agents
+PATCH /admin/agents/:id/status
+
+GET /admin/users
+PATCH /admin/users/:id/status
+
+GET /admin/activity
+GET /admin/settings
+PATCH /admin/settings
+```
+
+Current Admin state is a frontend demonstration only and does not mutate the public static datasets.

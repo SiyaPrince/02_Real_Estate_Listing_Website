@@ -410,3 +410,29 @@ larhub.demoAgentProfile
 ```
 
 They do not mutate the static public marketplace dataset or claim backend persistence.
+
+
+## Admin Application
+
+LarHub now includes a complete frontend Admin workspace:
+
+- Overview
+- Property moderation
+- Agent management
+- User management
+- Marketplace activity
+- Settings
+
+Admin state is browser-local only.
+
+Primary local keys:
+
+```text
+larhub.demoAdminPropertyState
+larhub.demoAdminAgentState
+larhub.demoAdminUsers
+larhub.demoAdminSettings
+```
+
+The Admin workspace does not mutate the static public datasets or claim that production
+moderation/configuration has occurred.

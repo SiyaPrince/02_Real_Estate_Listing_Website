@@ -784,3 +784,71 @@ Full visual/browser interaction QA remains intentionally deferred until implemen
 - [ ] Verify local additions survive refresh.
 - [ ] Verify Sold/Rented states remain management-only.
 - [ ] Verify performance counts after status changes.
+
+
+# 15. Increment 11 — Admin Application QA
+
+## Application Shell
+
+- [x] Admin Overview navigation exists.
+- [x] Properties navigation exists.
+- [x] Agents navigation exists.
+- [x] Users navigation exists.
+- [x] Activity navigation exists.
+- [x] Settings navigation exists.
+- [x] Active page state works.
+- [x] Admin Demo Access state is visible.
+
+## Property Moderation
+
+- [x] Property moderation list exists.
+- [x] Approved state exists.
+- [x] Pending Review state exists.
+- [x] Rejected state exists.
+- [x] Status filter exists.
+- [x] Changes persist locally.
+- [x] Static public property dataset is not mutated.
+
+## Agent Administration
+
+- [x] Agent management list exists.
+- [x] Approved state exists.
+- [x] Suspended state exists.
+- [x] Local state persists.
+- [x] Public Agent dataset is not mutated.
+
+## User Administration
+
+- [x] Explicit demo users exist.
+- [x] Active state exists.
+- [x] Suspended state exists.
+- [x] UI states these are demonstration records.
+
+## Activity
+
+- [x] Pending property count is computed.
+- [x] Rejected property count is computed.
+- [x] Suspended agent count is computed.
+- [x] Suspended user count is computed.
+- [x] Demo enquiry count is computed.
+- [x] No fake traffic/revenue/growth analytics exist.
+
+## Settings
+
+- [x] Marketplace name setting exists.
+- [x] Support email setting exists.
+- [x] Demo registration toggle exists.
+- [x] Agent approval toggle exists.
+- [x] Listing approval toggle exists.
+- [x] Settings persist locally.
+- [x] Reset Admin Demo State exists.
+- [x] UI states no production configuration is changed.
+
+## Pending Browser Acceptance
+
+- [ ] Verify Admin sidebar/mobile navigation.
+- [ ] Verify tables remain usable on narrow screens.
+- [ ] Verify moderation select controls.
+- [ ] Verify Agent cards at mobile/tablet widths.
+- [ ] Verify Admin settings persistence.
+- [ ] Verify reset behavior.

@@ -2,7 +2,7 @@
 
 ## Current Increment
 
-**Increment 10 — Agent Application**
+**Increment 11 — Admin Application**
 
 Status:
 
@@ -18,133 +18,140 @@ FOUNDATION                 COMPLETE + LOCKED
 PUBLIC EXPERIENCE          COMPLETE
 AUTHENTICATION UI          COMPLETE
 USER APPLICATION           COMPLETE
-AGENT APPLICATION          IMPLEMENTED
-ADMIN APPLICATION          NEXT
-FINAL QA / CONSOLIDATION   NOT STARTED
+AGENT APPLICATION          COMPLETE
+ADMIN APPLICATION          IMPLEMENTED
+FINAL QA / CONSOLIDATION   NEXT
 ```
 
 ---
 
-## Increment 10 Completed
+## Increment 11 Completed
 
-### Agent Application Shell
+### Admin Application Shell
 
-The shared application shell now supports Agent navigation:
+Admin navigation is now active:
 
 ```text
 Overview
-My Listings
-Add Property
-Enquiries
-Performance
-Profile
+Properties
+Agents
+Users
+Activity
+Settings
 ```
 
-Agent Demo Access uses:
+Admin Demo Access uses:
 
 ```text
 larhub.demoSession
-role: "agent"
+role: "admin"
 ```
 
 ### Overview
 
-Implemented data-driven counts for:
+Data-driven summary:
 
-- Published/active listings
-- Under Offer listings
-- Demo enquiries associated with this Demo Agent
-- Recent listing-management cards
+- Total properties
+- Approved properties
+- Pending properties
+- Rejected properties
+- Approved agents
+- Active users
+- Demo enquiries
+- Suspended accounts
 
-### My Listings
+### Property Moderation
 
 Implemented:
 
-- Demo Agent inventory
-- Status filter
-- Edit action
-- Lifecycle status control
-- Draft
-- Published
-- Under Offer
-- Sold
-- Rented
-- Reset local changes
-
-Important:
-
-Sold/Rented remain management-only states.
-
-Local Agent changes do not mutate the public marketplace demo dataset.
-
-### Add / Edit Property
-
-Implemented browser-local property editor:
-
-- Title
-- Listing type
-- Property type
-- Price
-- Lifecycle status
-- Suburb
-- City
-- Province
-- Bedrooms
-- Bathrooms
-- Parking
-- Floor area
-- Land area
-- Features
-- Description
-
-Existing static Demo Agent listings can be overridden locally.
-
-New listings receive local demo IDs/references.
+- All property records
+- Moderation filter
+- Approved
+- Pending Review
+- Rejected
+- Browser-local moderation override
 
 Storage:
 
 ```text
-larhub.demoAgentListings
+larhub.demoAdminPropertyState
 ```
 
-### Agent Enquiries
+No static public property record is mutated.
 
-Agent Enquiries filters the local User enquiry records to listing IDs managed by this Demo Agent.
+### Agent Administration
 
-No enquiry is claimed to have been delivered.
+Implemented:
 
-### Performance
+- Public agent list
+- Approved state
+- Suspended state
+- Browser-local account override
 
-Implemented only honest computed metrics:
+Storage:
 
-- Published listing count
-- Under Offer count
-- Sold/Rented count
-- Local Demo Enquiry count
-- Lifecycle distribution
+```text
+larhub.demoAdminAgentState
+```
+
+### User Administration
+
+Implemented explicit demo user records with:
+
+- Active
+- Suspended
+
+Storage:
+
+```text
+larhub.demoAdminUsers
+```
+
+These are not real LarHub user accounts.
+
+### Activity
+
+Only honest computed marketplace values are shown:
+
+- Pending properties
+- Rejected properties
+- Suspended agents
+- Suspended users
+- Total properties
+- Approved agents
+- Active users
+- Demo enquiries
 
 No fake:
 
-- page views
-- conversion rates
-- leads
+- traffic
+- growth
 - revenue
+- conversion
 - impressions
 
-were added.
+analytics are generated.
 
-### Agent Profile Settings
+### Settings
 
-Local Agent profile editing uses:
+Browser-local Admin settings:
+
+- Marketplace name
+- Support email
+- Demo registration UI
+- Agent approval requirement
+- Listing approval requirement
+
+Storage:
 
 ```text
-larhub.demoAgentProfile
+larhub.demoAdminSettings
 ```
 
-Changes remain browser-local and do not mutate the public Agent Profile dataset.
+Reset Admin Demo State is included.
 
 ---
 
 ## Next
 
-**Increment 11 — Admin Application**
+**Increment 12 — Final QA and Consolidation**

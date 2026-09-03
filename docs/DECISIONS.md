@@ -348,3 +348,28 @@ This preserves an honest distinction between:
 - frontend management simulation
 - real backend publication/moderation
 - public marketplace state
+
+
+## DEC-016 — Admin Demo State
+
+**Date:** 2026-09-03  
+**Status:** LOCKED
+
+### Decision
+
+The frontend-only Admin workspace uses browser-local state for moderation, user simulation,
+and platform settings.
+
+### Constraint
+
+Admin UI actions must not silently mutate LarHub's static public datasets or imply production
+moderation/configuration occurred.
+
+### Local Keys
+
+```text
+larhub.demoAdminPropertyState
+larhub.demoAdminAgentState
+larhub.demoAdminUsers
+larhub.demoAdminSettings
+```
