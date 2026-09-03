@@ -2,31 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1"
   >
+
   <meta
     name="description"
-    content="LarHub real estate listing platform."
+    content="View a LarHub property agent profile and active public listings."
   >
 
   <title>Agent Profile | LarHub</title>
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/pages/agent-profile.css">
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/pages/agent-profile.css"
+  >
 </head>
 
 <body class="page">
   <header data-public-header></header>
 
   <main id="main-content">
-    <h1>Agent Profile</h1>
+    <div
+      class="container agent-profile-page"
+      data-agent-profile-page
+    >
+      <nav
+        class="agent-profile-breadcrumb text-small"
+        aria-label="Breadcrumb"
+      >
+        <a href="/index.html">
+          Home
+        </a>
+
+        <span aria-hidden="true">
+          /
+        </span>
+
+        <a href="/agents.html">
+          Agents
+        </a>
+
+        <span aria-hidden="true">
+          /
+        </span>
+
+        <span data-agent-breadcrumb>
+          Agent
+        </span>
+      </nav>
+
+      <div
+        class="agent-profile-loading"
+        data-agent-profile-loading
+      >
+        Loading agent profile…
+      </div>
+
+      <section
+        class="empty-state"
+        data-agent-profile-not-found
+        hidden
+      >
+        <p class="text-eyebrow">
+          Agent unavailable
+        </p>
+
+        <h1>
+          We couldn't find this agent.
+        </h1>
+
+        <p>
+          The profile may no longer be public,
+          or the link may be incorrect.
+        </p>
+
+        <a
+          class="button button--secondary"
+          href="/agents.html"
+        >
+          Browse Agents
+        </a>
+      </section>
+
+      <div
+        data-agent-profile-content
+        hidden
+      ></div>
+    </div>
   </main>
 
   <footer data-public-footer></footer>
 
-  <script type="module" src="/js/main.js"></script>
-  <script type="module" src="/js/pages/agent-profile.js"></script>
+  <script
+    type="module"
+    src="/js/main.js"
+  ></script>
+
+  <script
+    type="module"
+    src="/js/pages/agent-profile.js"
+  ></script>
 </body>
 </html>
