@@ -59,3 +59,25 @@ export function getPropertiesByAgent(
     (property) => property.agentId === agentId
   );
 }
+
+
+/**
+ * Return public properties transformed by a caller-provided
+ * predicate pipeline.
+ *
+ * This keeps pages dependent on the service layer rather than
+ * importing the raw demo array.
+ *
+ * @param {(properties: object[]) => object[]} transform
+ * @returns {object[]}
+ */
+export function searchPublicProperties(
+  transform
+) {
+  const publicProperties =
+    getPublicProperties();
+
+  return typeof transform === "function"
+    ? transform(publicProperties)
+    : publicProperties;
+}

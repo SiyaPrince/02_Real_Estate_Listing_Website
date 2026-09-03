@@ -4,11 +4,18 @@
  * Increment 3 — Home
  */
 
-import {renderPropertyCard} from "../components/property-card.js";
+import {
+  renderPropertyCard
+} from "../components/property-card.js";
 
-import {getFeaturedProperties} from "../services/property-service.js";
+import {
+  getFeaturedProperties
+} from "../services/property-service.js";
 
-import {onReady, select} from "../utils/dom.js";
+import {
+  onReady,
+  select
+} from "../utils/dom.js";
 
 function renderFeaturedProperties() {
   const target = select(
