@@ -1,6 +1,237 @@
 /*
- * LarHub — pages / home
+ * LarHub Home Page
  *
- * Placeholder created in Increment 0.1.
- * Implementation belongs to a later increment.
+ * Increment 3 — Home
  */
+
+.home-hero {
+  overflow: hidden;
+
+  padding-block:
+    clamp(
+      var(--space-7),
+      8vw,
+      var(--section-space-large)
+    );
+}
+
+.home-hero__grid {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.home-hero__content {
+  min-width: 0;
+}
+
+.home-hero__title {
+  max-width: 12ch;
+
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.home-hero__media {
+  overflow: hidden;
+
+  min-height: 22rem;
+
+  background: var(--color-brand-soft);
+
+  border-radius: var(--radius-lg);
+}
+
+.home-hero__image {
+  width: 100%;
+  height: 100%;
+  min-height: 22rem;
+
+  object-fit: cover;
+}
+
+.home-section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+
+  margin-bottom: var(--space-6);
+}
+
+.home-featured__grid:empty::before {
+  content: "Featured properties are loading.";
+
+  color: var(--color-text-muted);
+}
+
+.home-intent__heading,
+.home-locations__heading {
+  margin-bottom: var(--space-6);
+}
+
+.home-intent__grid {
+  align-items: stretch;
+}
+
+.home-intent-card {
+  display: flex;
+  min-width: 0;
+  min-height: 20rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+
+  padding: var(--space-6);
+
+  background: var(--color-background);
+
+  border:
+    var(--border-width)
+    solid
+    var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.home-intent-card h3 {
+  max-width: 17ch;
+}
+
+.home-intent-card p:not(.text-eyebrow) {
+  max-width: 46ch;
+}
+
+.home-intent-card .button {
+  margin-top: auto;
+}
+
+.home-location-list {
+  display: grid;
+
+  border-top:
+    var(--border-width)
+    solid
+    var(--color-border);
+}
+
+.home-location {
+  display: flex;
+  min-height: 4.75rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+
+  color: var(--color-text);
+
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+
+  border-bottom:
+    var(--border-width)
+    solid
+    var(--color-border);
+
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    padding-inline var(--duration-fast) var(--ease-standard);
+}
+
+.home-location:hover {
+  padding-inline: var(--space-3);
+
+  color: var(--color-brand);
+}
+
+.home-value {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.home-value__intro {
+  max-width: 48rem;
+}
+
+.home-value__points {
+  align-items: stretch;
+}
+
+.home-value-point {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+
+  padding-top: var(--space-5);
+
+  border-top:
+    var(--border-width)
+    solid
+    var(--color-border-strong);
+}
+
+.home-cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+
+  padding:
+    var(--space-7)
+    var(--space-6);
+
+  color: var(--color-text-on-brand);
+  background: var(--color-brand);
+
+  border-radius: var(--radius-lg);
+}
+
+.home-cta__inner h2,
+.home-cta__inner p,
+.home-cta__inner .text-eyebrow {
+  color: inherit;
+}
+
+.home-cta__inner .button {
+  color: var(--color-brand);
+  background: var(--color-surface);
+  border-color: var(--color-surface);
+}
+
+.home-cta__inner .button:hover {
+  color: var(--color-brand-hover);
+  background: var(--color-brand-soft);
+  border-color: var(--color-brand-soft);
+}
+
+@media (min-width: 48rem) {
+  .home-section-heading {
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+  }
+
+  .home-cta__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 64rem) {
+  .home-hero__grid {
+    grid-template-columns:
+      minmax(0, 1.15fr)
+      minmax(22rem, 0.85fr);
+  }
+
+  .home-hero__media,
+  .home-hero__image {
+    min-height: 36rem;
+  }
+
+  .home-value {
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(0, 1.1fr);
+    align-items: start;
+  }
+}

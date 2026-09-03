@@ -1,6 +1,87 @@
 /*
- * LarHub — components / search
+ * LarHub Search Controls
  *
- * Placeholder created in Increment 0.1.
- * Implementation belongs to a later increment.
+ * Increment 3 — Home
  */
+
+.home-search {
+  display: grid;
+  gap: var(--space-4);
+
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+
+  background: var(--color-surface);
+
+  border:
+    var(--border-width)
+    solid
+    var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-subtle);
+}
+
+.home-search__field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.home-search input,
+.home-search select {
+  width: 100%;
+  min-height: var(--control-height-lg);
+
+  padding-inline: var(--space-4);
+
+  color: var(--color-text);
+  background: var(--color-surface);
+
+  border:
+    var(--border-width)
+    solid
+    var(--color-border-strong);
+  border-radius: var(--radius-control);
+}
+
+.home-search input:hover,
+.home-search select:hover {
+  border-color: var(--color-brand);
+}
+
+.home-search input:focus-visible,
+.home-search select:focus-visible {
+  border-color: var(--color-brand);
+}
+
+.home-search__submit {
+  width: 100%;
+}
+
+@media (min-width: 48rem) {
+  .home-search {
+    grid-template-columns:
+      minmax(8rem, 0.75fr)
+      minmax(12rem, 1.5fr)
+      minmax(10rem, 1fr);
+  }
+
+  .home-search__submit {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 64rem) {
+  .home-search {
+    grid-template-columns:
+      minmax(8rem, 0.75fr)
+      minmax(12rem, 1.5fr)
+      minmax(10rem, 1fr)
+      auto;
+    align-items: end;
+  }
+
+  .home-search__submit {
+    width: auto;
+    grid-column: auto;
+  }
+}
