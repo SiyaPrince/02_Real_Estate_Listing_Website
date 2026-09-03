@@ -47,7 +47,38 @@ const AREA_CONFIG = {
   agent: {
     label: "Agent",
     home: "/agent/index.html",
-    links: []
+    links: [
+      {
+        href: "/agent/index.html",
+        label: "Overview",
+        key: "overview"
+      },
+      {
+        href: "/agent/listings.html",
+        label: "My Listings",
+        key: "listings"
+      },
+      {
+        href: "/agent/property-form.html",
+        label: "Add Property",
+        key: "property-form"
+      },
+      {
+        href: "/agent/enquiries.html",
+        label: "Enquiries",
+        key: "enquiries"
+      },
+      {
+        href: "/agent/performance.html",
+        label: "Performance",
+        key: "performance"
+      },
+      {
+        href: "/agent/profile.html",
+        label: "Profile",
+        key: "profile"
+      }
+    ]
   },
   admin: {
     label: "Admin",
@@ -88,6 +119,50 @@ function getCurrentKey(area) {
     if (
       pathname.endsWith(
         "/user/profile.html"
+      )
+    ) {
+      return "profile";
+    }
+
+    return "overview";
+  }
+
+  if (area === "agent") {
+    if (
+      pathname.endsWith(
+        "/agent/listings.html"
+      )
+    ) {
+      return "listings";
+    }
+
+    if (
+      pathname.endsWith(
+        "/agent/property-form.html"
+      )
+    ) {
+      return "property-form";
+    }
+
+    if (
+      pathname.endsWith(
+        "/agent/enquiries.html"
+      )
+    ) {
+      return "enquiries";
+    }
+
+    if (
+      pathname.endsWith(
+        "/agent/performance.html"
+      )
+    ) {
+      return "performance";
+    }
+
+    if (
+      pathname.endsWith(
+        "/agent/profile.html"
       )
     ) {
       return "profile";
