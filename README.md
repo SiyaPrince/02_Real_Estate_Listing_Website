@@ -273,3 +273,20 @@ The public Properties page now supports:
 - Responsive mobile filter drawer
 
 The marketplace continues to use only public-property records from the Property Service.
+
+
+## Property Details
+
+The Property Details experience now supports:
+
+- Dynamic `?id=` loading
+- Public-property eligibility checks
+- Multi-image gallery/lightbox
+- Property facts
+- Description/features
+- Agent contact panel
+- Saved properties through `localStorage`
+- Enquiry UI
+- Request-viewing UI
+- Similar properties
+- Honest frontend-only messaging for backend-dependent actions

@@ -433,3 +433,70 @@ Full visual/browser interaction QA remains intentionally deferred until implemen
 - [ ] Verify chips wrap gracefully.
 - [ ] Verify pagination layout on mobile.
 - [ ] Verify browser Back/Forward visually restores controls.
+
+
+# 9. Increment 5 — Property Details QA
+
+## Loading
+
+- [x] Property ID is read from query state.
+- [x] Property loads through Property Service.
+- [x] Missing ID shows unavailable state.
+- [x] Unknown ID shows unavailable state.
+- [x] Sold/Rented/Draft management-only records do not render publicly.
+
+## Gallery
+
+- [x] Main image exists.
+- [x] Secondary images exist where available.
+- [x] Lightbox opens from gallery.
+- [x] Previous/Next works.
+- [x] Left/Right keyboard navigation exists.
+- [x] Escape closes lightbox.
+- [x] Focus restores after closing.
+- [x] Image count is shown.
+
+## Property Information
+
+- [x] Status renders as text.
+- [x] Price uses centralized formatter.
+- [x] Key facts adapt to property type.
+- [x] Description exists.
+- [x] Features render.
+- [x] No fake map is displayed.
+
+## Save State
+
+- [x] Save button uses `aria-pressed`.
+- [x] Saved property IDs persist in `localStorage`.
+- [x] Only IDs are stored, not duplicate property objects.
+
+## Agent
+
+- [x] Agent panel loads from Agent Service.
+- [x] Agent profile link works.
+- [x] Call link exists.
+- [x] Email link exists.
+
+## Enquiry / Viewing
+
+- [x] General enquiry form exists.
+- [x] Request-viewing form exists.
+- [x] Browser validation is used.
+- [x] Frontend-only status is explicit.
+- [x] No fake send/scheduling success is shown.
+
+## Similar Properties
+
+- [x] Similar-property service exists.
+- [x] Current property is excluded.
+- [x] Shared Property Card is reused.
+
+## Pending Browser Acceptance
+
+- [ ] Verify gallery layout on mobile/tablet/desktop.
+- [ ] Verify lightbox image scaling.
+- [ ] Verify sticky agent panel behavior.
+- [ ] Verify save state survives refresh.
+- [ ] Verify form controls fit narrow mobile widths.
+- [ ] Verify similar Property Cards align correctly.

@@ -140,3 +140,15 @@ These are structural fallbacks, not final portfolio imagery.
 The Home hero now contains explicit meaningful image markup.
 
 Replacing the placeholder later requires only changing the image asset/source, not rebuilding the Home hero.
+
+
+## Increment 5 — Property Detail Gallery Fallbacks
+
+| Asset ID | Filename | Location | Purpose | Status |
+|---|---|---|---|---|
+| PROPERTY-DETAIL-FALLBACK-001 | `property-detail-01.svg` | `assets/images/properties/` | Gallery test image 1 | PLACED |
+| PROPERTY-DETAIL-FALLBACK-002 | `property-detail-02.svg` | `assets/images/properties/` | Gallery test image 2 | PLACED |
+| PROPERTY-DETAIL-FALLBACK-003 | `property-detail-03.svg` | `assets/images/properties/` | Gallery test image 3 | PLACED |
+| PROPERTY-DETAIL-FALLBACK-004 | `property-detail-04.svg` | `assets/images/properties/` | Gallery test image 4 | PLACED |
+
+These exist to make the gallery/lightbox fully testable before final photography is introduced.

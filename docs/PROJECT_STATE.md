@@ -2,7 +2,7 @@
 
 ## Current Increment
 
-**Increment 4 — Properties**
+**Increment 5 — Property Details**
 
 Status:
 
@@ -18,9 +18,9 @@ FOUNDATION                 COMPLETE + LOCKED
 PUBLIC SHELL               COMPLETE
 PROPERTY DATA FOUNDATION   COMPLETE
 HOME                       COMPLETE
-PROPERTIES                 IMPLEMENTED
-PROPERTY DETAILS           NEXT
-AGENTS                     NOT STARTED
+PROPERTIES                 COMPLETE
+PROPERTY DETAILS           IMPLEMENTED
+AGENTS                     NEXT
 AUTHENTICATION UI          NOT STARTED
 USER APPLICATION           NOT STARTED
 AGENT APPLICATION          NOT STARTED
@@ -29,111 +29,107 @@ ADMIN APPLICATION          NOT STARTED
 
 ---
 
-## Increment 4 Completed
+## Increment 5 Completed
 
-### Query-State Marketplace
+### Dynamic Loading
 
-Properties reads and writes:
-
-```text
-listing
-location
-type
-minPrice
-maxPrice
-bedrooms
-bathrooms
-features
-sort
-page
-```
-
-Example:
+Property Details reads:
 
 ```text
-/properties.html?listing=sale&location=Johannesburg&type=house&bedrooms=3
+property.html?id=property-001
 ```
 
-Browser back/forward is supported through `popstate`.
+and loads the matching record through the Property Service.
 
-### Search
+Invalid, missing, Sold, Rented, Draft, or otherwise non-public records show the unavailable state.
 
-Implemented:
-
-- Buy / Rent
-- Location
-- Property Type
-
-### Filters
+### Gallery
 
 Implemented:
 
-- Minimum price
-- Maximum price
-- Minimum bedrooms
-- Minimum bathrooms
-- Garden
-- Security
-- Solar
-- Fibre
-
-Feature filtering uses AND logic across selected features.
-
-### Sorting
-
-Implemented:
-
-- Most relevant
-- Price low to high
-- Price high to low
-- Newest
-
-### Results
-
-Implemented:
-
-- Dynamic result count
-- Shared Property Card rendering
-- Active filter chips
-- Individual filter removal
-- Clear-all
-- Empty state
-- Pagination
-- Responsive grid
-
-### Mobile Filters
-
-Implemented:
-
-- Filter drawer
-- Backdrop
+- Main property image
+- Secondary images
+- View-all control
+- Full-screen lightbox
+- Previous / Next
 - Escape-to-close
-- Focus restoration
-- Basic focus trapping
-- Desktop reset behavior
+- Left / Right arrow navigation
+- Focus restoration after closing
 
-### Pagination
+### Property Information
 
-Current page size:
+Implemented:
+
+- Public status
+- Title
+- Full location
+- Price
+- Property reference
+- Property-type-aware key facts
+- Description
+- Features
+- Textual location context
+
+No fake map was added.
+
+### Saved Property
+
+Implemented with:
 
 ```text
-6 properties
+localStorage
 ```
+
+Key:
+
+```text
+larhub.savedProperties
+```
+
+Only property IDs are persisted.
+
+### Agent Panel
+
+Implemented:
+
+- Agent photo
+- Name
+- Agency
+- Public Agent Profile link
+- Call
+- Email
+
+### Enquiry UI
+
+Implemented:
+
+- General enquiry form
+- Request-viewing form
+- Required-field validation
+- Honest frontend-only result messaging
+
+No message or viewing request is claimed to have been sent.
+
+### Similar Properties
+
+Implemented using:
+
+```text
+getSimilarPublicProperties()
+```
+
+and the shared Property Card renderer.
 
 ---
 
-## Public Data Boundary
+## Image Status
 
-Properties uses:
+Selected demo properties now have multi-image placeholder galleries so gallery behavior can be tested.
 
-```text
-getPublicProperties()
-```
-
-and therefore excludes Sold, Rented, Draft, and other management-only records.
+These remain structural placeholders, not final property photography.
 
 ---
 
 ## Next
 
-**Increment 5 — Property Details**
+**Increment 6 — Agents**
