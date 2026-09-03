@@ -1,0 +1,76 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1200 900"
+>
+  <rect
+    width="1200"
+    height="900"
+    fill="#e7efec"
+  />
+
+  <rect
+    x="110"
+    y="220"
+    width="980"
+    height="520"
+    rx="18"
+    fill="#ffffff"
+    stroke="#b8bdb9"
+    stroke-width="10"
+  />
+
+  <path
+    d="M155 320L600 95L1045 320"
+    fill="none"
+    stroke="#173f35"
+    stroke-width="34"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <rect
+    x="210"
+    y="385"
+    width="240"
+    height="170"
+    fill="#f0f0eb"
+    stroke="#daddd9"
+    stroke-width="8"
+  />
+
+  <rect
+    x="750"
+    y="385"
+    width="240"
+    height="170"
+    fill="#f0f0eb"
+    stroke="#daddd9"
+    stroke-width="8"
+  />
+
+  <rect
+    x="510"
+    y="455"
+    width="180"
+    height="285"
+    fill="#173f35"
+  />
+
+  <path
+    d="M110 740H1090"
+    fill="none"
+    stroke="#b8bdb9"
+    stroke-width="10"
+  />
+
+  <text
+    x="600"
+    y="840"
+    text-anchor="middle"
+    font-family="Arial, sans-serif"
+    font-size="44"
+    fill="#606762"
+  >
+    LarHub Home Hero Placeholder
+  </text>
+</svg>
