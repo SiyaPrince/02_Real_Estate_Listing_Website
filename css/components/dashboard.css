@@ -1,6 +1,305 @@
 /*
- * LarHub — components / dashboard
+ * LarHub Application Shell
  *
- * Placeholder created in Increment 0.1.
- * Implementation belongs to a later increment.
+ * Increment 9 — User Application
  */
+
+.app-page {
+  min-height: 100vh;
+
+  background: var(--color-background);
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-shell__nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-drawer);
+
+  width: min(86vw, 18rem);
+
+  overflow-y: auto;
+
+  background: var(--color-surface);
+
+  border-right:
+    var(--border-width)
+    solid
+    var(--color-border);
+
+  transform: translateX(-105%);
+
+  transition:
+    transform var(--duration-base)
+    var(--ease-emphasized);
+}
+
+.app-shell__nav.is-open {
+  transform: translateX(0);
+}
+
+.app-shell__body {
+  min-width: 0;
+}
+
+.app-topbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+
+  display: flex;
+  min-height: 4.25rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+
+  padding-inline:
+    var(--gutter-mobile);
+
+  background:
+    rgb(247 246 242 / 0.95);
+
+  border-bottom:
+    var(--border-width)
+    solid
+    var(--color-border);
+
+  backdrop-filter: blur(12px);
+}
+
+.app-menu-toggle {
+  display: inline-flex;
+  min-height: var(--touch-target-min);
+  align-items: center;
+  gap: var(--space-2);
+
+  padding-inline: var(--space-3);
+
+  color: var(--color-text);
+  background: var(--color-surface);
+
+  font-weight: var(--font-weight-semibold);
+
+  border:
+    var(--border-width)
+    solid
+    var(--color-border);
+  border-radius: var(--radius-control);
+
+  cursor: pointer;
+}
+
+.app-nav {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+
+  padding: var(--space-5);
+}
+
+.app-nav__brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+
+  padding-bottom: var(--space-6);
+
+  border-bottom:
+    var(--border-width)
+    solid
+    var(--color-border);
+}
+
+.app-nav__area {
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+}
+
+.app-nav__list {
+  display: grid;
+  gap: var(--space-1);
+
+  margin-top: var(--space-5);
+
+  list-style: none;
+}
+
+.app-nav__link {
+  display: flex;
+  min-height: var(--touch-target-min);
+  align-items: center;
+
+  padding-inline: var(--space-3);
+
+  color: var(--color-text-secondary);
+
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+
+  border-radius: var(--radius-control);
+}
+
+.app-nav__link:hover {
+  color: var(--color-text);
+  background: var(--color-surface-secondary);
+}
+
+.app-nav__link[aria-current="page"] {
+  color: var(--color-brand);
+  background: var(--color-brand-soft);
+
+  font-weight: var(--font-weight-semibold);
+}
+
+.app-nav__footer {
+  display: grid;
+  gap: var(--space-3);
+
+  margin-top: auto;
+  padding-top: var(--space-6);
+}
+
+.app-nav__public-link {
+  color: var(--color-text-secondary);
+
+  font-size: var(--font-size-small);
+}
+
+.app-demo-badge {
+  display: inline-flex;
+  justify-self: start;
+
+  padding:
+    var(--space-1)
+    var(--space-3);
+
+  color: var(--color-brand);
+  background: var(--color-brand-soft);
+
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+
+  border-radius: var(--radius-pill);
+}
+
+.app-demo-badge--warning {
+  color: var(--color-warning);
+  background: var(--color-surface-secondary);
+}
+
+.app-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-backdrop);
+
+  background: rgb(29 33 31 / 0.4);
+}
+
+.app-nav-open {
+  overflow: hidden;
+}
+
+.app-page-heading {
+  margin-bottom: var(--space-7);
+}
+
+.app-section {
+  display: grid;
+  gap: var(--space-5);
+
+  margin-top: var(--space-7);
+}
+
+.app-section__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+.dashboard-stat {
+  display: grid;
+  gap: var(--space-2);
+
+  padding: var(--space-5);
+
+  background: var(--color-surface);
+
+  border:
+    var(--border-width)
+    solid
+    var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.dashboard-stat__value {
+  color: var(--color-text);
+
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+@media (min-width: 48rem) {
+  .app-topbar {
+    padding-inline:
+      var(--gutter-tablet);
+  }
+
+  .dashboard-stats {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .app-section__heading {
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 64rem) {
+  .app-shell {
+    display: grid;
+    grid-template-columns:
+      18rem
+      minmax(0, 1fr);
+  }
+
+  .app-shell__nav {
+    position: sticky;
+    top: 0;
+
+    width: auto;
+    height: 100vh;
+
+    transform: none;
+  }
+
+  .app-topbar {
+    display: none;
+  }
+
+  .app-nav-backdrop {
+    display: none !important;
+  }
+
+  .app-nav-open {
+    overflow: auto;
+  }
+}
